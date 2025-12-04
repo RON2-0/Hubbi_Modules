@@ -1,0 +1,92 @@
+name: Release Plugin 📦
+
+on:
+  push:
+    tags:
+      - '*@*' # Se activa cuando empujas un tag con formato "nombre@version"
+
+permissions:
+  contents: write # Necesario para crear el Release y subir archivos
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🏷️ Parse Tag
+        id: tag_info
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          echo "Tag original: $TAG_NAME"
+          
+          # Separamos por el último '@'
+          PLUGIN_NAME=${TAG_NAME%@*}
+          VERSION=${TAG_NAME##*@}
+          
+          echo "PLUGIN_NAME=$PLUGIN_NAME" >> $GITHUB_ENV
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          
+          echo "🎯 Detectado Plugin: $PLUGIN_NAME | Versión: $VERSION"
+
+      - name: 🔍 Verify Plugin Exists
+        run: |
+          if [ ! -d "$PLUGIN_NAME" ]; then
+            echo "❌ Error: No existe la carpeta '$PLUGIN_NAME' en el repositorio."
+            exit 1
+          fi
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📦 Install Dependencies
+        run: |
+          cd $PLUGIN_NAME
+          npm ci # Instalación limpia
+
+      - name: 🛠️ Build Plugin
+        run: |
+          cd $PLUGIN_NAME
+          npm run build
+          # Vite genera el index.umd.cjs en /dist
+
+      - name: 📄 Prepare Manifest
+        # Aseguramos que el manifest tenga la versión correcta del tag
+        run: |
+          cd $PLUGIN_NAME
+          # Usamos jq para actualizar la versión en el manifest.json al vuelo
+          # Si no tienes un manifest en public, asegúrate de crearlo o generarlo aquí
+          
+          # Opción A: Si ya tienes public/manifest.json, lo copiamos a dist (Vite lo hace solo)
+          # Pero vamos a forzar que la versión del JSON coincida con el tag
+          tmp=$(mktemp)
+          jq --arg v "$VERSION" '.meta.version = $v' dist/manifest.json > "$tmp" && mv "$tmp" dist/manifest.json
+          
+          echo "✅ Manifest actualizado a v$VERSION"
+
+      - name: 🤐 Zip Package (.hubbi)
+        run: |
+          cd $PLUGIN_NAME/dist
+          # Comprimimos el contenido de dist
+          zip -r ../../$PLUGIN_NAME.hubbi .
+          
+          echo "📦 Paquete generado: $PLUGIN_NAME.hubbi"
+
+      - name: 🚀 Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ env.PLUGIN_NAME }}.hubbi
+          name: "${{ env.PLUGIN_NAME }} v${{ env.VERSION }}"
+          body: |
+            🚀 **Nuevo Release del Módulo**
+            - Plugin: `${{ env.PLUGIN_NAME }}`
+            - Versión: `${{ env.VERSION }}`
+            
+            Descarga el archivo `.hubbi` e impórtalo en tu aplicación.
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

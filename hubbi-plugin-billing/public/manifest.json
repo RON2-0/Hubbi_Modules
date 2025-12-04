@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "id": "com.hubbi.billing",
+    "name": "Facturación Pro",
+    "version": "1.0.0",
+    "description": "Módulo externo oficial para facturación y control de caja.",
+    "category": "finance",
+    "min_core_version": "0.1.0"
+  },
+  "ui": {
+    "sidebar": [
+      {
+        "label": "Facturación",
+        "path": "/app/com.hubbi.billing/dashboard",
+        "icon": "receipt"
+      },
+      {
+        "label": "Reportes",
+        "path": "/app/com.hubbi.billing/reports",
+        "icon": "chart-bar"
+      }
+    ]
+  }
+}
