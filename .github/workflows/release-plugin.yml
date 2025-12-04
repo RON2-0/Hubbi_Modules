@@ -3,87 +3,101 @@ name: Release Plugin 📦
 on:
   push:
     tags:
-      - '*@*' # Se activa con tags tipo "nombre@version"
+      - '*@*' # Se activa SOLO cuando subes un tag con formato "nombre@version"
 
 permissions:
-  contents: write # Permiso para crear Releases
+  contents: write # Permiso para crear Releases y subir archivos
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
     steps:
+      # 1. Bajar el código
       - name: 📥 Checkout Code
         uses: actions/checkout@v4
 
+      # 2. Detectar qué plugin estamos liberando basado en el Tag
       - name: 🏷️ Parse Tag
-        id: tag_info # ID necesario para leer los outputs después
+        id: tag_info
         run: |
           TAG_NAME=${GITHUB_REF#refs/tags/}
           echo "Tag original: $TAG_NAME"
           
-          # Separamos nombre y versión
+          # Separamos el nombre y la versión (ej: hubbi-plugin-billing@1.0.0)
+          # Todo antes del último @ es el nombre
           PLUGIN_NAME=${TAG_NAME%@*}
+          # Todo después del último @ es la versión
           VERSION=${TAG_NAME##*@}
           
-          # 1. Guardamos en ENV para usarlo en scripts de terminal (bash)
-          echo "PLUGIN_NAME=$PLUGIN_NAME" >> $GITHUB_ENV
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-          
-          # 2. Guardamos en OUTPUT para usarlo en parámetros de acciones (yaml)
+          # Guardamos en outputs para usarlo en los siguientes pasos
           echo "plugin_name=$PLUGIN_NAME" >> $GITHUB_OUTPUT
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           
-          echo "🎯 Target: $PLUGIN_NAME | v$VERSION"
+          echo "🎯 Objetivo detectado: $PLUGIN_NAME (v$VERSION)"
 
+      # 3. Verificar que la carpeta existe (Seguridad)
       - name: 🔍 Verify Plugin Exists
         run: |
-          if [ ! -d "$PLUGIN_NAME" ]; then
-            echo "❌ Error: No existe la carpeta '$PLUGIN_NAME' en el repositorio."
+          if [ ! -d "${{ steps.tag_info.outputs.plugin_name }}" ]; then
+            echo "❌ Error: No existe la carpeta '${{ steps.tag_info.outputs.plugin_name }}' en el repositorio."
+            echo "Asegúrate de que el tag coincida con el nombre de la carpeta."
             exit 1
           fi
 
+      # 4. Preparar entorno Node.js
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 5. Instalar dependencias SOLO de ese plugin
       - name: 📦 Install Dependencies
         run: |
-          cd $PLUGIN_NAME
-          npm ci
+          cd ${{ steps.tag_info.outputs.plugin_name }}
+          npm install
 
+      # 6. Compilar el Plugin (Genera dist/index.umd.cjs)
       - name: 🛠️ Build Plugin
         run: |
-          cd $PLUGIN_NAME
+          cd ${{ steps.tag_info.outputs.plugin_name }}
           npm run build
 
-      - name: 📄 Prepare Manifest
+      # 7. Asegurar que el manifest tenga la versión correcta
+      # (Truco Pro: Sobrescribimos la versión del json con la del tag para que siempre coincidan)
+      - name: 📄 Sync Manifest Version
         run: |
-          cd $PLUGIN_NAME
-          # Actualizamos la versión en el manifest temporalmente
-          tmp=$(mktemp)
-          jq --arg v "$VERSION" '.meta.version = $v' dist/manifest.json > "$tmp" && mv "$tmp" dist/manifest.json
-          echo "✅ Manifest version bumped to $VERSION"
+          cd ${{ steps.tag_info.outputs.plugin_name }}
+          # Usamos jq (herramienta de linux) para editar el json al vuelo
+          # Si el manifest está en dist/ (copiado por vite)
+          if [ -f "dist/manifest.json" ]; then
+             tmp=$(mktemp)
+             jq --arg v "${{ steps.tag_info.outputs.version }}" '.meta.version = $v' dist/manifest.json > "$tmp" && mv "$tmp" dist/manifest.json
+             echo "✅ Manifest actualizado a versión ${{ steps.tag_info.outputs.version }}"
+          else
+             echo "⚠️ No se encontró manifest.json en dist/"
+          fi
 
+      # 8. Empaquetar (.hubbi es solo un .zip renombrado)
       - name: 🤐 Zip Package
         run: |
-          cd $PLUGIN_NAME/dist
-          # Creamos el archivo .hubbi en la raíz del repo
-          zip -r ../../$PLUGIN_NAME.hubbi .
-          echo "📦 Empaquetado listo: $PLUGIN_NAME.hubbi"
+          cd ${{ steps.tag_info.outputs.plugin_name }}/dist
+          # Comprimimos todo el contenido de dist en un archivo con el nombre del plugin
+          zip -r ../../${{ steps.tag_info.outputs.plugin_name }}.hubbi .
+          echo "📦 Paquete generado: ${{ steps.tag_info.outputs.plugin_name }}.hubbi"
 
+      # 9. Publicar Release en GitHub
       - name: 🚀 Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          # AQUI EL CAMBIO: Usamos 'steps.tag_info.outputs' en lugar de 'env'
           files: ${{ steps.tag_info.outputs.plugin_name }}.hubbi
           name: "${{ steps.tag_info.outputs.plugin_name }} v${{ steps.tag_info.outputs.version }}"
           body: |
-            🚀 **Nuevo Release del Módulo**
-            - Plugin: `${{ steps.tag_info.outputs.plugin_name }}`
-            - Versión: `${{ steps.tag_info.outputs.version }}`
+            🚀 **Nuevo Módulo Disponible**
             
-            Descarga el archivo `.hubbi` e impórtalo en tu aplicación.
+            - **Plugin:** `${{ steps.tag_info.outputs.plugin_name }}`
+            - **Versión:** `${{ steps.tag_info.outputs.version }}`
+            
+            *Instalación:* Descarga el archivo `.hubbi` adjunto e impórtalo en Hubbi Store.
           draft: false
           prerelease: false
         env:
