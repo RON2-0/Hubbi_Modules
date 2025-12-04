@@ -3,10 +3,10 @@ name: Release Plugin 📦
 on:
   push:
     tags:
-      - '*@*' # Se activa cuando empujas un tag con formato "nombre@version"
+      - '*@*' # Se activa con tags tipo "nombre@version"
 
 permissions:
-  contents: write # Necesario para crear el Release y subir archivos
+  contents: write # Permiso para crear Releases
 
 jobs:
   build-and-release:
@@ -16,19 +16,24 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 🏷️ Parse Tag
-        id: tag_info
+        id: tag_info # ID necesario para leer los outputs después
         run: |
           TAG_NAME=${GITHUB_REF#refs/tags/}
           echo "Tag original: $TAG_NAME"
           
-          # Separamos por el último '@'
+          # Separamos nombre y versión
           PLUGIN_NAME=${TAG_NAME%@*}
           VERSION=${TAG_NAME##*@}
           
+          # 1. Guardamos en ENV para usarlo en scripts de terminal (bash)
           echo "PLUGIN_NAME=$PLUGIN_NAME" >> $GITHUB_ENV
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           
-          echo "🎯 Detectado Plugin: $PLUGIN_NAME | Versión: $VERSION"
+          # 2. Guardamos en OUTPUT para usarlo en parámetros de acciones (yaml)
+          echo "plugin_name=$PLUGIN_NAME" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          
+          echo "🎯 Target: $PLUGIN_NAME | v$VERSION"
 
       - name: 🔍 Verify Plugin Exists
         run: |
@@ -45,45 +50,38 @@ jobs:
       - name: 📦 Install Dependencies
         run: |
           cd $PLUGIN_NAME
-          npm ci # Instalación limpia
+          npm ci
 
       - name: 🛠️ Build Plugin
         run: |
           cd $PLUGIN_NAME
           npm run build
-          # Vite genera el index.umd.cjs en /dist
 
       - name: 📄 Prepare Manifest
-        # Aseguramos que el manifest tenga la versión correcta del tag
         run: |
           cd $PLUGIN_NAME
-          # Usamos jq para actualizar la versión en el manifest.json al vuelo
-          # Si no tienes un manifest en public, asegúrate de crearlo o generarlo aquí
-          
-          # Opción A: Si ya tienes public/manifest.json, lo copiamos a dist (Vite lo hace solo)
-          # Pero vamos a forzar que la versión del JSON coincida con el tag
+          # Actualizamos la versión en el manifest temporalmente
           tmp=$(mktemp)
           jq --arg v "$VERSION" '.meta.version = $v' dist/manifest.json > "$tmp" && mv "$tmp" dist/manifest.json
-          
-          echo "✅ Manifest actualizado a v$VERSION"
+          echo "✅ Manifest version bumped to $VERSION"
 
-      - name: 🤐 Zip Package (.hubbi)
+      - name: 🤐 Zip Package
         run: |
           cd $PLUGIN_NAME/dist
-          # Comprimimos el contenido de dist
+          # Creamos el archivo .hubbi en la raíz del repo
           zip -r ../../$PLUGIN_NAME.hubbi .
-          
-          echo "📦 Paquete generado: $PLUGIN_NAME.hubbi"
+          echo "📦 Empaquetado listo: $PLUGIN_NAME.hubbi"
 
       - name: 🚀 Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ env.PLUGIN_NAME }}.hubbi
-          name: "${{ env.PLUGIN_NAME }} v${{ env.VERSION }}"
+          # AQUI EL CAMBIO: Usamos 'steps.tag_info.outputs' en lugar de 'env'
+          files: ${{ steps.tag_info.outputs.plugin_name }}.hubbi
+          name: "${{ steps.tag_info.outputs.plugin_name }} v${{ steps.tag_info.outputs.version }}"
           body: |
             🚀 **Nuevo Release del Módulo**
-            - Plugin: `${{ env.PLUGIN_NAME }}`
-            - Versión: `${{ env.VERSION }}`
+            - Plugin: `${{ steps.tag_info.outputs.plugin_name }}`
+            - Versión: `${{ steps.tag_info.outputs.version }}`
             
             Descarga el archivo `.hubbi` e impórtalo en tu aplicación.
           draft: false
