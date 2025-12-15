@@ -5,7 +5,7 @@
       "name": "Facturación",
       "version": "1.0.0",
       "description": "Módulo esencial para emitir facturas y gestionar ventas.",
-      "url": "https://github.com/ron2-0/Hubbi_Modules/releases/download/v1.0.0/billing.zip",
+      "url": "https://github.com/RON2-0/Hubbi_Modules/releases/download/hubbi-plugin-billing@1.0.0/hubbi-plugin-billing.hubbi",
       "icon": "Receipt"
     }
   ]
