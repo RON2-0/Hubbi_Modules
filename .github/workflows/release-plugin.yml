@@ -44,23 +44,26 @@ jobs:
             exit 1
           fi
 
-      # 4. Preparar entorno Node.js
-      - name: 🟢 Setup Node.js
+      # 4. Preparar entorno Node.js y PNPM
+      - name: 🟢 Setup Node.js & PNPM
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      
+      - name: 📦 Install PNPM
+        run: npm install -g pnpm
 
       # 5. Instalar dependencias SOLO de ese plugin
       - name: 📦 Install Dependencies
         run: |
           cd ${{ steps.tag_info.outputs.plugin_name }}
-          npm install
+          pnpm install --no-frozen-lockfile
 
       # 6. Compilar el Plugin (Genera dist/index.umd.cjs)
       - name: 🛠️ Build Plugin
         run: |
           cd ${{ steps.tag_info.outputs.plugin_name }}
-          npm run build
+          pnpm run build
 
       # 7. Asegurar que el manifest tenga la versión correcta
       # (Truco Pro: Sobrescribimos la versión del json con la del tag para que siempre coincidan)
