@@ -107,9 +107,7 @@
             "sql/periods.sql"
         ]
     },
-    "dependencies": [
-        "com.hubbi.settings"
-    ],
+    "dependencies": [],
     "optional_dependencies": [
         "com.hubbi.accounting"
     ]
