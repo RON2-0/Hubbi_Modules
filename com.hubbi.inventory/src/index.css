@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Hubbi Plugin Resets if needed */
+:host {
+    display: block;
+    height: 100%;
+}

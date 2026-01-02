@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import {
     useReactTable,
     getCoreRowModel,
@@ -10,9 +10,10 @@ import {
     SortingState,
     ColumnFiltersState
 } from '@tanstack/react-table';
-import { Search, Filter, Plus, Edit, Trash2, Box, Package, Truck, Activity, ArrowUpDown } from 'lucide-react';
+import { Search, Filter, Plus, Edit, Trash2, Box, Package, Truck, Activity, ArrowUpDown, Upload } from 'lucide-react';
 import { InventoryItem } from '../types/inventory';
 import { hubbi } from '../hubbi-sdk.d';
+import { ExcelImport } from './ExcelImport';
 
 const columnHelper = createColumnHelper<InventoryItem>();
 
@@ -24,8 +25,9 @@ export const ProductsTable = () => {
     const [sorting, setSorting] = useState<SortingState>([]);
     const [globalFilter, setGlobalFilter] = useState('');
     const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+    const [showImport, setShowImport] = useState(false);
 
-    const fetchItems = async () => {
+    const fetchItems = useCallback(async () => {
         setLoading(true);
         const { data, error } = await hubbi.data.list({
             table: 'com_hubbi_inventory_items',
@@ -39,12 +41,12 @@ export const ProductsTable = () => {
             hubbi.notify.error('Error al cargar inventario');
         }
         setLoading(false);
-    };
+    }, []);
+
+    const handleUpdate = useCallback(() => fetchItems(), [fetchItems]);
 
     useEffect(() => {
         fetchItems();
-
-        const handleUpdate = () => fetchItems();
 
         hubbi.events.on('inventory:item:created', handleUpdate);
         hubbi.events.on('inventory:item:updated', handleUpdate);
@@ -53,7 +55,7 @@ export const ProductsTable = () => {
             hubbi.events.off('inventory:item:created', handleUpdate);
             hubbi.events.off('inventory:item:updated', handleUpdate);
         };
-    }, []);
+    }, [fetchItems, handleUpdate]);
 
     const getTypeIcon = (type: string) => {
         switch (type) {
@@ -171,11 +173,35 @@ export const ProductsTable = () => {
                         </select>
                     </div>
                 </div>
-                <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                    <Plus size={18} />
-                    Nuevo Producto
-                </button>
+                <div className="flex items-center gap-2">
+                    <button
+                        onClick={() => {
+                            // Dispatch event to open import modal from parent if needed, 
+                            // or ideally ProductsTable should accept an onImport prop.
+                            // For now, we'll assume the Dashboard handles global import via a mechanism, 
+                            // OR we can expose the ExcelImport here too.
+                            // Let's check permissions or just use a state in ProductsTable if acceptable.
+                            // Actually, simpler: define showImport state in ProductsTable too.
+                            setShowImport(true);
+                        }}
+                        className="flex items-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                    >
+                        <Upload size={18} />
+                        Importar
+                    </button>
+                    <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <Plus size={18} />
+                        Nuevo Producto
+                    </button>
+                </div>
             </div>
+
+            {showImport && (
+                <ExcelImport
+                    onClose={() => setShowImport(false)}
+                    onSuccess={handleUpdate}
+                />
+            )}
 
             {/* Table */}
             <div className="flex-1 overflow-auto">

@@ -1,3 +1,4 @@
+import './index.css';
 import './hubbi-sdk.d';
 
 // Exports for consumption by host app

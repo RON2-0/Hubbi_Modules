@@ -140,4 +140,15 @@ export interface HubbiSDK {
   };
 }
 
-export const hubbi = window.hubbi;
+// Export a proxy to ensure we always access the latest window.hubbi instance
+// This prevents issues where window.hubbi might not be ready at module evaluation time
+export const hubbi = new Proxy({} as HubbiSDK, {
+  get: (_target, prop) => {
+    const sdk = window.hubbi;
+    if (!sdk) {
+      console.warn('[Hubbi SDK] Accessing hubbi SDK before it is initialized');
+      return undefined;
+    }
+    return sdk[prop as keyof HubbiSDK];
+  }
+});
