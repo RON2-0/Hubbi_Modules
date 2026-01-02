@@ -633,27 +633,29 @@ export function registerInventoryAPI(): void {
         return;
     }
 
+    const MODULE_ID = 'com.hubbi.inventory';
+
     // Stock queries
-    window.hubbi.modules.expose('getStock', getStock);
-    window.hubbi.modules.expose('checkAvailability', checkAvailability);
-    window.hubbi.modules.expose('getLowStockItems', getLowStockItems);
+    window.hubbi.modules.expose('getStock', getStock, MODULE_ID);
+    window.hubbi.modules.expose('checkAvailability', checkAvailability, MODULE_ID);
+    window.hubbi.modules.expose('getLowStockItems', getLowStockItems, MODULE_ID);
 
     // Reservations
-    window.hubbi.modules.expose('createReservation', createReservation);
-    window.hubbi.modules.expose('consumeReservation', consumeReservation);
-    window.hubbi.modules.expose('cancelReservation', cancelReservation);
+    window.hubbi.modules.expose('createReservation', createReservation, MODULE_ID);
+    window.hubbi.modules.expose('consumeReservation', consumeReservation, MODULE_ID);
+    window.hubbi.modules.expose('cancelReservation', cancelReservation, MODULE_ID);
 
     // Movements
-    window.hubbi.modules.expose('recordMovement', recordMovement);
+    window.hubbi.modules.expose('recordMovement', recordMovement, MODULE_ID);
 
     // Item queries
-    window.hubbi.modules.expose('getItem', getItem);
-    window.hubbi.modules.expose('getSellableItems', getSellableItems);
-    window.hubbi.modules.expose('getKitComponents', getKitComponents);
+    window.hubbi.modules.expose('getItem', getItem, MODULE_ID);
+    window.hubbi.modules.expose('getSellableItems', getSellableItems, MODULE_ID);
+    window.hubbi.modules.expose('getKitComponents', getKitComponents, MODULE_ID);
 
     // Fiscal Periods (shared API for other modules)
-    window.hubbi.modules.expose('getCurrentPeriod', getCurrentPeriod);
-    window.hubbi.modules.expose('isPeriodEditable', isPeriodEditableById);
+    window.hubbi.modules.expose('getCurrentPeriod', getCurrentPeriod, MODULE_ID);
+    window.hubbi.modules.expose('isPeriodEditable', isPeriodEditableById, MODULE_ID);
 
     if (import.meta.env.DEV) {
         console.log('[Inventory] API registered with Hubbi SDK');

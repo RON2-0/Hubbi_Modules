@@ -53,7 +53,7 @@ export interface HubbiSDK {
 
   // Module communication
   modules: {
-    expose: (name: string, fn: (...args: any[]) => any) => void;
+    expose: (name: string, fn: (...args: any[]) => any, moduleId?: string) => void;
     call: <T = unknown>(targetModuleId: string, method: string, args?: unknown) => Promise<T>;
     isInstalled: (moduleId: string) => boolean;
     list: () => Array<{ id: string; name: string; version: string }>;
