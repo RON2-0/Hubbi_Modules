@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS hubbi_fiscal_config (
     managed_by TEXT,                       -- 'com.hubbi.accounting', 'com.hubbi.inventory', etc.
     
     -- Timestamps
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 -- Note: Default configuration is inserted by module code, not here
@@ -51,11 +51,11 @@ CREATE TABLE IF NOT EXISTS hubbi_fiscal_periods (
     
     -- Closure info
     closed_by TEXT,                       -- User ID who closed it
-    closed_at DATETIME,
-    locked_at DATETIME,                   -- When it was auto-locked
+    closed_at TIMESTAMPTZ,
+    locked_at TIMESTAMPTZ,                   -- When it was auto-locked
     
     -- Timestamps
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
     
     UNIQUE(year, month)
 );
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS hubbi_period_snapshots (
     snapshot_type TEXT NOT NULL,          -- 'inventory_stock', 'accounts_balance', etc.
     data JSON NOT NULL,                   -- Snapshot data
     
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
     
     FOREIGN KEY (period_id) REFERENCES hubbi_fiscal_periods(id)
 );

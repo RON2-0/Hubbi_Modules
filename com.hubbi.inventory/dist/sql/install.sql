@@ -45,8 +45,8 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_items (
     abc_class TEXT DEFAULT 'C', -- 'A', 'B', 'C' para clasificación ABC
     cyclic_count_frequency TEXT, -- 'daily', 'weekly', 'monthly', etc.
     
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 -- 2. Ubicaciones (Bodegas, Zonas, Estantes, Camiones)
@@ -68,8 +68,8 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_locations (
     sub_hub_id TEXT, -- Which branch owns this location
     
     is_active BOOLEAN DEFAULT TRUE,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 -- 3. Existencias (Stock Físico)
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_stock (
     reorder_point REAL DEFAULT 0,
     
     -- Auditoría de conteo
-    last_count_at DATETIME, 
+    last_count_at TIMESTAMPTZ, 
     
     PRIMARY KEY (item_id, location_id),
     FOREIGN KEY (item_id) REFERENCES com_hubbi_inventory_items(id),
@@ -105,8 +105,8 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_reservations (
     reference_id TEXT NOT NULL,   -- ID de la Orden de Trabajo, Venta, etc.
     
     created_by TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    expires_at DATETIME, -- Opcional, liberación automática
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    expires_at TIMESTAMPTZ, -- Opcional, liberación automática
     
     status TEXT DEFAULT 'active' -- 'active', 'consumed', 'cancelled'
 );
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_movements (
     document_uuid TEXT, -- UUID del DTE si aplica
     
     created_by TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
     
     -- Fiscal Period
     period_id TEXT, -- References hubbi_fiscal_periods(id)
@@ -157,8 +157,8 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_traces (
     
     value TEXT NOT NULL, -- El número de serie o código de lote real
     
-    expiration_date DATETIME, -- Solo para lotes
-    manufacturing_date DATETIME,
+    expiration_date TIMESTAMPTZ, -- Solo para lotes
+    manufacturing_date TIMESTAMPTZ,
     
     cost_specific REAL, -- Costo específico de este serial/lote (override del promedio)
     
@@ -170,8 +170,8 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_traces (
 CREATE TABLE IF NOT EXISTS com_hubbi_inventory_audits (
     id TEXT PRIMARY KEY,
     location_id TEXT, -- Si es null, es auditoría general
-    started_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    closed_at DATETIME,
+    started_at TIMESTAMPTZ DEFAULT NOW(),
+    closed_at TIMESTAMPTZ,
     status TEXT DEFAULT 'open', -- 'open', 'reviewing', 'closed'
     created_by TEXT
 );
