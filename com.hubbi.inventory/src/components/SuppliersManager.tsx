@@ -113,11 +113,12 @@ export const SuppliersManager = () => {
             );
             hubbi.notify('Proveedor actualizado', 'success');
         } else {
-            // Create
+            // Create - generate UUID in code for cross-DB compatibility
+            const id = crypto.randomUUID();
             await hubbi.db.execute(
-                `INSERT INTO com_hubbi_inventory_suppliers (hub_id, name, contact_name, email, phone, address, notes)
-                 VALUES ($1, $2, $3, $4, $5, $6, $7)`,
-                [context?.hubId || 1, form.name, form.contact_name || null, form.email || null, form.phone || null, form.address || null, form.notes || null],
+                `INSERT INTO com_hubbi_inventory_suppliers (id, hub_id, name, contact_name, email, phone, address, notes)
+                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+                [id, context?.hubId || 1, form.name, form.contact_name || null, form.email || null, form.phone || null, form.address || null, form.notes || null],
                 { moduleId: 'com.hubbi.inventory' }
             );
             hubbi.notify('Proveedor creado', 'success');

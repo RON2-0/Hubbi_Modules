@@ -190,7 +190,7 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_audit_lines (
 
 -- 9. Proveedores
 CREATE TABLE IF NOT EXISTS com_hubbi_inventory_suppliers (
-    id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+    id TEXT PRIMARY KEY, -- UUID generated in application code for cross-DB compatibility
     hub_id INTEGER NOT NULL,
     name TEXT NOT NULL,
     contact_name TEXT,
