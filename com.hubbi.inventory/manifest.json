@@ -1,0 +1,80 @@
+{
+    "id": "com.hubbi.inventory",
+    "name": "Hubbi Inventory & WMS",
+    "version": "1.0.0",
+    "description": "Gestión avanzada de stock, kits, seriales y lotes. Soporte multi-sector con alineación fiscal.",
+    "kind": "app",
+    "permissions": [
+        "sql:write:com_hubbi_inventory_*",
+        "ui:dashboard_widget",
+        "ui:sidebar_item",
+        "http:supabase",
+        {
+            "id": "inventory.create_item",
+            "label": "Crear Productos",
+            "description": "Permite crear nuevos productos en el inventario"
+        },
+        {
+            "id": "inventory.edit_item",
+            "label": "Editar Productos",
+            "description": "Permite modificar productos existentes"
+        },
+        {
+            "id": "inventory.delete_item",
+            "label": "Eliminar Productos",
+            "description": "Permite eliminar productos del inventario"
+        },
+        {
+            "id": "inventory.create_movement",
+            "label": "Registrar Movimientos",
+            "description": "Permite registrar entradas, salidas y ajustes"
+        },
+        {
+            "id": "inventory.approve_transfer",
+            "label": "Aprobar Traslados",
+            "description": "Permite aprobar solicitudes de traslado entre sucursales"
+        },
+        {
+            "id": "inventory.physical_audit",
+            "label": "Auditoría Física",
+            "description": "Permite realizar toma física de inventario"
+        },
+        {
+            "id": "inventory.view_costs",
+            "label": "Ver Costos",
+            "description": "Permite ver los costos de los productos"
+        },
+        {
+            "id": "inventory.view_all_subhubs",
+            "label": "Ver Todas las Sucursales",
+            "description": "Permite ver inventario de todas las sucursales"
+        },
+        {
+            "id": "inventory.edit_own_subhub",
+            "label": "Editar Sucursal Propia",
+            "description": "Permite modificar inventario de su sucursal asignada"
+        },
+        {
+            "id": "inventory.edit_all_subhubs",
+            "label": "Editar Todas las Sucursales",
+            "description": "Permite modificar inventario de cualquier sucursal"
+        },
+        {
+            "id": "inventory.switch_active_subhub",
+            "label": "Cambiar Sucursal Activa",
+            "description": "Permite cambiar la sucursal activa en la interfaz"
+        },
+        {
+            "id": "inventory.close_period",
+            "label": "Cerrar Período",
+            "description": "Permite cerrar períodos fiscales"
+        }
+    ],
+    "database": {
+        "namespace": "com_hubbi_inventory",
+        "init_script": "sql/install.sql"
+    },
+    "dependencies": {
+        "com.hubbi.settings": "^1.0.0"
+    }
+}
