@@ -69,15 +69,28 @@ jobs:
 
       # 7. Asegurar que el manifest tenga la versión correcta
       # (Truco Pro: Sobrescribimos la versión del json con la del tag para que siempre coincidan)
-      - name: 📄 Sync Manifest Version
+      # 7. Asegurar que el manifest tenga la versión y el hash de integridad correctos
+      - name: 📄 Sync Manifest Metadata
         run: |
           cd ${{ steps.tag_info.outputs.plugin_name }}
           # Usamos jq (herramienta de linux) para editar el json al vuelo
           # Si el manifest está en dist/ (copiado por vite)
           if [ -f "dist/manifest.json" ]; then
+             # 1. Actualizar Versión
              tmp=$(mktemp)
              jq --arg v "${{ steps.tag_info.outputs.version }}" '.meta.version = $v' dist/manifest.json > "$tmp" && mv "$tmp" dist/manifest.json
-             echo "✅ Manifest actualizado a versión ${{ steps.tag_info.outputs.version }}"
+             echo "✅ Versión actualizada a: ${{ steps.tag_info.outputs.version }}"
+
+             # 2. Actualizar Integrity Hash (SHA256)
+             if [ -f "dist/index.umd.js" ]; then
+               HASH=$(sha256sum dist/index.umd.js | awk '{print $1}')
+               echo "🔐 Hash calculado: $HASH"
+               tmp=$(mktemp)
+               jq --arg h "$HASH" '.meta.integrity = $h' dist/manifest.json > "$tmp" && mv "$tmp" dist/manifest.json
+               echo "✅ Integrity Hash inyectado correctamente"
+             else
+               echo "⚠️ No se encontró index.umd.js para calcular el hash"
+             fi
           else
              echo "⚠️ No se encontró manifest.json en dist/"
           fi
