@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import {
     useReactTable,
     getCoreRowModel,
@@ -25,24 +25,36 @@ export const MovementsHistory = ({ item }: MovementsHistoryProps) => {
     const [sorting, setSorting] = useState<SortingState>([]);
     const [globalFilter, setGlobalFilter] = useState('');
 
-    useEffect(() => {
-        const fetchMovements = async () => {
-            setLoading(true);
-            let sql = `SELECT * FROM com_hubbi_inventory_movements ORDER BY created_at DESC LIMIT 500`;
-            let params: unknown[] = [];
+    const fetchMovements = useCallback(async () => {
+        setLoading(true);
+        let sql = `SELECT * FROM com_hubbi_inventory_movements ORDER BY created_at DESC LIMIT 500`;
+        let params: unknown[] = [];
 
-            if (item) {
-                sql = `SELECT * FROM com_hubbi_inventory_movements WHERE item_id = ? ORDER BY created_at DESC LIMIT 500`;
-                params = [item.id];
-            }
+        if (item) {
+            sql = `SELECT * FROM com_hubbi_inventory_movements WHERE item_id = ? ORDER BY created_at DESC LIMIT 500`;
+            params = [item.id];
+        }
 
-            const data = await hubbi.data.query(sql, params);
-            if (data && Array.isArray(data)) setMovements(data);
-            setLoading(false);
-        };
-
-        fetchMovements();
+        const data = await hubbi.data.query(sql, params);
+        if (data && Array.isArray(data)) setMovements(data);
+        setLoading(false);
     }, [item]);
+
+    useEffect(() => {
+        fetchMovements();
+
+        const handleUpdate = () => fetchMovements();
+
+        // Listen for any stock change as that implies a movement
+        hubbi.events.on('inventory:stock:increased', handleUpdate);
+        hubbi.events.on('inventory:stock:decreased', handleUpdate);
+
+        return () => {
+            hubbi.events.off('inventory:stock:increased', handleUpdate);
+            hubbi.events.off('inventory:stock:increased', handleUpdate);
+            hubbi.events.off('inventory:stock:decreased', handleUpdate);
+        };
+    }, [item, fetchMovements]);
 
     const getIcon = (type: string) => {
         switch (type) {

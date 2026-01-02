@@ -55,9 +55,21 @@ export const useStockAlerts = () => {
         setLoading(false);
     }, []);
 
-    // Check on mount
+    // Check on mount and subscribe to events
     useEffect(() => {
         checkAlerts();
+
+        const handleStockChange = () => {
+            checkAlerts();
+        };
+
+        hubbi.events.on('inventory:stock:increased', handleStockChange);
+        hubbi.events.on('inventory:stock:decreased', handleStockChange);
+
+        return () => {
+            hubbi.events.off('inventory:stock:increased', handleStockChange);
+            hubbi.events.off('inventory:stock:decreased', handleStockChange);
+        };
     }, [checkAlerts]);
 
     // Get counts by severity

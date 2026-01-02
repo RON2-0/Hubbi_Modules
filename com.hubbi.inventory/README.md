@@ -2,7 +2,7 @@
 
 **Module ID:** `com.hubbi.inventory`  
 **Version:** 1.0.0  
-**Bundle Size:** 195.74 kB (gzip: 49.88 kB)
+**Bundle Size:** 195.89 kB (gzip: 49.93 kB)
 
 ---
 
@@ -78,24 +78,68 @@ Módulo completo de gestión de inventario y almacén (WMS) para Hubbi. Incluye 
 
 ---
 
-## 🔐 Sistema de Permisos
+## 🔐 Sistema de Permisos (RBAC)
 
-### Permisos Definidos
+### Arquitectura de Permisos
 
-| Permiso | Descripción |
-|---------|-------------|
-| `inventory.view` | Ver inventario |
-| `inventory.edit` | Editar productos |
-| `inventory.delete` | Eliminar productos |
-| `inventory.view_costs` | Ver costos y valores |
-| `inventory.adjust` | Realizar ajustes de inventario |
-| `inventory.transfer` | Crear traslados |
-| `inventory.approve_transfer` | Aprobar traslados |
-| `inventory.view_all_subhubs` | Ver inventario de todas las sucursales |
-| `inventory.edit_own_subhub` | Editar su propia sucursal |
-| `inventory.edit_all_subhubs` | Editar cualquier sucursal |
-| `inventory.switch_active_subhub` | Cambiar sucursal activa en UI |
-| `inventory.close_period` | Cerrar períodos fiscales |
+```
+┌─────────────────────────────────────────────────────────────────┐
+│ 1. MÓDULO DECLARA                                               │
+│    manifest.json → defined_permissions                          │
+│    [{ code: "inventory:access", name: "Acceder al Módulo" }]    │
+└───────────────────────────────────────────┬─────────────────────┘
+                                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 2. CORE REGISTRA                                                │
+│    Al instalar → guarda en tabla `permissions`                  │
+└───────────────────────────────────────────┬─────────────────────┘
+                                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 3. ADMIN ASIGNA                                                 │
+│    Configuración > Roles → asigna permisos a roles             │
+└───────────────────────────────────────────┬─────────────────────┘
+                                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 4. SDK VERIFICA                                                 │
+│    hubbi.permissions.has('inventory:create') → true/false       │
+└───────────────────────────────────────────┬─────────────────────┘
+                                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 5. UI RESPONDE                                                  │
+│    Muestra/oculta botones y secciones según permisos           │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Permisos Definidos (defined_permissions)
+
+| Código | Nombre | Descripción |
+|--------|--------|-------------|
+| `inventory:access` | Acceder al Módulo | Permite ver el módulo en la barra lateral |
+| `inventory:view` | Ver Inventario | Permite ver productos, stock y movimientos |
+| `inventory:create` | Crear Productos | Permite registrar nuevos productos |
+| `inventory:edit` | Editar Productos | Permite modificar productos existentes |
+| `inventory:delete` | Eliminar Productos | Permite eliminar productos |
+| `inventory:adjust` | Ajustar Stock | Permite realizar ajustes manuales |
+| `inventory:transfer` | Crear Traslados | Permite solicitar traslados |
+| `inventory:approve_transfer` | Aprobar Traslados | Permite aprobar solicitudes de traslado |
+| `inventory:physical_audit` | Auditoría Física | Permite realizar toma física |
+| `inventory:view_costs` | Ver Costos | Permite ver costos y valorización |
+| `inventory:view_all_subhubs` | Ver Todas las Sucursales | Ver inventario de todas |
+| `inventory:edit_own_subhub` | Editar Sucursal Propia | Modificar su sucursal asignada |
+| `inventory:edit_all_subhubs` | Editar Todas las Sucursales | Modificar cualquier sucursal |
+| `inventory:switch_active_subhub` | Cambiar Sucursal Activa | Cambiar la sucursal activa en UI |
+| `inventory:close_period` | Cerrar Período Fiscal | Permite cerrar períodos |
+| `inventory:import` | Importar Datos | Permite importar desde Excel/CSV |
+| `inventory:export` | Exportar Datos | Permite exportar reportes |
+
+### Ejemplo de Asignación de Roles
+
+| Rol | Permisos Sugeridos |
+|-----|-------------------|
+| **Bodeguero** | `access`, `view`, `adjust`, `physical_audit` |
+| **Vendedor** | `access`, `view` |
+| **Jefe de Bodega** | `access`, `view`, `create`, `edit`, `adjust`, `transfer`, `approve_transfer`, `view_all_subhubs` |
+| **Administrador** | Todos los permisos |
 
 ### Matriz de Acceso por Sub-Hub
 
@@ -107,18 +151,16 @@ Usuario asignado a SubHub "A":
 └── + switch_active_subhub → Puede cambiar en UI
 ```
 
-### Integración con useSubHubFilter
+### Uso en Componentes
 
 ```typescript
-const { 
-  canViewAll,      // Puede ver todas las sucursales
-  canEditSubHub,   // Función: (subHubId) => boolean
-  getSubHubWhereClause // Genera SQL WHERE para filtrado
-} = useSubHubFilter();
+// Verificar permiso antes de mostrar botón
+{hubbi.permissions.has('inventory:create') && (
+  <button onClick={createProduct}>+ Nuevo Producto</button>
+)}
 
-// Ejemplo de uso en queries
-const whereClause = getSubHubWhereClause('location.sub_hub_id');
-// Retorna: "AND location.sub_hub_id = 'xxx'" o "" si puede ver todo
+// Hook useSubHubFilter maneja permisos de sucursal
+const { canEditSubHub, getSubHubWhereClause } = useSubHubFilter();
 ```
 
 ---
@@ -393,10 +435,10 @@ const result = await hubbi.modules.call(
 | Componentes | 15 |
 | Hooks | 5 |
 | API Methods | 14 |
-| Permisos | 13 |
+| Permisos RBAC | 17 |
 | Tablas SQL | 25+ |
-| Bundle | 195.74 kB |
-| Gzip | 49.88 kB |
+| Bundle | 195.89 kB |
+| Gzip | 49.93 kB |
 
 ---
 

@@ -4,77 +4,113 @@
     "version": "1.0.0",
     "description": "Gestión avanzada de stock, kits, seriales y lotes. Soporte multi-sector con alineación fiscal.",
     "kind": "app",
-    "permissions": [
+    "icon": "Package",
+    "capabilities": [
         "sql:write:com_hubbi_inventory_*",
+        "sql:write:hubbi_fiscal_*",
         "ui:dashboard_widget",
         "ui:sidebar_item",
-        "http:supabase",
+        "ui:settings_tab",
+        "http:supabase"
+    ],
+    "defined_permissions": [
         {
-            "id": "inventory.create_item",
-            "label": "Crear Productos",
-            "description": "Permite crear nuevos productos en el inventario"
+            "code": "inventory:access",
+            "name": "Acceder al Módulo",
+            "description": "Permite ver el inventario en la barra lateral y acceder al módulo."
         },
         {
-            "id": "inventory.edit_item",
-            "label": "Editar Productos",
-            "description": "Permite modificar productos existentes"
+            "code": "inventory:view",
+            "name": "Ver Inventario",
+            "description": "Permite ver productos, stock y movimientos."
         },
         {
-            "id": "inventory.delete_item",
-            "label": "Eliminar Productos",
-            "description": "Permite eliminar productos del inventario"
+            "code": "inventory:create",
+            "name": "Crear Productos",
+            "description": "Permite registrar nuevos productos en el inventario."
         },
         {
-            "id": "inventory.create_movement",
-            "label": "Registrar Movimientos",
-            "description": "Permite registrar entradas, salidas y ajustes"
+            "code": "inventory:edit",
+            "name": "Editar Productos",
+            "description": "Permite modificar productos existentes."
         },
         {
-            "id": "inventory.approve_transfer",
-            "label": "Aprobar Traslados",
-            "description": "Permite aprobar solicitudes de traslado entre sucursales"
+            "code": "inventory:delete",
+            "name": "Eliminar Productos",
+            "description": "Permite eliminar productos del inventario."
         },
         {
-            "id": "inventory.physical_audit",
-            "label": "Auditoría Física",
-            "description": "Permite realizar toma física de inventario"
+            "code": "inventory:adjust",
+            "name": "Ajustar Stock",
+            "description": "Permite realizar ajustes manuales de entrada/salida."
         },
         {
-            "id": "inventory.view_costs",
-            "label": "Ver Costos",
-            "description": "Permite ver los costos de los productos"
+            "code": "inventory:transfer",
+            "name": "Crear Traslados",
+            "description": "Permite solicitar traslados entre bodegas/sucursales."
         },
         {
-            "id": "inventory.view_all_subhubs",
-            "label": "Ver Todas las Sucursales",
-            "description": "Permite ver inventario de todas las sucursales"
+            "code": "inventory:approve_transfer",
+            "name": "Aprobar Traslados",
+            "description": "Permite aprobar solicitudes de traslado."
         },
         {
-            "id": "inventory.edit_own_subhub",
-            "label": "Editar Sucursal Propia",
-            "description": "Permite modificar inventario de su sucursal asignada"
+            "code": "inventory:physical_audit",
+            "name": "Auditoría Física",
+            "description": "Permite realizar toma física de inventario."
         },
         {
-            "id": "inventory.edit_all_subhubs",
-            "label": "Editar Todas las Sucursales",
-            "description": "Permite modificar inventario de cualquier sucursal"
+            "code": "inventory:view_costs",
+            "name": "Ver Costos",
+            "description": "Permite ver costos y valorización del inventario."
         },
         {
-            "id": "inventory.switch_active_subhub",
-            "label": "Cambiar Sucursal Activa",
-            "description": "Permite cambiar la sucursal activa en la interfaz"
+            "code": "inventory:view_all_subhubs",
+            "name": "Ver Todas las Sucursales",
+            "description": "Permite ver inventario de todas las sucursales."
         },
         {
-            "id": "inventory.close_period",
-            "label": "Cerrar Período",
-            "description": "Permite cerrar períodos fiscales"
+            "code": "inventory:edit_own_subhub",
+            "name": "Editar Sucursal Propia",
+            "description": "Permite modificar inventario de su sucursal asignada."
+        },
+        {
+            "code": "inventory:edit_all_subhubs",
+            "name": "Editar Todas las Sucursales",
+            "description": "Permite modificar inventario de cualquier sucursal."
+        },
+        {
+            "code": "inventory:switch_active_subhub",
+            "name": "Cambiar Sucursal Activa",
+            "description": "Permite cambiar la sucursal activa en la interfaz."
+        },
+        {
+            "code": "inventory:close_period",
+            "name": "Cerrar Período Fiscal",
+            "description": "Permite cerrar períodos fiscales de inventario."
+        },
+        {
+            "code": "inventory:import",
+            "name": "Importar Datos",
+            "description": "Permite importar inventario desde archivos Excel/CSV."
+        },
+        {
+            "code": "inventory:export",
+            "name": "Exportar Datos",
+            "description": "Permite exportar reportes de inventario."
         }
     ],
     "database": {
         "namespace": "com_hubbi_inventory",
-        "init_script": "sql/install.sql"
+        "init_scripts": [
+            "sql/install.sql",
+            "sql/periods.sql"
+        ]
     },
     "dependencies": {
         "com.hubbi.settings": "^1.0.0"
+    },
+    "optional_dependencies": {
+        "com.hubbi.accounting": "^1.0.0"
     }
 }

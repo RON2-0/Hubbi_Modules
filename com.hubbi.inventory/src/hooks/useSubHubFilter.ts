@@ -48,10 +48,10 @@ export function useSubHubFilter() {
         const assignedSubHubId = hubbiContext?.subHubId || null;
 
         // Check permissions
-        const canViewAll = hubbi.permissions.has('inventory.view_all_subhubs');
-        const canEditOwn = hubbi.permissions.has('inventory.edit_own_subhub');
-        const canEditAll = hubbi.permissions.has('inventory.edit_all_subhubs');
-        const canSwitchActive = hubbi.permissions.has('inventory.switch_active_subhub');
+        const canViewAll = hubbi.permissions.has('inventory:view_all_subhubs');
+        const canEditOwn = hubbi.permissions.has('inventory:edit_own_subhub');
+        const canEditAll = hubbi.permissions.has('inventory:edit_all_subhubs');
+        const canSwitchActive = hubbi.permissions.has('inventory:switch_active_subhub');
 
         // Get all sub_hubs from Core
         let subHubs: SubHub[] = [];
@@ -188,14 +188,14 @@ export async function validateSubHubPermission(subHubId: string, action: 'view' 
 
     if (action === 'view') {
         // Can view if has view_all or it's their assigned sub_hub
-        if (hubbi.permissions.has('inventory.view_all_subhubs')) return true;
+        if (hubbi.permissions.has('inventory:view_all_subhubs')) return true;
         return subHubId === assignedSubHubId;
     }
 
     if (action === 'edit') {
         // Can edit if has edit_all or (edit_own AND it's their sub_hub)
-        if (hubbi.permissions.has('inventory.edit_all_subhubs')) return true;
-        if (hubbi.permissions.has('inventory.edit_own_subhub') && subHubId === assignedSubHubId) return true;
+        if (hubbi.permissions.has('inventory:edit_all_subhubs')) return true;
+        if (hubbi.permissions.has('inventory:edit_own_subhub') && subHubId === assignedSubHubId) return true;
         return false;
     }
 

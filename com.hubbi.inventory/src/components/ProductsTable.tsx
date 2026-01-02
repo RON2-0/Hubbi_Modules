@@ -25,24 +25,34 @@ export const ProductsTable = () => {
     const [globalFilter, setGlobalFilter] = useState('');
     const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
+    const fetchItems = async () => {
+        setLoading(true);
+        const { data, error } = await hubbi.data.list({
+            table: 'com_hubbi_inventory_items',
+            options: { strategy: 'cache_first' }
+        });
+
+        if (data) {
+            setItems(data as InventoryItem[]);
+        } else if (error) {
+            console.error(error);
+            hubbi.notify.error('Error al cargar inventario');
+        }
+        setLoading(false);
+    };
+
     useEffect(() => {
-        const fetchItems = async () => {
-            setLoading(true);
-            const { data, error } = await hubbi.data.list({
-                table: 'com_hubbi_inventory_items',
-                options: { strategy: 'cache_first' }
-            });
-
-            if (data) {
-                setItems(data as InventoryItem[]);
-            } else if (error) {
-                console.error(error);
-                hubbi.notify.error('Error al cargar inventario');
-            }
-            setLoading(false);
-        };
-
         fetchItems();
+
+        const handleUpdate = () => fetchItems();
+
+        hubbi.events.on('inventory:item:created', handleUpdate);
+        hubbi.events.on('inventory:item:updated', handleUpdate);
+
+        return () => {
+            hubbi.events.off('inventory:item:created', handleUpdate);
+            hubbi.events.off('inventory:item:updated', handleUpdate);
+        };
     }, []);
 
     const getTypeIcon = (type: string) => {

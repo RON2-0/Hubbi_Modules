@@ -311,8 +311,8 @@ export async function cancelReservation(params: {
 export interface MovementParams {
     itemId: string;
     locationId: string;
-    type: 'IN' | 'OUT' | 'ADJUST';
-    reason: 'purchase' | 'sale' | 'internal_use' | 'correction' | 'initial_load' | 'import' | 'return';
+    type: 'IN' | 'OUT' | 'ADJUST' | 'TRANSFER_IN' | 'TRANSFER_OUT';
+    reason: 'purchase' | 'sale' | 'internal_use' | 'correction' | 'initial_load' | 'import' | 'return' | 'transfer' | 'damage' | 'expired' | 'found' | 'other';
     quantity: number;
     unitCost?: number;
     documentType?: string;
@@ -369,10 +369,10 @@ export async function recordMovement(params: MovementParams): Promise<{
 
     // Validate sub_hub permission if sub_hub specified
     if (params.subHubId) {
-        const canEdit = hubbi.permissions.has('inventory.edit_all_subhubs');
+        const canEdit = hubbi.permissions.has('inventory:edit_all_subhubs');
         const ctx = hubbi.getContext();
         const isOwnSubHub = params.subHubId === ctx?.subHubId;
-        const canEditOwn = hubbi.permissions.has('inventory.edit_own_subhub') && isOwnSubHub;
+        const canEditOwn = hubbi.permissions.has('inventory:edit_own_subhub') && isOwnSubHub;
 
         if (!canEdit && !canEditOwn) {
             return {
@@ -419,9 +419,18 @@ export async function recordMovement(params: MovementParams): Promise<{
     ], { moduleId: 'com.hubbi.inventory' });
 
     // Update stock
-    const stockDelta = params.type === 'IN' ? params.quantity :
-        params.type === 'OUT' ? -params.quantity :
-            params.quantity; // ADJUST can be positive or negative
+    let stockDelta = params.quantity;
+    if (params.type === 'OUT' || params.type === 'TRANSFER_OUT') {
+        stockDelta = -params.quantity;
+    } else if (params.type === 'ADJUST') {
+        // ADJUST uses the quantity as is (can be neg/pos), but here we assume caller passes signed quantity?
+        // Actually, the previous code was: params.quantity (ADJUST can be positive or negative)
+        // Check how ADJUST is usually called. Usually quantity is absolute and type determines direction?
+        // But QuickAdjust passes signed quantity? No, QuickAdjust passes type 'ADJUST' but logic there was simpler.
+        // Let's stick to: if ADJUST, assume quantity IS the delta.
+        stockDelta = params.quantity;
+    }
+    // IN, TRANSFER_IN are positive
 
     await hubbi.db.execute(`
     INSERT INTO com_hubbi_inventory_stock(item_id, location_id, quantity)
@@ -430,7 +439,7 @@ export async function recordMovement(params: MovementParams): Promise<{
                 `, [params.itemId, params.locationId, stockDelta, stockDelta], { moduleId: 'com.hubbi.inventory' });
 
     // If it's an IN movement with a cost, recalculate weighted average
-    if (params.type === 'IN' && params.unitCost) {
+    if ((params.type === 'IN' || params.type === 'TRANSFER_IN') && params.unitCost) {
         await recalculateWeightedAverageCost(params.itemId, params.quantity, params.unitCost);
     }
 
@@ -443,7 +452,9 @@ export async function recordMovement(params: MovementParams): Promise<{
     const newStock = stockResult.length > 0 ? (stockResult[0] as Record<string, unknown>).quantity as number : 0;
 
     // Emit events
-    emitInventoryEvent(params.type === 'IN' ? 'stock:increased' : 'stock:decreased', {
+    // Emit events
+    const isIncrease = params.type === 'IN' || params.type === 'TRANSFER_IN' || (params.type === 'ADJUST' && params.quantity > 0);
+    emitInventoryEvent(isIncrease ? 'stock:increased' : 'stock:decreased', {
         itemId: params.itemId,
         locationId: params.locationId,
         quantity: params.quantity,

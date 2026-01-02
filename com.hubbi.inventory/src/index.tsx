@@ -55,6 +55,12 @@ export const InventoryDashboardWidget = () => {
 
 // Sidebar Navigation Component
 export const InventorySidebar = () => {
+  // The Core should already hide this if user doesn't have access,
+  // but we add a defensive check here too
+  const hasAccess = window.hubbi?.permissions?.has?.('inventory:access') ?? true;
+
+  if (!hasAccess) return null;
+
   const navigate = () => window.hubbi?.navigate?.('/inventory');
   return (
     <button onClick={navigate} className="w-full text-left px-3 py-2 hover:bg-gray-100 rounded-lg flex items-center gap-2">
