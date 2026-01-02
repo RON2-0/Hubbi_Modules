@@ -3,6 +3,10 @@
     "name": "Hubbi Inventory & WMS",
     "version": "1.0.0",
     "description": "Gestión avanzada de stock, kits, seriales y lotes. Soporte multi-sector con alineación fiscal.",
+    "meta": {
+        "entry_point": "index.umd.js",
+        "integrity": "3478dda7de098744111c0923328989ea0f746567e376a93883eb458406d49757"
+    },
     "kind": "app",
     "icon": "Package",
     "capabilities": [

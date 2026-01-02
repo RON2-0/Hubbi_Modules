@@ -7,13 +7,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // https://vitejs.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react({ jsxRuntime: 'classic' })],
+    plugins: [react()],
     define: {
         'process.env': {}
-    },
-    esbuild: {
-        jsxInject: `import React from 'react';`
     },
     build: {
         lib: {
@@ -33,8 +31,8 @@ export default defineConfig({
                     react: 'React',
                     'react-dom': 'ReactDOM',
                     'react-dom/client': 'ReactDOMClient',
-                    'react/jsx-runtime': 'React',
-                    'react/jsx-dev-runtime': 'React',
+                    'react/jsx-runtime': 'HubbiJSX',
+                    'react/jsx-dev-runtime': 'HubbiJSX',
                     '@hubbi/sdk': 'hubbi'
                 }
             }
