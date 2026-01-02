@@ -10,6 +10,9 @@ declare global {
 }
 
 export interface HubbiSDK {
+  // Plugin registration
+  register: (id: string, component: React.ComponentType) => void;
+
   // Database operations (official API per module-development.md)
   db: {
     query: (sql: string, params?: unknown[], opts?: { moduleId?: string }) => Promise<any[]>;

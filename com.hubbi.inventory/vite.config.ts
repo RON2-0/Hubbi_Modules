@@ -15,7 +15,7 @@ export default defineConfig({
     },
     build: {
         lib: {
-            entry: resolve(__dirname, 'src/index.tsx'),
+            entry: resolve(__dirname, 'src/PluginEntry.tsx'),
             name: 'com.hubbi.inventory',
             fileName: (format) => `index.${format}.js`,
             formats: ['umd']

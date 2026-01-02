@@ -5,7 +5,7 @@
     "description": "Gestión avanzada de stock, kits, seriales y lotes. Soporte multi-sector con alineación fiscal.",
     "meta": {
         "entry_point": "index.umd.js",
-        "integrity": "365e4452ba6923420f89e963287a1e4592012e37cf47f67af1d7ac11cd834fa4"
+        "integrity": "75b4985e4b239215d6709d9a9e8e2bdb01dcde9dbb8eb0b3588823fea0336cdb"
     },
     "kind": "app",
     "icon": "Package",
