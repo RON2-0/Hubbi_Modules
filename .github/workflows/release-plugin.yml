@@ -3,7 +3,7 @@ name: Release Plugin 📦
 on:
   push:
     tags:
-      - '*@*' # Se activa SOLO cuando subes un tag con formato "nombre@version"
+      - "*@*" # Se activa SOLO cuando subes un tag con formato "nombre@version"
 
 permissions:
   contents: write # Permiso para crear Releases y subir archivos
@@ -22,17 +22,17 @@ jobs:
         run: |
           TAG_NAME=${GITHUB_REF#refs/tags/}
           echo "Tag original: $TAG_NAME"
-          
+
           # Separamos el nombre y la versión (ej: hubbi-plugin-billing@1.0.0)
           # Todo antes del último @ es el nombre
           PLUGIN_NAME=${TAG_NAME%@*}
           # Todo después del último @ es la versión
           VERSION=${TAG_NAME##*@}
-          
+
           # Guardamos en outputs para usarlo en los siguientes pasos
           echo "plugin_name=$PLUGIN_NAME" >> $GITHUB_OUTPUT
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          
+
           echo "🎯 Objetivo detectado: $PLUGIN_NAME (v$VERSION)"
 
       # 3. Verificar que la carpeta existe (Seguridad)
@@ -49,7 +49,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      
+
       - name: 📦 Install PNPM
         run: npm install -g pnpm
 
@@ -64,6 +64,8 @@ jobs:
         run: |
           cd ${{ steps.tag_info.outputs.plugin_name }}
           pnpm run build
+          # Copiar manifest.json a dist/ para que sea incluido en el zip
+          cp manifest.json dist/
 
       # 7. Asegurar que el manifest tenga la versión correcta
       # (Truco Pro: Sobrescribimos la versión del json con la del tag para que siempre coincidan)
@@ -96,10 +98,10 @@ jobs:
           name: "${{ steps.tag_info.outputs.plugin_name }} v${{ steps.tag_info.outputs.version }}"
           body: |
             🚀 **Nuevo Módulo Disponible**
-            
+
             - **Plugin:** `${{ steps.tag_info.outputs.plugin_name }}`
             - **Versión:** `${{ steps.tag_info.outputs.version }}`
-            
+
             *Instalación:* Descarga el archivo `.hubbi` adjunto e impórtalo en Hubbi Store.
           draft: false
           prerelease: false
