@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
+    plugins: [react({ jsxRuntime: 'classic' })],
     define: {
         'process.env': {}
     },
