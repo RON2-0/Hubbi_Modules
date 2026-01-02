@@ -71,9 +71,9 @@ export const ProductsTable = () => {
             header: 'Producto',
             cell: info => (
                 <div className="flex flex-col">
-                    <span className="font-medium text-gray-900">{info.getValue()}</span>
+                    <span className="font-medium text-hubbi-text">{info.getValue()}</span>
                     {info.row.original.description && (
-                        <span className="text-xs text-gray-400 truncate max-w-xs">
+                        <span className="text-xs text-hubbi-dim truncate max-w-xs">
                             {info.row.original.description}
                         </span>
                     )}
@@ -82,14 +82,14 @@ export const ProductsTable = () => {
         }),
         columnHelper.accessor('sku', {
             header: 'SKU',
-            cell: info => <span className="font-mono text-gray-600">{info.getValue()}</span>
+            cell: info => <span className="font-mono text-hubbi-dim">{info.getValue()}</span>
         }),
         columnHelper.accessor('type', {
             header: 'Tipo',
             cell: info => (
                 <div className="flex items-center gap-2" title={info.getValue()}>
                     {getTypeIcon(info.getValue())}
-                    <span className="text-sm capitalize text-gray-600">{info.getValue()}</span>
+                    <span className="text-sm capitalize text-hubbi-dim">{info.getValue()}</span>
                 </div>
             )
         }),
@@ -113,10 +113,10 @@ export const ProductsTable = () => {
             header: () => <div className="text-right">Acciones</div>,
             cell: () => (
                 <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button className="p-1 hover:bg-gray-200 rounded text-gray-500 hover:text-blue-600">
+                    <button className="p-1 hover:bg-hubbi-bg rounded text-hubbi-dim hover:text-hubbi-primary">
                         <Edit size={16} />
                     </button>
-                    <button className="p-1 hover:bg-gray-200 rounded text-gray-500 hover:text-red-600">
+                    <button className="p-1 hover:bg-hubbi-bg rounded text-hubbi-dim hover:text-hubbi-danger">
                         <Trash2 size={16} />
                     </button>
                 </div>
@@ -142,24 +142,24 @@ export const ProductsTable = () => {
     });
 
     return (
-        <div className="flex flex-col h-full bg-white rounded-lg shadow-sm">
+        <div className="flex flex-col h-full bg-hubbi-card rounded-xl border border-hubbi-border shadow-sm">
             {/* Toolbar */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-100">
+            <div className="flex items-center justify-between p-4 border-b border-hubbi-border">
                 <div className="flex items-center gap-2">
                     <div className="relative">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-hubbi-dim" size={18} />
                         <input
                             type="text"
                             placeholder="Buscar por SKU o Nombre..."
-                            className="pl-10 pr-4 py-2 border rounded-lg text-sm w-64 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                            className="pl-10 pr-4 py-2 border border-hubbi-border rounded-lg text-sm w-64 bg-hubbi-input text-hubbi-text focus:outline-none focus:ring-2 focus:ring-hubbi-primary/20 focus:border-hubbi-primary"
                             value={globalFilter}
                             onChange={(e) => setGlobalFilter(e.target.value)}
                         />
                     </div>
                     <div className="flex items-center gap-2 ml-2">
-                        <Filter size={18} className="text-gray-400" />
+                        <Filter size={18} className="text-hubbi-dim" />
                         <select
-                            className="text-sm border-none bg-transparent focus:ring-0 cursor-pointer text-gray-600 font-medium"
+                            className="text-sm border-none bg-transparent focus:ring-0 cursor-pointer text-hubbi-text font-medium"
                             onChange={(e) => {
                                 const val = e.target.value;
                                 table.getColumn('type')?.setFilterValue(val === 'all' ? undefined : val);
@@ -184,12 +184,12 @@ export const ProductsTable = () => {
                             // Actually, simpler: define showImport state in ProductsTable too.
                             setShowImport(true);
                         }}
-                        className="flex items-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                        className="flex items-center gap-2 bg-hubbi-card border border-hubbi-border hover:bg-hubbi-bg text-hubbi-text px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                     >
                         <Upload size={18} />
                         Importar
                     </button>
-                    <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    <button className="flex items-center gap-2 bg-hubbi-primary hover:opacity-90 text-hubbi-primary-fg px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                         <Plus size={18} />
                         Nuevo Producto
                     </button>
@@ -206,15 +206,15 @@ export const ProductsTable = () => {
             {/* Table */}
             <div className="flex-1 overflow-auto">
                 <table className="w-full text-left border-collapse">
-                    <thead className="bg-gray-50 sticky top-0 z-10">
+                    <thead className="bg-hubbi-bg sticky top-0 z-10">
                         {table.getHeaderGroups().map(headerGroup => (
                             <tr key={headerGroup.id}>
                                 {headerGroup.headers.map(header => (
-                                    <th key={header.id} className="px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors" onClick={header.column.getToggleSortingHandler()}>
+                                    <th key={header.id} className="px-6 py-3 text-xs font-semibold text-hubbi-dim uppercase tracking-wider cursor-pointer hover:bg-hubbi-card transition-colors" onClick={header.column.getToggleSortingHandler()}>
                                         <div className="flex items-center gap-1">
                                             {flexRender(header.column.columnDef.header, header.getContext())}
                                             {header.column.getCanSort() && (
-                                                <ArrowUpDown size={12} className="text-gray-400" />
+                                                <ArrowUpDown size={12} className="text-hubbi-dim" />
                                             )}
                                         </div>
                                     </th>
@@ -222,18 +222,18 @@ export const ProductsTable = () => {
                             </tr>
                         ))}
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-hubbi-border">
                         {loading ? (
                             <tr>
-                                <td colSpan={columns.length} className="text-center py-12 text-gray-400">Cargando inventario...</td>
+                                <td colSpan={columns.length} className="text-center py-12 text-hubbi-dim">Cargando inventario...</td>
                             </tr>
                         ) : table.getRowModel().rows.length === 0 ? (
                             <tr>
-                                <td colSpan={columns.length} className="text-center py-12 text-gray-400">No se encontraron productos</td>
+                                <td colSpan={columns.length} className="text-center py-12 text-hubbi-dim">No se encontraron productos</td>
                             </tr>
                         ) : (
                             table.getRowModel().rows.map(row => (
-                                <tr key={row.id} className="hover:bg-gray-50/50 transition-colors group">
+                                <tr key={row.id} className="hover:bg-hubbi-bg/50 transition-colors group">
                                     {row.getVisibleCells().map(cell => (
                                         <td key={cell.id} className="px-6 py-3 text-sm">
                                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -248,13 +248,13 @@ export const ProductsTable = () => {
 
             {/* Pagination Controls */}
             {table.getPageCount() > 1 && (
-                <div className="flex items-center justify-between p-4 border-t border-gray-100">
-                    <div className="text-xs text-gray-500">
+                <div className="flex items-center justify-between p-4 border-t border-hubbi-border">
+                    <div className="text-xs text-hubbi-dim">
                         Página {table.getState().pagination.pageIndex + 1} de {table.getPageCount()}
                     </div>
                     <div className="flex gap-2">
                         <button
-                            className="px-3 py-1 border rounded text-xs disabled:opacity-50"
+                            className="px-3 py-1 border border-hubbi-border rounded text-xs text-hubbi-text disabled:opacity-50 hover:bg-hubbi-bg"
                             onClick={() => table.previousPage()}
                             disabled={!table.getCanPreviousPage()}
                         >

@@ -1,6 +1,6 @@
-import { Package, ArrowRightLeft, AlertTriangle, Layers, Truck, BarChart3, ClipboardList, LayoutDashboard } from 'lucide-react';
+import { Package, ArrowRightLeft, AlertTriangle, Layers, Truck, BarChart3, ClipboardList, LayoutDashboard, Users, Barcode } from 'lucide-react';
 
-export type TabId = 'overview' | 'products' | 'movements' | 'transfers' | 'alerts' | 'audit' | 'reports';
+export type TabId = 'overview' | 'products' | 'movements' | 'transfers' | 'alerts' | 'audit' | 'reports' | 'suppliers' | 'barcodes';
 
 interface SidebarProps {
     activeTab: TabId;
@@ -15,6 +15,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
         { id: 'transfers', label: 'Transferencias', icon: <Truck size={20} /> },
         { id: 'alerts', label: 'Alertas', icon: <AlertTriangle size={20} /> },
         { id: 'audit', label: 'Auditoría', icon: <ClipboardList size={20} /> },
+        { id: 'suppliers', label: 'Proveedores', icon: <Users size={20} /> },
+        { id: 'barcodes', label: 'Códigos de Barra', icon: <Barcode size={20} /> },
         { id: 'reports', label: 'Reportes', icon: <BarChart3 size={20} /> },
     ];
 

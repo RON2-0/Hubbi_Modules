@@ -60,7 +60,7 @@ export const MovementsHistory = ({ item }: MovementsHistoryProps) => {
         switch (type) {
             case 'IN': return <ArrowDownLeft className="text-green-600" size={16} />;
             case 'OUT': return <ArrowUpRight className="text-red-600" size={16} />;
-            case 'ADJUST': return <FileText className="text-gray-600" size={16} />;
+            case 'ADJUST': return <FileText className="text-hubbi-dim" size={16} />;
             default: return <ArrowRightLeft className="text-blue-600" size={16} />;
         }
     };
@@ -139,9 +139,9 @@ export const MovementsHistory = ({ item }: MovementsHistoryProps) => {
     });
 
     return (
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="p-4 border-b border-gray-100 flex items-center justify-between">
-                <h3 className="font-semibold text-gray-900 flex items-center gap-2">
+        <div className="bg-hubbi-card rounded-xl border border-hubbi-border shadow-sm overflow-hidden">
+            <div className="p-4 border-b border-hubbi-border flex items-center justify-between">
+                <h3 className="font-semibold text-hubbi-text flex items-center gap-2">
                     <Clock size={16} />
                     Historial de Movimientos
                 </h3>
@@ -150,13 +150,13 @@ export const MovementsHistory = ({ item }: MovementsHistoryProps) => {
                     placeholder="Buscar..."
                     value={globalFilter}
                     onChange={e => setGlobalFilter(e.target.value)}
-                    className="px-3 py-1.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="px-3 py-1.5 text-sm border border-hubbi-border rounded-lg bg-hubbi-input text-hubbi-text focus:outline-none focus:ring-2 focus:ring-hubbi-primary"
                 />
             </div>
 
             <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm">
-                    <thead className="bg-gray-50 text-gray-500">
+                    <thead className="bg-hubbi-bg text-hubbi-dim">
                         {table.getHeaderGroups().map(headerGroup => (
                             <tr key={headerGroup.id}>
                                 {headerGroup.headers.map(header => (
@@ -167,14 +167,14 @@ export const MovementsHistory = ({ item }: MovementsHistoryProps) => {
                             </tr>
                         ))}
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-hubbi-border">
                         {loading ? (
-                            <tr><td colSpan={6} className="text-center py-8 text-gray-400">Cargando...</td></tr>
+                            <tr><td colSpan={6} className="text-center py-8 text-hubbi-dim">Cargando...</td></tr>
                         ) : table.getRowModel().rows.length === 0 ? (
-                            <tr><td colSpan={6} className="text-center py-8 text-gray-400">No hay movimientos registrados</td></tr>
+                            <tr><td colSpan={6} className="text-center py-8 text-hubbi-dim">No hay movimientos registrados</td></tr>
                         ) : (
                             table.getRowModel().rows.map(row => (
-                                <tr key={row.id} className="hover:bg-gray-50">
+                                <tr key={row.id} className="hover:bg-hubbi-bg/50">
                                     {row.getVisibleCells().map(cell => (
                                         <td key={cell.id} className="px-4 py-3">
                                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -188,7 +188,7 @@ export const MovementsHistory = ({ item }: MovementsHistoryProps) => {
             </div>
 
             {/* Pagination */}
-            <div className="p-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-600">
+            <div className="p-4 border-t border-hubbi-border flex items-center justify-between text-sm text-hubbi-dim">
                 <span>
                     Mostrando {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1} - {Math.min((table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize, movements.length)} de {movements.length}
                 </span>
@@ -196,7 +196,7 @@ export const MovementsHistory = ({ item }: MovementsHistoryProps) => {
                     <button
                         onClick={() => table.previousPage()}
                         disabled={!table.getCanPreviousPage()}
-                        className="p-1 rounded hover:bg-gray-100 disabled:opacity-50"
+                        className="p-1 rounded hover:bg-hubbi-bg disabled:opacity-50"
                     >
                         <ChevronLeft size={18} />
                     </button>
@@ -204,7 +204,7 @@ export const MovementsHistory = ({ item }: MovementsHistoryProps) => {
                     <button
                         onClick={() => table.nextPage()}
                         disabled={!table.getCanNextPage()}
-                        className="p-1 rounded hover:bg-gray-100 disabled:opacity-50"
+                        className="p-1 rounded hover:bg-hubbi-bg disabled:opacity-50"
                     >
                         <ChevronRight size={18} />
                     </button>

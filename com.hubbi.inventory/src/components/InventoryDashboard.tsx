@@ -13,6 +13,8 @@ import { PhysicalAudit } from './PhysicalAudit';
 import { OnboardingModal } from './OnboardingModal';
 import { ExcelImport } from './ExcelImport';
 import { InventoryStats } from './InventoryStats';
+import { SuppliersManager } from './SuppliersManager';
+import { BarcodeGenerator } from './BarcodeGenerator';
 
 export const InventoryDashboard: React.FC = () => {
     const [activeTab, setActiveTab] = useState<TabId>('overview');
@@ -32,6 +34,10 @@ export const InventoryDashboard: React.FC = () => {
                 return <StockAlertsPanel />;
             case 'audit':
                 return <PhysicalAudit />;
+            case 'suppliers':
+                return <SuppliersManager />;
+            case 'barcodes':
+                return <BarcodeGenerator />;
             case 'reports':
                 return (
                     <div className="flex flex-col gap-6">

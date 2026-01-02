@@ -38,6 +38,7 @@ export * from './utils/export-utils';
 // Import for internal use
 import { registerInventoryAPI } from './api/inventory-api';
 import { StockAlertsPanel } from './components/StockAlertsPanel';
+import { setupInventoryEventListeners } from './logic/InventoryEvents';
 
 // Settings Tab Component
 export const InventorySettingsTab = () => {
@@ -111,6 +112,9 @@ export const onActivate = async () => {
 
   // Initialize stock alerts monitoring (send persistent notifications for critical stock)
   initializeStockAlertNotifications();
+
+  // Listen for cross-module events (Billing, etc.)
+  setupInventoryEventListeners();
 };
 
 // Check for low stock and send persistent notifications

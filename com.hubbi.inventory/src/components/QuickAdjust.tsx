@@ -162,22 +162,22 @@ export const QuickAdjust = ({ onClose, onSuccess }: QuickAdjustProps) => {
 
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-xl shadow-2xl w-full max-w-lg mx-4">
+            <div className="bg-hubbi-card rounded-xl shadow-2xl w-full max-w-lg mx-4 border border-hubbi-border">
                 {/* Header */}
-                <div className="flex items-center justify-between px-6 py-4 border-b">
-                    <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                        <Package className="text-indigo-600" size={20} />
+                <div className="flex items-center justify-between px-6 py-4 border-b border-hubbi-border">
+                    <h2 className="text-lg font-semibold text-hubbi-text flex items-center gap-2">
+                        <Package className="text-hubbi-primary" size={20} />
                         Ajuste Rápido
                     </h2>
-                    <button onClick={onClose} className="p-1 hover:bg-gray-100 rounded">
-                        <X size={20} className="text-gray-500" />
+                    <button onClick={onClose} className="p-1 hover:bg-hubbi-bg rounded">
+                        <X size={20} className="text-hubbi-dim" />
                     </button>
                 </div>
 
                 <div className="p-6 space-y-5">
                     {/* Search */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Buscar Producto</label>
+                        <label className="block text-sm font-medium text-hubbi-dim mb-1">Buscar Producto</label>
                         <div className="relative">
                             <input
                                 type="text"
@@ -185,13 +185,13 @@ export const QuickAdjust = ({ onClose, onSuccess }: QuickAdjustProps) => {
                                 onChange={(e) => setSearch(e.target.value)}
                                 onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
                                 placeholder="Código, SKU o nombre..."
-                                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                className="w-full pl-10 pr-4 py-2 border border-hubbi-border rounded-lg bg-hubbi-input text-hubbi-text focus:ring-2 focus:ring-hubbi-primary focus:border-hubbi-primary"
                             />
-                            <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
+                            <Search className="absolute left-3 top-2.5 text-hubbi-dim" size={18} />
                             <button
                                 onClick={handleSearch}
                                 disabled={loading}
-                                className="absolute right-2 top-1.5 px-3 py-1 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700"
+                                className="absolute right-2 top-1.5 px-3 py-1 bg-hubbi-primary text-hubbi-primary-fg text-sm rounded hover:opacity-90"
                             >
                                 Buscar
                             </button>
@@ -199,15 +199,15 @@ export const QuickAdjust = ({ onClose, onSuccess }: QuickAdjustProps) => {
 
                         {/* Results dropdown */}
                         {results.length > 0 && (
-                            <div className="absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-auto">
+                            <div className="absolute z-10 mt-1 w-full bg-hubbi-card border border-hubbi-border rounded-lg shadow-lg max-h-48 overflow-auto">
                                 {results.map(item => (
                                     <button
                                         key={item.id}
                                         onClick={() => selectProduct(item)}
-                                        className="w-full text-left px-4 py-2 hover:bg-gray-50 border-b last:border-0"
+                                        className="w-full text-left px-4 py-2 hover:bg-hubbi-bg border-b border-hubbi-border last:border-0"
                                     >
-                                        <div className="font-medium">{item.name}</div>
-                                        <div className="text-xs text-gray-500">SKU: {item.sku}</div>
+                                        <div className="font-medium text-hubbi-text">{item.name}</div>
+                                        <div className="text-xs text-hubbi-dim">SKU: {item.sku}</div>
                                     </button>
                                 ))}
                             </div>
@@ -217,18 +217,18 @@ export const QuickAdjust = ({ onClose, onSuccess }: QuickAdjustProps) => {
                     {/* Selected Product Info */}
                     {selectedItem && (
                         <>
-                            <div className="p-3 bg-indigo-50 rounded-lg">
-                                <div className="font-medium text-indigo-900">{selectedItem.name}</div>
-                                <div className="text-sm text-indigo-700">SKU: {selectedItem.sku}</div>
+                            <div className="p-3 bg-hubbi-primary/10 rounded-lg">
+                                <div className="font-medium text-hubbi-text">{selectedItem.name}</div>
+                                <div className="text-sm text-hubbi-dim">SKU: {selectedItem.sku}</div>
                             </div>
 
                             {/* Location selector */}
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Bodega</label>
+                                <label className="block text-sm font-medium text-hubbi-dim mb-1">Bodega</label>
                                 <select
                                     value={selectedLocation}
                                     onChange={(e) => setSelectedLocation(e.target.value)}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                                    className="w-full px-3 py-2 border border-hubbi-border rounded-lg bg-hubbi-input text-hubbi-text"
                                 >
                                     {stockInfo.map(s => (
                                         <option key={s.locationId} value={s.locationId}>
@@ -243,8 +243,8 @@ export const QuickAdjust = ({ onClose, onSuccess }: QuickAdjustProps) => {
                                 <button
                                     onClick={() => setAdjustType('add')}
                                     className={`flex-1 py-2 rounded-lg flex items-center justify-center gap-2 ${adjustType === 'add'
-                                            ? 'bg-green-600 text-white'
-                                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                        ? 'bg-green-600 text-white'
+                                        : 'bg-hubbi-bg text-hubbi-text hover:bg-hubbi-border'
                                         }`}
                                 >
                                     <Plus size={18} /> Entrada
@@ -252,8 +252,8 @@ export const QuickAdjust = ({ onClose, onSuccess }: QuickAdjustProps) => {
                                 <button
                                     onClick={() => setAdjustType('subtract')}
                                     className={`flex-1 py-2 rounded-lg flex items-center justify-center gap-2 ${adjustType === 'subtract'
-                                            ? 'bg-red-600 text-white'
-                                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                        ? 'bg-red-600 text-white'
+                                        : 'bg-hubbi-bg text-hubbi-text hover:bg-hubbi-border'
                                         }`}
                                 >
                                     <Minus size={18} /> Salida
@@ -262,23 +262,23 @@ export const QuickAdjust = ({ onClose, onSuccess }: QuickAdjustProps) => {
 
                             {/* Quantity */}
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Cantidad</label>
+                                <label className="block text-sm font-medium text-hubbi-dim mb-1">Cantidad</label>
                                 <input
                                     type="number"
                                     value={quantity}
                                     onChange={(e) => setQuantity(Math.max(0, parseInt(e.target.value) || 0))}
                                     min="0"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                                    className="w-full px-3 py-2 border border-hubbi-border rounded-lg bg-hubbi-input text-hubbi-text"
                                 />
                             </div>
 
                             {/* Reason */}
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Razón</label>
+                                <label className="block text-sm font-medium text-hubbi-dim mb-1">Razón</label>
                                 <select
                                     value={reason}
                                     onChange={(e) => setReason(e.target.value)}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                                    className="w-full px-3 py-2 border border-hubbi-border rounded-lg bg-hubbi-input text-hubbi-text"
                                 >
                                     {ADJUST_REASONS.map(r => (
                                         <option key={r.value} value={r.value}>{r.label}</option>
@@ -288,20 +288,20 @@ export const QuickAdjust = ({ onClose, onSuccess }: QuickAdjustProps) => {
 
                             {/* Notes */}
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Notas (opcional)</label>
+                                <label className="block text-sm font-medium text-hubbi-dim mb-1">Notas (opcional)</label>
                                 <input
                                     type="text"
                                     value={notes}
                                     onChange={(e) => setNotes(e.target.value)}
                                     placeholder="Detalles adicionales..."
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                                    className="w-full px-3 py-2 border border-hubbi-border rounded-lg bg-hubbi-input text-hubbi-text"
                                 />
                             </div>
 
                             {/* Preview */}
-                            <div className="p-3 bg-gray-50 rounded-lg flex items-center justify-between">
-                                <span className="text-sm text-gray-600">Stock resultante:</span>
-                                <span className={`font-bold ${newStock < 0 ? 'text-red-600' : 'text-gray-900'}`}>
+                            <div className="p-3 bg-hubbi-bg rounded-lg flex items-center justify-between">
+                                <span className="text-sm text-hubbi-dim">Stock resultante:</span>
+                                <span className={`font-bold ${newStock < 0 ? 'text-hubbi-danger' : 'text-hubbi-text'}`}>
                                     {currentStock} → {newStock}
                                 </span>
                             </div>
@@ -317,14 +317,14 @@ export const QuickAdjust = ({ onClose, onSuccess }: QuickAdjustProps) => {
                 </div>
 
                 {/* Footer */}
-                <div className="flex justify-end gap-3 px-6 py-4 border-t bg-gray-50 rounded-b-xl">
-                    <button onClick={onClose} className="px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                <div className="flex justify-end gap-3 px-6 py-4 border-t border-hubbi-border bg-hubbi-bg rounded-b-xl">
+                    <button onClick={onClose} className="px-4 py-2 text-hubbi-text hover:bg-hubbi-border rounded-lg">
                         Cancelar
                     </button>
                     <button
                         onClick={handleSave}
                         disabled={!selectedItem || !selectedLocation || quantity <= 0 || saving}
-                        className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2"
+                        className="px-4 py-2 bg-hubbi-primary text-hubbi-primary-fg rounded-lg hover:opacity-90 disabled:opacity-50 flex items-center gap-2"
                     >
                         <Save size={16} />
                         {saving ? 'Guardando...' : 'Guardar Ajuste'}

@@ -123,7 +123,7 @@ export const InventoryStats = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Best Sellers */}
                 <div className="bg-hubbi-card rounded-xl border border-hubbi-border shadow-sm overflow-hidden">
-                    <div className="p-4 border-b border-hubbi-border bg-gray-50 dark:bg-gray-800/50">
+                    <div className="p-4 border-b border-hubbi-border bg-hubbi-bg">
                         <h3 className="font-semibold flex items-center gap-2">
                             <TrendingUp size={18} className="text-green-500" />
                             Más Vendidos
@@ -137,7 +137,7 @@ export const InventoryStats = () => {
                                 {bestSellers.map((item, idx) => (
                                     <div key={item.item_id} className="flex items-center justify-between">
                                         <div className="flex items-center gap-3">
-                                            <span className="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full text-xs font-bold text-gray-500">
+                                            <span className="w-6 h-6 flex items-center justify-center bg-hubbi-bg rounded-full text-xs font-bold text-hubbi-dim">
                                                 {idx + 1}
                                             </span>
                                             <div>
@@ -155,7 +155,7 @@ export const InventoryStats = () => {
 
                 {/* Low Stock Alerts */}
                 <div className="bg-hubbi-card rounded-xl border border-hubbi-border shadow-sm overflow-hidden">
-                    <div className="p-4 border-b border-hubbi-border bg-gray-50 dark:bg-gray-800/50">
+                    <div className="p-4 border-b border-hubbi-border bg-hubbi-bg">
                         <h3 className="font-semibold flex items-center gap-2">
                             <AlertTriangle size={18} className="text-red-500" />
                             Stock Crítico

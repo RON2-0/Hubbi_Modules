@@ -188,8 +188,24 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_audit_lines (
     PRIMARY KEY (audit_id, item_id)
 );
 
+-- 9. Proveedores
+CREATE TABLE IF NOT EXISTS com_hubbi_inventory_suppliers (
+    id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+    hub_id INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    contact_name TEXT,
+    email TEXT,
+    phone TEXT,
+    address TEXT,
+    notes TEXT,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Índices Clave
 CREATE INDEX IF NOT EXISTS com_hubbi_inventory_idx_stock_location ON com_hubbi_inventory_stock(location_id);
 CREATE INDEX IF NOT EXISTS com_hubbi_inventory_idx_movements_item ON com_hubbi_inventory_movements(item_id);
 CREATE INDEX IF NOT EXISTS com_hubbi_inventory_idx_movements_date ON com_hubbi_inventory_movements(created_at);
 CREATE INDEX IF NOT EXISTS com_hubbi_inventory_idx_reservations_ref ON com_hubbi_inventory_reservations(reference_id);
+CREATE INDEX IF NOT EXISTS com_hubbi_inventory_idx_suppliers_name ON com_hubbi_inventory_suppliers(name);
