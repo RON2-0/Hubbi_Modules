@@ -66,6 +66,11 @@ jobs:
           pnpm run build
           # Copiar manifest.json a dist/ para que sea incluido en el zip
           cp manifest.json dist/
+          # Copiar sql/ a dist/ si existe (para init_scripts)
+          if [ -d "sql" ]; then
+            cp -r sql dist/
+            echo "📊 Carpeta sql/ copiada a dist/"
+          fi
 
       # 7. Asegurar que el manifest tenga la versión correcta
       # (Truco Pro: Sobrescribimos la versión del json con la del tag para que siempre coincidan)
