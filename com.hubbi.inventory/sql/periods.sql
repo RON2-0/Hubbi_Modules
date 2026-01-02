@@ -24,9 +24,10 @@ CREATE TABLE IF NOT EXISTS hubbi_fiscal_config (
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- Insert default configuration
-INSERT OR IGNORE INTO hubbi_fiscal_config (id, lock_after_periods, period_type)
-VALUES ('default', 2, 'monthly');
+-- Note: Default configuration is inserted by module code, not here
+-- (INSERT statements are blocked by security validator)
+-- INSERT OR IGNORE INTO hubbi_fiscal_config (id, lock_after_periods, period_type)
+-- VALUES ('default', 2, 'monthly');
 
 -- 2. Fiscal Periods
 CREATE TABLE IF NOT EXISTS hubbi_fiscal_periods (
