@@ -1,7 +1,0 @@
-@import "tailwindcss";
-
-/* Custom Hubbi Plugin Resets if needed */
-:host {
-    display: block;
-    height: 100%;
-}
