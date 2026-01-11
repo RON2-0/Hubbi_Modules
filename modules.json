@@ -1,15 +1,5 @@
 {
   "modules": [
-    {
-      "id": "com.hubbi.inventory",
-      "name": "Hubbi Inventory & WMS",
-      "version": "1.0.0",
-      "kind": "app",
-      "url": "https://github.com/RON2-0/Hubbi_Modules/releases/download/com.hubbi.inventory@1.0.0/com.hubbi.inventory.hubbi",
-      "icon": "Package",
-      "description": "Gestión avanzada de stock, kits, seriales y lotes. Soporte multi-sector con alineación fiscal.",
-      "size": 2560000,
-      "readme": "# Hubbi Inventory\n\nEste módulo permite la gestión completa de inventarios.\n\n## Características\n- Control de Stock\n- Kits y Lotes\n- Seriales"
-    }
+    {}
   ]
 }
