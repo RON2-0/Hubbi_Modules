@@ -1,0 +1,150 @@
+{
+  "id": "com.hubbi.inventory",
+  "name": "Hubbi Inventory & WMS",
+  "version": "1.0.0",
+  "description": "Gestión avanzada de stock, kits, seriales y visualización WMS (Three.js).",
+  "kind": "app",
+  "icon": "lucide:Package?bg=#f1d592&fg=#000000",
+  "readme": "README.md",
+  "meta": {
+    "entry_point": "dist/index.umd.js",
+    "integrity": "5136fe5a333e23f5bde9af6a8a7ab9ad6d4b6e525ae9d7e78a0211ef4eb064a5",
+    "size": 1582091,
+    "built_at": "2026-01-22T16:28:58.719Z"
+  },
+  "ui": {
+    "sidebar": [
+      {
+        "label": "Dashboard",
+        "path": "/app/com.hubbi.inventory",
+        "icon": "lucide:Home"
+      },
+      {
+        "label": "Productos",
+        "path": "/app/com.hubbi.inventory/products",
+        "icon": "lucide:Package"
+      },
+      {
+        "label": "Compras",
+        "path": "/app/com.hubbi.inventory/purchases",
+        "icon": "lucide:Receipt"
+      },
+      {
+        "label": "Movimientos",
+        "path": "/app/com.hubbi.inventory/movements",
+        "icon": "lucide:Repeat",
+        "required_permission": "inventory.access"
+      },
+      {
+        "label": "Existencias",
+        "path": "/app/com.hubbi.inventory/stock",
+        "icon": "lucide:Boxes",
+        "required_permission": "inventory.access"
+      },
+      {
+        "label": "Kardex",
+        "path": "/app/com.hubbi.inventory/kardex",
+        "icon": "lucide:History",
+        "required_permission": "inventory.access"
+      },
+      {
+        "label": "Admin WMS",
+        "path": "/app/com.hubbi.inventory/wms-admin",
+        "icon": "lucide:Container",
+        "required_permission": "inventory.map_edit"
+      },
+      {
+        "label": "Etiquetación",
+        "path": "/app/com.hubbi.inventory/labeling",
+        "icon": "lucide:Tag",
+        "required_permission": "inventory.create"
+      },
+      {
+        "label": "Configuración",
+        "path": "/app/com.hubbi.inventory/settings",
+        "icon": "lucide:Settings",
+        "required_permission": "inventory.access",
+        "children": [
+          {
+            "label": "Bodegas",
+            "path": "/app/com.hubbi.inventory/settings/warehouses",
+            "icon": "lucide:Warehouse"
+          },
+          {
+            "label": "Categorías",
+            "path": "/app/com.hubbi.inventory/settings/categories",
+            "icon": "lucide:Copy"
+          },
+          {
+            "label": "Grupos",
+            "path": "/app/com.hubbi.inventory/settings/groups",
+            "icon": "lucide:Layers"
+          },
+          {
+            "label": "Subgrupos",
+            "path": "/app/com.hubbi.inventory/settings/subgroups",
+            "icon": "lucide:List"
+          },
+          {
+            "label": "Campos Custom",
+            "path": "/app/com.hubbi.inventory/settings/custom-fields",
+            "icon": "lucide:Type"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": [
+    {
+      "id": "inventory.access",
+      "label": "Acceso al Inventario",
+      "description": "Permite ver el módulo de inventario."
+    },
+    {
+      "id": "inventory.create",
+      "label": "Crear Productos",
+      "description": "Permite crear nuevos ítems en el catálogo."
+    },
+    {
+      "id": "inventory.update",
+      "label": "Editar Productos",
+      "description": "Permite modificar detalles de productos existentes."
+    },
+    {
+      "id": "inventory.delete",
+      "label": "Eliminar Productos",
+      "description": "Permite eliminar productos (solo si no tienen movimientos)."
+    },
+    {
+      "id": "inventory.adjust_stock",
+      "label": "Ajustar Stock",
+      "description": "Permite realizar ajustes manuales de inventario."
+    },
+    {
+      "id": "inventory.map_edit",
+      "label": "Editar Mapa de Bodega",
+      "description": "Permite modificar la distribución física (WMS) de la bodega."
+    },
+    {
+      "id": "inventory.approve_transfer",
+      "label": "Aprobar Transferencias",
+      "description": "Permite aprobar solicitudes de traslado entre bodegas."
+    },
+    {
+      "id": "inventory.export",
+      "label": "Exportar Datos",
+      "description": "Permite descargar reportes en Excel/CSV."
+    }
+  ],
+  "dependencies": [],
+  "database": {
+    "namespace": "com_hubbi_inventory",
+    "migrations": [
+      {
+        "version": 1,
+        "script": "sql/001_initial.sql",
+        "description": "Initial schema: Items, Stock, Locations, Movements"
+      }
+    ]
+  }
+}

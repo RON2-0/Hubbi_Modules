@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* Relies on Host Application CSS */
+
+/* 
+ * Module Theme Configuration
+ * 
+ * This @theme block tells Tailwind how to generate utility classes (bg-hubbi-primary, etc.)
+ * The actual CSS variable values (--color-bg, --color-primary, etc.) are defined by the Core
+ * and inherited at runtime through the DOM. This ensures:
+ * 1. No duplication of theme definitions
+ * 2. Automatic theme switching when Core changes themes
+ * 3. Single source of truth for all color values
+ */
+@theme {
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+
+  --color-hubbi-bg: rgb(var(--color-bg));
+  --color-hubbi-card: rgb(var(--color-card));
+  --color-hubbi-input: rgb(var(--color-input));
+  --color-hubbi-border: rgb(var(--color-border));
+  --color-hubbi-text: rgb(var(--color-text-main));
+  --color-hubbi-dim: rgb(var(--color-text-dim));
+  --color-hubbi-primary: rgb(var(--color-primary));
+  --color-hubbi-primary-fg: rgb(var(--color-primary-fg));
+  --color-hubbi-danger: rgb(var(--color-danger));
+  --color-hubbi-warning: rgb(var(--color-warning));
+  --color-hubbi-success: rgb(var(--color-success));
+}
+
+
+/* Custom Scrollbar for Sidebar Preview */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  @apply bg-hubbi-border rounded-full hover:bg-hubbi-dim;
+}
