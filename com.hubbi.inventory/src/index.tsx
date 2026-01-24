@@ -1,9 +1,11 @@
 import './index.css';
 import { useState, useEffect } from 'react';
+import { AlertTriangle } from 'lucide-react';
 import MainLayout from './Layout/MainLayout';
 import { DashboardWidget } from './components/DashboardWidget';
 
 import ProductsView from './pages/Products/TableView/ProductsView';
+import SettingsView from './pages/Settings/SettingsView';
 import { PlaceholderPage } from './components/PlaceholderPage';
 
 // ============================================
@@ -39,47 +41,88 @@ function InventoryModule(props: { isActive?: boolean }) {
         if (subPath.startsWith('/wms-admin')) return 'wms-admin';
 
         if (subPath.startsWith('/settings')) {
+            if (subPath.includes('/general')) return 'settings-general';
             if (subPath.includes('/warehouses')) return 'settings-warehouses';
             if (subPath.includes('/categories')) return 'settings-categories';
             if (subPath.includes('/groups')) return 'settings-groups';
             if (subPath.includes('/subgroups')) return 'settings-subgroups';
             if (subPath.includes('/custom-fields')) return 'settings-custom-fields';
-            return 'settings';
+            return 'settings-general';
         }
 
         return 'dashboard';
     };
 
     const [currentRoute, setCurrentRoute] = useState(getRoute);
+    const [accessDenied, setAccessDenied] = useState(false);
+    const [loading, setLoading] = useState(true);
 
-    // NAVIGATION ISOLATION:
-    // Only update route if we are the ACTIVE tab.
-    // If we become active, we should sync to current URL.
+    // ACCESS CONTROL & NAVIGATION
     useEffect(() => {
-        if (!props.isActive) return;
+        const checkAccess = async () => {
+            if (typeof window === 'undefined') return;
+
+            try {
+                const stored = await window.hubbi.settings.get('allowedDepartments', 'com.hubbi.inventory');
+                const allowedIds: number[] = stored ? JSON.parse(stored) : [];
+
+                if (allowedIds.length > 0) {
+                    // Get department from context
+                    const context = window.hubbi.getContext() as any;
+                    const userDept = context.departmentId || context.department_id;
+
+                    if (userDept && !allowedIds.includes(userDept)) {
+                        setAccessDenied(true);
+                    }
+                }
+            } catch (e) {
+                console.error("Access check failed", e);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        checkAccess();
+
+        if (!props.isActive || accessDenied) return;
 
         const checkRoute = () => {
-            // ... logic ...
             const newRoute = getRoute();
             if (newRoute !== currentRoute) {
                 setCurrentRoute(newRoute);
             }
         };
 
-        // Check immediately on mount/active
         checkRoute();
-
         const interval = setInterval(checkRoute, 100);
         window.addEventListener('popstate', checkRoute);
         return () => {
             clearInterval(interval);
             window.removeEventListener('popstate', checkRoute);
         };
-    }, [currentRoute, props.isActive]);
+    }, [currentRoute, props.isActive, accessDenied]);
+
+    if (loading) return null;
+
+    if (accessDenied) {
+        return (
+            <div className="h-full w-full flex flex-col items-center justify-center p-6 bg-hubbi-background text-center">
+                <div className="w-20 h-20 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mb-4">
+                    <AlertTriangle size={40} />
+                </div>
+                <h1 className="text-2xl font-bold text-hubbi-text mb-2">Acceso Restringido</h1>
+                <p className="text-hubbi-dim max-w-md">
+                    Tu departamento no tiene permisos autorizados para acceder al módulo de Inventario.
+                    Contacta al administrador para solicitar acceso.
+                </p>
+            </div>
+        );
+    }
 
     return (
         <InventoryProvider>
             <MainLayout>
+                {/* ... existing routes ... */}
                 {/* DASHBOARD: Default View */}
                 {currentRoute === 'dashboard' && (
                     <div className="p-6">
@@ -100,12 +143,9 @@ function InventoryModule(props: { isActive?: boolean }) {
                 {currentRoute === 'wms-admin' && <PlaceholderPage title="Administración WMS" description="Mapa interactivo y gestión de ubicaciones." />}
 
                 {/* SETTINGS */}
-                {currentRoute === 'settings' && <PlaceholderPage title="Configuración General" />}
-                {currentRoute === 'settings-warehouses' && <PlaceholderPage title="Configuración de Bodegas" />}
-                {currentRoute === 'settings-categories' && <PlaceholderPage title="Configuración de Categorías" />}
-                {currentRoute === 'settings-groups' && <PlaceholderPage title="Configuración de Grupos" />}
-                {currentRoute === 'settings-subgroups' && <PlaceholderPage title="Configuración de Subgrupos" />}
-                {currentRoute === 'settings-custom-fields' && <PlaceholderPage title="Campos Personalizados" />}
+                {currentRoute.startsWith('settings') && (
+                    <SettingsView currentRoute={currentRoute} />
+                )}
 
             </MainLayout>
         </InventoryProvider>
@@ -132,11 +172,25 @@ if (typeof window !== 'undefined' && window.hubbi) {
         const sku = args[0] as string;
         if (!sku) return null;
 
-        const result = await window.hubbi.db.query(
-            'SELECT * FROM items WHERE sku = ? LIMIT 1',
-            [sku],
-            { moduleId: 'com.hubbi.inventory' }
-        );
+        const context = window.hubbi.getContext();
+        const subHubId = context?.subHubId;
+
+        let sql = 'SELECT * FROM items WHERE sku = ? LIMIT 1';
+        const params: any[] = [sku];
+
+        if (subHubId) {
+            sql = `
+                SELECT DISTINCT i.* 
+                FROM items i
+                INNER JOIN stock s ON i.id = s.item_id
+                INNER JOIN warehouses w ON s.warehouse_id = w.id
+                WHERE i.sku = ? AND w.sub_hub_id = ?
+                LIMIT 1
+            `;
+            params.push(subHubId);
+        }
+
+        const result = await window.hubbi.db.query(sql, params, { moduleId: 'com.hubbi.inventory' });
         return result[0] || null;
     }, 'com.hubbi.inventory');
 
@@ -144,11 +198,23 @@ if (typeof window !== 'undefined' && window.hubbi) {
         const itemId = args[0] as string;
         if (!itemId) return [];
 
-        const result = await window.hubbi.db.query(
-            'SELECT * FROM stock WHERE item_id = ?',
-            [itemId],
-            { moduleId: 'com.hubbi.inventory' }
-        );
+        const context = window.hubbi.getContext();
+        const subHubId = context?.subHubId;
+
+        let sql = 'SELECT * FROM stock WHERE item_id = ?';
+        const params: any[] = [itemId];
+
+        if (subHubId) {
+            sql = `
+                SELECT s.* 
+                FROM stock s
+                INNER JOIN warehouses w ON s.warehouse_id = w.id
+                WHERE s.item_id = ? AND w.sub_hub_id = ?
+            `;
+            params.push(subHubId);
+        }
+
+        const result = await window.hubbi.db.query(sql, params, { moduleId: 'com.hubbi.inventory' });
         return result;
     }, 'com.hubbi.inventory');
 }

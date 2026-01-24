@@ -1,6 +1,6 @@
 -- =============================================
 -- Módulo: com.hubbi.inventory
--- Versión: 3 (Schema-Isolated Tables)
+-- Versión: 1 (Unified Development Schema)
 -- Descripción: Esquema avanzado para gestión universal (B2B/B2C, Activos, Servicios, Multi-UOM).
 -- NOTA: Este SQL se ejecuta dentro del esquema 'com_hubbi_inventory' automáticamente.
 --       No es necesario usar prefijos en los nombres de tablas.
@@ -10,7 +10,7 @@
 
 -- 0.1 Unidades de Medida (UOM) Globales
 CREATE TABLE IF NOT EXISTS uoms (
-    id TEXT PRIMARY KEY,
+    id UUID PRIMARY KEY,
     name TEXT NOT NULL, -- "Unidad", "Libra", "Caja 12"
     symbol TEXT NOT NULL, -- "u", "lb", "c12"
     is_active BOOLEAN DEFAULT TRUE
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS uoms (
 
 -- 0.2 Campos Personalizados Globales (Dynamic Fields)
 CREATE TABLE IF NOT EXISTS custom_fields (
-    id TEXT PRIMARY KEY,
+    id UUID PRIMARY KEY,
     label TEXT NOT NULL,
     key_name TEXT NOT NULL UNIQUE, -- "color", "material"
     type TEXT DEFAULT 'text', -- 'text', 'number', 'boolean', 'select', 'date'
@@ -29,23 +29,23 @@ CREATE TABLE IF NOT EXISTS custom_fields (
 
 -- 1. Catálogo Maestro de Productos y Activos
 CREATE TABLE IF NOT EXISTS items (
-    id TEXT PRIMARY KEY,
+    id UUID PRIMARY KEY,
     sku TEXT UNIQUE,
     name TEXT NOT NULL,
     description TEXT,
     photo_url TEXT,
     
     -- Clasificación Jerárquica
-    category_id TEXT,
-    group_id TEXT,
-    subgroup_id TEXT,
+    category_id UUID,
+    group_id UUID,
+    subgroup_id UUID,
     
     -- Tipología Principal
     type TEXT DEFAULT 'product', -- 'product', 'service', 'asset', 'kit'
     
     -- Unidades de Medida
-    base_unit_id TEXT NOT NULL,
-    purchase_unit_id TEXT,
+    base_unit_id UUID NOT NULL,
+    purchase_unit_id UUID,
     
     -- Banderas Operativas
     is_active BOOLEAN DEFAULT TRUE,
@@ -58,12 +58,15 @@ CREATE TABLE IF NOT EXISTS items (
     -- Datos Financieros
     cost_avg REAL DEFAULT 0,
     price_base REAL DEFAULT 0,
-    accounting_account_id TEXT,
-    tax_code_id TEXT,
+    accounting_account_id UUID,
+    tax_code_id UUID,
     
     -- Atributos Dinámicos
     attributes JSON DEFAULT '{}',
     asset_meta JSON DEFAULT '{}',
+    
+    -- Contexto Organizacional
+    responsible_department_id UUID,
     
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -74,12 +77,13 @@ CREATE TABLE IF NOT EXISTS items (
 CREATE INDEX IF NOT EXISTS idx_items_type ON items(type);
 CREATE INDEX IF NOT EXISTS idx_items_category ON items(category_id);
 CREATE INDEX IF NOT EXISTS idx_items_sku ON items(sku);
+CREATE INDEX IF NOT EXISTS idx_items_responsible_dept ON items(responsible_department_id);
 
 -- 1.1 Unidades de Medida Alternativas por Ítem
 CREATE TABLE IF NOT EXISTS item_uoms (
-    id TEXT PRIMARY KEY,
-    item_id TEXT NOT NULL,
-    uom_id TEXT NOT NULL,
+    id UUID PRIMARY KEY,
+    item_id UUID NOT NULL,
+    uom_id UUID NOT NULL,
     
     conversion_factor REAL NOT NULL,
     sale_price REAL,
@@ -94,8 +98,8 @@ CREATE TABLE IF NOT EXISTS item_uoms (
 
 -- 1.2 Proveedores por Ítem
 CREATE TABLE IF NOT EXISTS item_suppliers (
-    item_id TEXT NOT NULL,
-    supplier_id TEXT NOT NULL,
+    item_id UUID NOT NULL,
+    supplier_id UUID NOT NULL,
     
     supplier_sku TEXT,
     last_cost REAL,
@@ -107,23 +111,37 @@ CREATE TABLE IF NOT EXISTS item_suppliers (
     FOREIGN KEY (item_id) REFERENCES items(id)
 );
 
--- 2. Ubicaciones (Locations)
-CREATE TABLE IF NOT EXISTS locations (
-    id TEXT PRIMARY KEY,
-    parent_id TEXT,
+-- 2. Bodegas (Warehouses)
+CREATE TABLE IF NOT EXISTS warehouses (
+    id UUID PRIMARY KEY,
     name TEXT NOT NULL,
-    type TEXT NOT NULL, -- 'warehouse', 'zone', 'rack', 'shelf', 'bin'
     
+    -- Datos de contacto
+    address TEXT,
+    phone TEXT,
+    
+    -- Contexto Organizacional
+    sub_hub_id UUID,
+    department_id UUID,
+    
+    -- Responsable de la bodega
+    responsible_user_id UUID,
+    
+    -- Metadatos adicionales para WMS (coordenadas, dimensiones, etc.)
     wms_meta JSON DEFAULT '{}',
     
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE INDEX IF NOT EXISTS idx_warehouses_sub_hub ON warehouses(sub_hub_id);
+CREATE INDEX IF NOT EXISTS idx_warehouses_department ON warehouses(department_id);
+CREATE INDEX IF NOT EXISTS idx_warehouses_responsible ON warehouses(responsible_user_id);
+
 -- 3. Existencias (Stock)
 CREATE TABLE IF NOT EXISTS stock (
-    item_id TEXT NOT NULL,
-    location_id TEXT NOT NULL,
+    item_id UUID NOT NULL,
+    warehouse_id UUID NOT NULL,
     
     quantity REAL DEFAULT 0,
     
@@ -133,24 +151,24 @@ CREATE TABLE IF NOT EXISTS stock (
     
     last_count TIMESTAMP,
     
-    PRIMARY KEY (item_id, location_id),
+    PRIMARY KEY (item_id, warehouse_id),
     FOREIGN KEY (item_id) REFERENCES items(id),
-    FOREIGN KEY (location_id) REFERENCES locations(id)
+    FOREIGN KEY (warehouse_id) REFERENCES warehouses(id)
 );
 CREATE INDEX IF NOT EXISTS idx_stock_item ON stock(item_id);
-CREATE INDEX IF NOT EXISTS idx_stock_location ON stock(location_id);
+CREATE INDEX IF NOT EXISTS idx_stock_warehouse ON stock(warehouse_id);
 
 -- 4. Historial de Movimientos (Kardex)
 CREATE TABLE IF NOT EXISTS movements (
-    id TEXT PRIMARY KEY,
-    item_id TEXT NOT NULL,
-    user_id TEXT NOT NULL,
+    id UUID PRIMARY KEY,
+    item_id UUID NOT NULL,
+    user_id UUID NOT NULL,
     
     type TEXT NOT NULL, -- 'IN', 'OUT', 'ADJUST', 'TRANSFER', 'CONSUME'
     reason TEXT,
     
-    from_location_id TEXT,
-    to_location_id TEXT,
+    from_warehouse_id UUID,
+    to_warehouse_id UUID,
     
     quantity REAL NOT NULL,
     uom_id TEXT,
@@ -159,13 +177,18 @@ CREATE TABLE IF NOT EXISTS movements (
     reference_doc TEXT,
     notes TEXT,
     
+    -- Contexto Organizacional
+    department_id UUID,
+    
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE INDEX IF NOT EXISTS idx_movements_department ON movements(department_id);
+
 -- 5. Kits / Bill of Materials
 CREATE TABLE IF NOT EXISTS kits (
-    parent_item_id TEXT NOT NULL,
-    child_item_id TEXT NOT NULL,
+    parent_item_id UUID NOT NULL,
+    child_item_id UUID NOT NULL,
     quantity REAL NOT NULL,
     
     PRIMARY KEY (parent_item_id, child_item_id)
@@ -173,12 +196,12 @@ CREATE TABLE IF NOT EXISTS kits (
 
 -- 6. Trazabilidad (Seriales & Lotes)
 CREATE TABLE IF NOT EXISTS serials (
-    id TEXT PRIMARY KEY,
-    item_id TEXT NOT NULL,
+    id UUID PRIMARY KEY,
+    item_id UUID NOT NULL,
     serial_number TEXT NOT NULL,
     lot_number TEXT,
     
-    current_location_id TEXT,
+    current_warehouse_id UUID,
     status TEXT DEFAULT 'available',
     
     expiration_date TIMESTAMP,
@@ -192,11 +215,15 @@ CREATE TABLE IF NOT EXISTS serials (
 
 -- 7. Transferencias
 CREATE TABLE IF NOT EXISTS transfers (
-    id TEXT PRIMARY KEY,
-    from_hub_id TEXT,
-    to_hub_id TEXT,
-    requester_id TEXT,
+    id UUID PRIMARY KEY,
+    from_hub_id UUID,
+    to_hub_id UUID,
+    requester_id UUID,
     status TEXT DEFAULT 'pending',
     items JSON NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- =============================================
+-- Schema Complete: All tables unified
+-- =============================================

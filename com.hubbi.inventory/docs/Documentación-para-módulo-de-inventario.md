@@ -58,7 +58,7 @@ Inventory Module
 ├── Core (siempre activo)
 │   ├── Items
 │   ├── Stock
-│   ├── Locations (abstractas)
+│   ├── Warehouses (abstractas)
 │   └── Movements
 │
 ├── Capabilities (activables desde Ajustes)
@@ -82,12 +82,12 @@ Inventory Module
  
 2️⃣ Modelo de datos (flexible, no rígido)
 Tablas base (siempre)
-com_hubbi_inventory_items - id - sku - name - category_id - is_active - type (product | service | asset) - created_at com_hubbi_inventory_stock - id - item_id - location_id - quantity com_hubbi_inventory_locations - id - name - kind (warehouse | room | shelf | virtual) - parent_id 
-💡 Location es la clave: todo se apoya en esto.
+com_hubbi_inventory_items - id - sku - name - category_id - is_active - type (product | service | asset) - created_at com_hubbi_inventory_stock - id - item_id - warehouse_id - quantity com_hubbi_inventory_warehouses - id - name - kind (warehouse | room | shelf | virtual) - parent_id 
+💡 Warehouse es la clave: todo se apoya en esto.
  
 3️⃣ 📦 Mapeo de Bodega (VMS – Visual Mapping System)
 Concepto
-La bodega no es un dibujo, es un grafo de locations.
+La bodega no es un dibujo, es un grafo de warehouses.
 Jerarquía ejemplo
 Bodega Central
 ├── Zona A
@@ -138,22 +138,22 @@ Inventory Settings
 7️⃣ Casos reales (para validar el diseño)
 📚 Librería
 •	Capabilities: stock, venta
-•	Locations: estanterías
+•	Warehouses: estanterías
 •	Vista principal: tabla
 •	VMS opcional
 🚗 Taller
 •	Capabilities: uso interno + activos
-•	Locations: bahías
+•	Warehouses: bahías
 •	VMS obligatorio
 •	No venta directa
 🏥 Hospital
 •	Capabilities: vencimiento + lotes
-•	Locations: habitaciones
+•	Warehouses: habitaciones
 •	VMS crítico
 •	Auditoría fuerte
 🏠 Casa
 •	Capabilities mínimas
-•	Locations simples
+•	Warehouses simples
 •	Tabla básica
  
 8️⃣ Seguridad y permisos (alineado a Hubbi)
@@ -227,7 +227,7 @@ Tipos de movimiento
 •	Transferencia interna
 •	Transferencia entre sucursales (especial)
 Cada movimiento:
-com_hubbi_inventory_movements - id - type - from_location_id - to_location_id - quantity - reason - document_id (opcional) - created_by - created_at 
+com_hubbi_inventory_movements - id - type - from_warehouse_id - to_warehouse_id - quantity - reason - document_id (opcional) - created_by - created_at 
 ✅ Auditoría automática + manual
  
 3️⃣ Transferencias entre sucursales (MUY IMPORTANTE)
@@ -294,7 +294,7 @@ Flujo
 3.	Se cuentan productos (PC o móvil)
 4.	Se comparan diferencias
 5.	Se genera ajuste auditado
-com_hubbi_inventory_counts - id - location_id - status - started_at - closed_at 
+com_hubbi_inventory_counts - id - warehouse_id - status - started_at - closed_at 
  
 7️⃣ Móvil y PC (operación real)
 Funcionalidades móviles críticas
@@ -645,12 +645,12 @@ CREATE TABLE IF NOT EXISTS com_hubbi_inventory_items (
 -- 2. Existencias (Stock por Ubicación/Bodega)
 CREATE TABLE IF NOT EXISTS com_hubbi_inventory_stock (
     item_id TEXT NOT NULL,
-    location_id TEXT NOT NULL, -- 'bodega_principal', 'camion_01'
+    warehouse_id TEXT NOT NULL, -- 'bodega_principal', 'camion_01'
     quantity REAL DEFAULT 0,
     min_stock REAL DEFAULT 0,
     max_stock REAL DEFAULT 0,
     last_count DATETIME, -- Para conteos rotativos
-    PRIMARY KEY (item_id, location_id)
+    PRIMARY KEY (item_id, warehouse_id)
 );
 
 -- 3. Historial de Movimientos (Kardex / Auditoría)
@@ -859,7 +859,7 @@ Json
 "capabilities": [
 "inventory",
 "wms",
-"multi-location",
+"multi-warehouse",
 "offline"
 ]
 No es obligatorio hoy, pero te abre puertas para plugins y marketplace.
@@ -889,12 +889,12 @@ equipos médicos
 motores
 auditorías
 Puedes dejarlo para Fase 3.5.
-2️⃣ Movimientos deberían tener location_from / location_to
+2️⃣ Movimientos deberían tener warehouse_from / warehouse_to
 Para transferencias legales entre bodegas:
 Copiar código
 Sql
-location_from TEXT,
-location_to TEXT
+warehouse_from TEXT,
+warehouse_to TEXT
 Esto es clave para documentos de traslado en El Salvador.
 6️⃣ Hook Online-First (useInventoryActions.ts)
 ✅ Conceptualmente CORRECTO
@@ -950,7 +950,7 @@ Sí, vale totalmente la pena que ahora
 te genere el Formulario Dinámico de Productos.
 Ese formulario es la cara visible de toda esta arquitectura.
 ¡Recibido fuerte y claro! 🫡
-El análisis que compartiste es oro puro. Confirma que estamos construyendo sobre cimientos sólidos (legales, técnicos y operativos). Me encanta especialmente la validación sobre la separación de items vs stock vs movements, y la sugerencia de location_from/location_to para las Notas de Remisión (ya lo anoté para la Fase 3).
+El análisis que compartiste es oro puro. Confirma que estamos construyendo sobre cimientos sólidos (legales, técnicos y operativos). Me encanta especialmente la validación sobre la separación de items vs stock vs movements, y la sugerencia de warehouse_from/warehouse_to para las Notas de Remisión (ya lo anoté para la Fase 3).
 Vamos directo a lo que pediste: La Joya de la Corona de la Fase 2.
 Aquí tienes el código para el Formulario Dinámico de Productos. Este componente es el que permitirá que Hubbi gestione desde un Filtro de Aceite hasta un Cabezal Freightliner sin tocar la base de datos.
 ________________________________________
@@ -984,7 +984,7 @@ export interface AttributeField {
 // Aquí está la magia de la flexibilidad
 export const PRODUCT_SCHEMAS: Record<string, AttributeField[]> = {
   simple: [
-    { key: 'location_rack', label: 'Ubicación (Estante)', type: 'text', placeholder: 'Ej: Pasillo A-2' },
+    { key: 'warehouse_rack', label: 'Ubicación (Estante)', type: 'text', placeholder: 'Ej: Pasillo A-2' },
     { key: 'min_stock_alert', label: 'Alerta Stock Mínimo', type: 'number' }
   ],
   vehicle: [
@@ -1232,7 +1232,7 @@ JSON
 {
   "sku": "BOOK-DONQUIJOTE",
   "type": "simple",
-  "attributes": { "location_rack": "Pasillo 4" }
+  "attributes": { "warehouse_rack": "Pasillo 4" }
 }
 ✅ Próximo Paso
 Copia estos 3 archivos a tu carpeta de plugins. Luego, en tu src/pages/Inventory.tsx (o donde vayas a mostrar esto), simplemente importas <ProductForm />.

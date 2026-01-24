@@ -57,9 +57,10 @@ export default function SidebarPreview() {
                             <span className="font-mono text-xs bg-hubbi-muted px-1.5 py-0.5 rounded text-hubbi-dim">
                                 {selectedItem.sku || 'N/A'}
                             </span>
-                            <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${selectedItem.is_active ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'}`}>
-                                {selectedItem.is_active ? 'Activo' : 'Inactivo'}
+                            <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${selectedItem.status === 'ACTIVE' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'}`}>
+                                {selectedItem.status === 'ACTIVE' ? 'Activo' : 'Inactivo'}
                             </span>
+
                         </div>
                     </div>
                 </div>
@@ -118,7 +119,8 @@ export default function SidebarPreview() {
                             <div className="p-3 bg-hubbi-muted/50 rounded-lg">
                                 <label className="text-xs text-hubbi-dim block mb-1">Tipo de Ítem</label>
                                 <div className="text-sm font-medium capitalize flex items-center gap-2 text-hubbi-text">
-                                    {selectedItem.type}
+                                    {selectedItem.kind}
+
                                 </div>
                             </div>
                             <div className="p-3 bg-hubbi-muted/50 rounded-lg">
@@ -179,15 +181,18 @@ export default function SidebarPreview() {
                             <p className="text-sm text-hubbi-dim italic">No hay atributos definidos.</p>
                         )}
 
-                        {selectedItem.type === 'asset' && selectedItem.asset_meta && (
+                        {selectedItem.kind === 'ASSET' && selectedItem.attributes && (
+
                             <section>
                                 <h3 className="text-xs font-bold text-hubbi-dim uppercase tracking-wider mb-3">Datos de Activo Fijo</h3>
                                 <div className="p-3 bg-amber-50 dark:bg-amber-900/10 rounded-lg border border-amber-100 dark:border-amber-800">
                                     <div className="flex items-start gap-2">
                                         <AlertCircle className="w-4 h-4 text-amber-600 mt-0.5" />
                                         <div className="text-xs text-amber-800 dark:text-amber-200">
-                                            <p><strong>Método Depreciación:</strong> {selectedItem.asset_meta.depreciation_method}</p>
-                                            <p><strong>Vida Útil:</strong> {selectedItem.asset_meta.useful_life_years} años</p>
+                                            // Note: depreciation mapping would need update if not in attributes anymore. Assumed in generic attributes now.
+                                            <p><strong>Meta:</strong> {(selectedItem.attributes as any).depreciation || 'N/A'}</p>
+
+
                                         </div>
                                     </div>
                                 </div>

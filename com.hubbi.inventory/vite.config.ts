@@ -13,6 +13,9 @@ export default defineConfig({
   ],
   resolve: {
     dedupe: ["three"],
+    alias: {
+      '@core': resolve(__dirname, '../../Hubbi/src'),
+    }
   },
   define: {
     // Polyfill for xlsx and other Node.js libs that use process.env

@@ -63,6 +63,11 @@
         "required_permission": "inventory.access",
         "children": [
           {
+            "label": "General",
+            "path": "/app/com.hubbi.inventory/settings/general",
+            "icon": "lucide:Sliders"
+          },
+          {
             "label": "Bodegas",
             "path": "/app/com.hubbi.inventory/settings/warehouses",
             "icon": "lucide:Warehouse"
@@ -140,7 +145,7 @@
       {
         "version": 1,
         "script": "sql/001_initial.sql",
-        "description": "Initial schema: Items, Stock, Locations, Movements"
+        "description": "Unified development schema: Items, Stock, Warehouses, Movements, OrgContext, Warehouses"
       }
     ]
   }

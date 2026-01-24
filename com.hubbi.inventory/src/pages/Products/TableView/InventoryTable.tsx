@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React from 'react';
 import {
     createColumnHelper,
     flexRender,
@@ -17,7 +18,7 @@ import * as XLSX from 'xlsx';
 
 const columnHelper = createColumnHelper<InventoryItem>();
 
-const TYPE_ICONS = {
+const TYPE_ICONS: Record<string, React.ReactNode> = {
     product: <Package className="w-4 h-4 text-blue-500" />,
     service: <Wrench className="w-4 h-4 text-orange-500" />,
     asset: <Briefcase className="w-4 h-4 text-purple-500" />,
@@ -25,11 +26,11 @@ const TYPE_ICONS = {
 };
 
 const columns = [
-    columnHelper.accessor('type', {
+    columnHelper.accessor('kind', {
         header: 'Tipo',
         cell: (info) => (
             <div className="flex justify-center" title={info.getValue()}>
-                {TYPE_ICONS[info.getValue()] || <Package className="w-4 h-4 text-hubbi-dim" />}
+                {TYPE_ICONS[info.getValue().toLowerCase()] || <Package className="w-4 h-4 text-hubbi-dim" />}
             </div>
         ),
         size: 50,
@@ -65,18 +66,18 @@ const columns = [
     }),
     columnHelper.accessor('cost_avg', {
         header: 'Costo Prom.',
-        cell: (info) => <span className="text-hubbi-dim font-mono">${info.getValue().toFixed(2)}</span>,
+        cell: (info) => <span className="text-hubbi-dim font-mono">${(info.getValue() || 0).toFixed(2)}</span>,
     }),
-    columnHelper.accessor('is_active', {
+    columnHelper.accessor('status', {
         header: 'Estado',
         cell: (info) => (
             <span className={clsx(
                 "px-2 py-0.5 rounded-full text-xs font-medium",
-                info.getValue()
+                info.getValue() === 'ACTIVE'
                     ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
                     : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
             )}>
-                {info.getValue() ? 'Activo' : 'Inactivo'}
+                {info.getValue() === 'ACTIVE' ? 'Activo' : 'Inactivo'}
             </span>
         ),
     }),
@@ -84,7 +85,7 @@ const columns = [
 
 export default function InventoryTable() {
     const { data, loading } = useInventoryData();
-    const { selectedItemId, selectItem } = useInventoryStore(); // Fix: direct selectItem usage
+    const { selectedItemId, selectItem } = useInventoryStore();
     const [sorting, setSorting] = useState<SortingState>([]);
     const [globalFilter, setGlobalFilter] = useState('');
 
@@ -132,11 +133,11 @@ export default function InventoryTable() {
                         const exportData = data.map(item => ({
                             SKU: item.sku || '',
                             Nombre: item.name,
-                            Tipo: item.type,
+                            Tipo: item.kind,
                             Categoría: item.category_id,
                             'Precio Base': item.price_base,
                             'Costo Promedio': item.cost_avg,
-                            Estado: item.is_active ? 'Activo' : 'Inactivo',
+                            Estado: item.status,
                             Vendible: item.is_saleable ? 'Sí' : 'No',
                             Comprable: item.is_purchasable ? 'Sí' : 'No',
                         }));

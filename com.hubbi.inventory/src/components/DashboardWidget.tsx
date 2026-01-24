@@ -25,12 +25,26 @@ export function DashboardWidget() {
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                // Low stock count (items below min_stock)
+                const context = window.hubbi.getContext();
+                const subHubId = context?.subHubId;
+
+                let sql = `
+                    SELECT COUNT(*) as count 
+                    FROM stock s
+                    JOIN items i ON s.item_id = i.id
+                    JOIN warehouses w ON s.warehouse_id = w.id
+                    WHERE s.quantity < s.min_stock AND s.min_stock > 0
+                `;
+                const params = [];
+
+                if (subHubId) {
+                    sql += " AND w.sub_hub_id = ?";
+                    params.push(subHubId);
+                }
+
                 const lowStockResult = await window.hubbi.db.query<{ count: number }>(
-                    `SELECT COUNT(*) as count FROM stock s
-           JOIN items i ON s.item_id = i.id
-           WHERE s.quantity < s.min_stock AND s.min_stock > 0`,
-                    [],
+                    sql,
+                    params,
                     { moduleId: 'com.hubbi.inventory' }
                 );
 
