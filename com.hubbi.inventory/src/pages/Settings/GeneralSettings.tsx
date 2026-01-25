@@ -6,7 +6,7 @@ import { useInventorySettings } from '../../context/InventoryContext';
 import { InventoryProfile, FeatureFlagKey } from '../../types/inventory';
 import { Toggle } from '../../components/ui/Toggle';
 
-const PROFILE_META: Record<InventoryProfile, { label: string; icon: React.ComponentType<{ className?: string; size?: number }>; description: string }> = {
+const PROFILE_META: Record<InventoryProfile, { label: string; icon: React.ComponentType<{ className?: string; size?: number | string }>; description: string }> = {
     [InventoryProfile.GENERIC]: {
         label: 'Genérico',
         icon: Briefcase,

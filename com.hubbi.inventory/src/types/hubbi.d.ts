@@ -10,6 +10,25 @@ declare global {
     }
 
     interface HubbiSDK {
+        // --- REALTIME & HI-PERF UI ---
+        realtime: {
+            query: <T = unknown>(sql: string, params?: unknown[]) => Promise<T[]>;
+            subscribe: (table: string, cb: () => void) => () => void;
+            mutate: (op: { table: string; type: 'INSERT' | 'UPDATE' | 'DELETE'; data: Record<string, unknown>; id?: string | number }) => Promise<void>;
+        };
+
+        ui: {
+            HighPerformanceGrid: React.FC<{
+                columns: any[];
+                rowCount: number;
+                getCellContent: (cell: any) => any;
+                onCellEdited?: (cell: any, newValue: any) => void;
+                onCellClicked?: (cell: any) => void;
+                width?: string | number;
+                height?: string | number;
+            }>;
+        };
+
         // Module Registration
         register: (moduleId: string, component: React.ComponentType) => void;
 

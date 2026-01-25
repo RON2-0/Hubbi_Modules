@@ -1,5 +1,5 @@
 import { useInventoryStore } from '../../../context/InventoryContext';
-import InventoryTable from './InventoryTable';
+import ProductsGrid from './ProductsGrid';
 import WmsView from '../WMS/WmsView';
 import ProductsHeader from '../ProductsHeader';
 
@@ -17,7 +17,7 @@ export default function ProductsView() {
                   For now, hard switch.
                 */}
                 {viewMode === 'table' ? (
-                    <InventoryTable />
+                    <ProductsGrid />
                 ) : (
                     <WmsView />
                 )}
