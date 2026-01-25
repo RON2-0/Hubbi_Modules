@@ -1,9 +1,9 @@
 import { LayoutGrid, Table2, Building2, Plus } from 'lucide-react';
 import { useInventoryStore } from '../../context/InventoryContext';
 import { clsx } from 'clsx';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { InventoryWarehouse } from '../../types/inventory';
-import ProductForm from './ProductForm';
+import { SchemaProductForm } from '../../components/CreateProduct/SchemaProductForm';
 import { useInventoryData } from '../../hooks/useInventoryData';
 
 // Core UI Components
@@ -19,6 +19,7 @@ export default function Header() {
 
     const { refresh } = useInventoryData();
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [branches, setBranches] = useState<any[]>([]);
     const [warehouses, setWarehouses] = useState<InventoryWarehouse[]>([]);
     const [isProductFormOpen, setIsProductFormOpen] = useState(false);
@@ -36,23 +37,33 @@ export default function Header() {
     }, []);
 
     // Fetch Warehouses based on filters
-    const loadWarehouses = useCallback(async () => {
-        if (typeof window === 'undefined') return;
-        let sql = "SELECT * FROM warehouses WHERE 1=1";
-        const params = [];
-
-        if (selectedSubHubId) {
-            sql += " AND sub_hub_id = ?";
-            params.push(selectedSubHubId);
-        }
-
-        const results = await window.hubbi.db.query<InventoryWarehouse>(sql, params, { moduleId: 'com.hubbi.inventory' });
-        setWarehouses(results);
-    }, [selectedSubHubId]);
-
     useEffect(() => {
+        let isMounted = true;
+
+        const loadWarehouses = async () => {
+            if (typeof window === 'undefined') return;
+            let sql = "SELECT * FROM warehouses WHERE 1=1";
+            const params = [];
+
+            if (selectedSubHubId) {
+                sql += " AND sub_hub_id = ?";
+                params.push(selectedSubHubId);
+            }
+
+            try {
+                const results = await window.hubbi.db.query<InventoryWarehouse>(sql, params, { moduleId: 'com.hubbi.inventory' });
+                if (isMounted) {
+                    setWarehouses(results);
+                }
+            } catch (error) {
+                console.error("Failed to load warehouses", error);
+            }
+        };
+
         loadWarehouses();
-    }, [loadWarehouses]);
+
+        return () => { isMounted = false; };
+    }, [selectedSubHubId]);
 
     const viewOptions = [
         { id: 'table', label: 'Tabla', icon: Table2 },
@@ -135,7 +146,7 @@ export default function Header() {
             </div>
 
             {/* MODALS */}
-            <ProductForm
+            <SchemaProductForm
                 open={isProductFormOpen}
                 onClose={() => setIsProductFormOpen(false)}
                 onSuccess={refresh}

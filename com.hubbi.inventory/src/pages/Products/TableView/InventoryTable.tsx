@@ -1,212 +1,166 @@
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import React from 'react';
-import {
-    createColumnHelper,
-    flexRender,
-    getCoreRowModel,
-    useReactTable,
-    getFilteredRowModel,
-    getSortedRowModel,
-    SortingState,
-} from '@tanstack/react-table';
+import { InventoryItem } from '../../../types/inventory';
+import { Package, Wrench, Briefcase, Download } from 'lucide-react';
 import { useInventoryStore } from '../../../context/InventoryContext';
 import { useInventoryData } from '../../../hooks/useInventoryData';
-import { InventoryItem } from '../../../types/inventory';
-import { ArrowUpDown, Search, Package, Wrench, Briefcase, Download } from 'lucide-react';
-import { clsx } from 'clsx';
+import { DataTable, DataTableColumn } from '@core/components/ui/DataTable';
 import * as XLSX from 'xlsx';
-
-const columnHelper = createColumnHelper<InventoryItem>();
-
-const TYPE_ICONS: Record<string, React.ReactNode> = {
-    product: <Package className="w-4 h-4 text-blue-500" />,
-    service: <Wrench className="w-4 h-4 text-orange-500" />,
-    asset: <Briefcase className="w-4 h-4 text-purple-500" />,
-    kit: <Package className="w-4 h-4 text-green-500" />,
-};
-
-const columns = [
-    columnHelper.accessor('kind', {
-        header: 'Tipo',
-        cell: (info) => (
-            <div className="flex justify-center" title={info.getValue()}>
-                {TYPE_ICONS[info.getValue().toLowerCase()] || <Package className="w-4 h-4 text-hubbi-dim" />}
-            </div>
-        ),
-        size: 50,
-    }),
-    columnHelper.accessor('sku', {
-        header: 'SKU / Código',
-        cell: (info) => <span className="font-mono text-hubbi-dim">{info.getValue() || '-'}</span>,
-    }),
-    columnHelper.accessor('name', {
-        header: ({ column }) => {
-            return (
-                <button
-                    className="flex items-center gap-1 hover:text-hubbi-primary"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-                >
-                    Nombre
-                    <ArrowUpDown className="w-3 h-3" />
-                </button>
-            );
-        },
-        cell: (info) => <span className="font-medium text-hubbi-text">{info.getValue()}</span>,
-    }),
-    columnHelper.accessor('category_id', {
-        header: 'Categoría',
-        cell: (info) => <span className="capitalize px-2 py-1 bg-hubbi-muted rounded-md text-xs text-hubbi-text">{info.getValue()}</span>,
-    }),
-    columnHelper.accessor('price_base', {
-        header: 'Precio Lista',
-        cell: (info) => {
-            const val = info.getValue();
-            return val ? <span className="text-green-500 font-medium">${val.toFixed(2)}</span> : <span className="text-hubbi-dim">-</span>;
-        },
-    }),
-    columnHelper.accessor('cost_avg', {
-        header: 'Costo Prom.',
-        cell: (info) => <span className="text-hubbi-dim font-mono">${(info.getValue() || 0).toFixed(2)}</span>,
-    }),
-    columnHelper.accessor('status', {
-        header: 'Estado',
-        cell: (info) => (
-            <span className={clsx(
-                "px-2 py-0.5 rounded-full text-xs font-medium",
-                info.getValue() === 'ACTIVE'
-                    ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-                    : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
-            )}>
-                {info.getValue() === 'ACTIVE' ? 'Activo' : 'Inactivo'}
-            </span>
-        ),
-    }),
-];
 
 export default function InventoryTable() {
     const { data, loading } = useInventoryData();
     const { selectedItemId, selectItem } = useInventoryStore();
-    const [sorting, setSorting] = useState<SortingState>([]);
-    const [globalFilter, setGlobalFilter] = useState('');
+    const [customFields, setCustomFields] = useState<{ id: string; label: string; key_name: string }[]>([]);
 
-    const table = useReactTable({
-        data,
-        columns,
-        state: {
-            sorting,
-            globalFilter,
-        },
-        onSortingChange: setSorting,
-        onGlobalFilterChange: setGlobalFilter,
-        getCoreRowModel: getCoreRowModel(),
-        getFilteredRowModel: getFilteredRowModel(),
-        getSortedRowModel: getSortedRowModel(),
-    });
+    // Load custom fields to build dynamic columns
+    useEffect(() => {
+        if (!window.hubbi?.db?.query) return;
 
-    if (loading) {
-        return (
-            <div className="flex items-center justify-center h-64 text-gray-400 animate-pulse">
-                Cargando inventario...
-            </div>
-        );
-    }
+        window.hubbi.db.query<{ id: string; label: string; key_name: string }>(
+            "SELECT id, label, key_name FROM custom_fields WHERE is_active = TRUE ORDER BY display_order ASC, label ASC",
+            [],
+            { moduleId: 'com.hubbi.inventory' }
+        ).then((res) => setCustomFields(res))
+            .catch(err => console.error("Error loading custom columns", err));
+    }, []);
+
+    const TYPE_ICONS: Record<string, React.ReactNode> = {
+        product: <Package className="w-4 h-4 text-blue-500" />,
+        service: <Wrench className="w-4 h-4 text-orange-500" />,
+        asset: <Briefcase className="w-4 h-4 text-purple-500" />,
+        kit: <Package className="w-4 h-4 text-green-500" />,
+    };
+
+    const columns = useMemo<DataTableColumn<InventoryItem>[]>(() => {
+        const baseCols: DataTableColumn<InventoryItem>[] = [
+            {
+                id: 'kind',
+                accessorKey: 'kind',
+                header: 'Tipo',
+                width: '60px',
+                align: 'center',
+                cell: ({ row }) => (
+                    <div className="flex justify-center" title={row.original.kind}>
+                        {TYPE_ICONS[row.original.kind.toLowerCase()] || <Package className="w-4 h-4 text-hubbi-dim" />}
+                    </div>
+                )
+            },
+            {
+                id: 'sku',
+                accessorKey: 'sku',
+                header: 'SKU / Código',
+                width: '150px',
+                cell: ({ row }) => <span className="font-mono text-hubbi-dim">{row.original.sku || '-'}</span>
+            },
+            {
+                id: 'name',
+                accessorKey: 'name',
+                header: 'Nombre',
+                width: '300px',
+                cell: ({ row }) => <span className="font-medium text-hubbi-text">{row.original.name}</span>
+            },
+            {
+                id: 'category',
+                accessorKey: 'category_id',
+                header: 'Categoría',
+                width: '150px',
+                cell: ({ row }) => (
+                    <span className="capitalize px-2 py-0.5 bg-hubbi-input rounded text-[10px] font-bold text-hubbi-dim border border-hubbi-border/50">
+                        {row.original.category_id || 'Sin categoría'}
+                    </span>
+                )
+            },
+            {
+                id: 'price',
+                accessorKey: 'price_base',
+                header: 'Precio Lista',
+                width: '120px',
+                align: 'right',
+                cell: ({ row }) => {
+                    const val = row.original.price_base;
+                    return val ? <span className="text-hubbi-success font-bold font-mono text-sm">${val.toFixed(2)}</span> : <span className="text-hubbi-dim">-</span>;
+                }
+            },
+            {
+                id: 'cost',
+                accessorKey: 'cost_avg',
+                header: 'Costo Prom.',
+                width: '120px',
+                align: 'right',
+                cell: ({ row }) => <span className="text-hubbi-dim font-mono text-sm">${(row.original.cost_avg || 0).toFixed(2)}</span>
+            },
+            {
+                id: 'status',
+                accessorKey: 'status',
+                header: 'Estado',
+                width: '100px',
+                align: 'center',
+                cell: ({ row }) => (
+                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${row.original.status === 'ACTIVE'
+                        ? "bg-hubbi-success/10 text-hubbi-success border border-hubbi-success/20"
+                        : "bg-hubbi-danger/10 text-hubbi-danger border border-hubbi-danger/20"
+                        }`}>
+                        {row.original.status === 'ACTIVE' ? 'Activo' : 'Inactivo'}
+                    </span>
+                )
+            }
+        ];
+
+        const dynamicCols = customFields.map(field => ({
+            id: `cf_${field.key_name}`,
+            header: field.label,
+            width: '150px',
+            accessorFn: (row: InventoryItem) => row.attributes?.[field.key_name],
+            cell: ({ getValue }: { getValue: () => unknown }) => {
+                const val = getValue();
+                return <span className="text-hubbi-dim text-sm">{val !== null && val !== undefined ? String(val) : '-'}</span>;
+            }
+        })) as DataTableColumn<InventoryItem>[];
+
+        return [...baseCols, ...dynamicCols];
+    }, [customFields]);
+
+    const handleExportExcel = () => {
+        const exportData = data.map(item => ({
+            SKU: item.sku || '',
+            Nombre: item.name,
+            Tipo: item.kind,
+            Categoría: item.category_id,
+            'Precio Base': item.price_base,
+            'Costo Promedio': item.cost_avg,
+            Estado: item.status,
+            Vendible: item.is_saleable ? 'Sí' : 'No',
+            Comprable: item.is_purchasable ? 'Sí' : 'No',
+        }));
+
+        const ws = XLSX.utils.json_to_sheet(exportData);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Inventario');
+        XLSX.writeFile(wb, `inventario_${new Date().toISOString().slice(0, 10)}.xlsx`);
+    };
 
     return (
-        <div className="p-4 space-y-4">
-            {/* Table Toolbar */}
-            <div className="flex items-center gap-4 bg-hubbi-card p-3 rounded-lg border border-hubbi-border shadow-sm">
-                <div className="relative flex-1 max-w-sm">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-hubbi-dim" />
-                    <input
-                        type="text"
-                        placeholder="Buscar por nombre, SKU..."
-                        value={globalFilter}
-                        onChange={(e) => setGlobalFilter(e.target.value)}
-                        className="w-full pl-9 pr-4 py-2 text-sm bg-hubbi-bg border border-hubbi-border rounded-md focus:outline-none focus:ring-2 focus:ring-hubbi-primary text-hubbi-text placeholder-hubbi-dim"
-                    />
-                </div>
-
-                {/* Export Button */}
-                <button
-                    onClick={() => {
-                        // Prepare data for export
-                        const exportData = data.map(item => ({
-                            SKU: item.sku || '',
-                            Nombre: item.name,
-                            Tipo: item.kind,
-                            Categoría: item.category_id,
-                            'Precio Base': item.price_base,
-                            'Costo Promedio': item.cost_avg,
-                            Estado: item.status,
-                            Vendible: item.is_saleable ? 'Sí' : 'No',
-                            Comprable: item.is_purchasable ? 'Sí' : 'No',
-                        }));
-
-                        const ws = XLSX.utils.json_to_sheet(exportData);
-                        const wb = XLSX.utils.book_new();
-                        XLSX.utils.book_append_sheet(wb, ws, 'Inventario');
-                        XLSX.writeFile(wb, `inventario_${new Date().toISOString().slice(0, 10)}.xlsx`);
-                    }}
-                    className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-md transition-colors"
-                >
-                    <Download className="w-4 h-4" />
-                    Exportar
-                </button>
-            </div>
-
-            {/* Table Component */}
-            <div className="bg-hubbi-card rounded-lg border border-hubbi-border shadow-sm overflow-hidden">
-                <div className="overflow-x-auto">
-                    <table className="w-full text-left text-sm">
-                        <thead className="bg-hubbi-muted border-b border-hubbi-border">
-                            {table.getHeaderGroups().map((headerGroup) => (
-                                <tr key={headerGroup.id}>
-                                    {headerGroup.headers.map((header) => (
-                                        <th key={header.id} className="px-4 py-3 font-medium text-hubbi-dim whitespace-nowrap">
-                                            {header.isPlaceholder
-                                                ? null
-                                                : flexRender(header.column.columnDef.header, header.getContext())}
-                                        </th>
-                                    ))}
-                                </tr>
-                            ))}
-                        </thead>
-                        <tbody className="divide-y divide-hubbi-border">
-                            {table.getRowModel().rows.map((row) => {
-                                const isSelected = row.original.id === selectedItemId;
-                                return (
-                                    <tr
-                                        key={row.id}
-                                        onClick={() => selectItem(row.original)}
-                                        className={clsx(
-                                            "cursor-pointer transition-colors hover:bg-hubbi-muted/50",
-                                            isSelected && "bg-hubbi-primary/10 border-l-2 border-hubbi-primary"
-                                        )}
-                                    >
-                                        {row.getVisibleCells().map((cell) => (
-                                            <td key={cell.id} className="px-4 py-3 text-hubbi-text">
-                                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                            </td>
-                                        ))}
-                                    </tr>
-                                );
-                            })}
-
-                            {table.getRowModel().rows.length === 0 && (
-                                <tr>
-                                    <td colSpan={columns.length} className="px-4 py-8 text-center text-hubbi-dim">
-                                        No se encontraron resultados
-                                    </td>
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
-                </div>
-
-                <div className="px-4 py-2 border-t border-hubbi-border text-xs text-hubbi-dim text-right">
-                    Mostrando {table.getRowModel().rows.length} registros
-                </div>
-            </div>
+        <div className="h-full flex flex-col min-h-0">
+            <DataTable
+                data={data}
+                columns={columns}
+                getRowKey={(item: InventoryItem) => item.id}
+                isLoading={loading}
+                emptyMessage="No se encontraron productos en el inventario."
+                onRowClick={selectItem}
+                searchPlaceholder="Buscar por nombre, SKU..."
+                enablePagination={true}
+                pageSizeOptions={[25, 50, 100]}
+                toolbarActions={
+                    <button
+                        onClick={handleExportExcel}
+                        className="h-[42px] flex items-center justify-center gap-2 px-4 bg-hubbi-card border border-hubbi-border rounded-xl text-xs font-bold hover:border-hubbi-success hover:text-hubbi-success transition-colors disabled:opacity-50 whitespace-nowrap"
+                    >
+                        <Download className="w-4 h-4 text-hubbi-success" />
+                        Excel
+                    </button>
+                }
+            />
         </div>
     );
 }

@@ -22,7 +22,7 @@ const columnHelper = createColumnHelper<InventoryWarehouse>();
 
 export default function WarehousesSettings() {
     const [warehouses, setWarehouses] = useState<InventoryWarehouse[]>([]);
-    const [branches, setBranches] = useState<any[]>([]);
+    const [branches, setBranches] = useState<{ id: string | number; name: string }[]>([]);
     const [loading, setLoading] = useState(true);
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [editingWarehouse, setEditingWarehouse] = useState<InventoryWarehouse | null>(null);
@@ -65,7 +65,7 @@ export default function WarehousesSettings() {
         fetchWarehouses();
     }, [fetchWarehouses]);
 
-    const handleDelete = async (id: string) => {
+    const handleDelete = useCallback(async (id: string) => {
         if (!confirm("¿Estás seguro de eliminar esta bodega?")) return;
         try {
             await window.hubbi.db.delete('warehouses', id, { moduleId: 'com.hubbi.inventory' });
@@ -75,7 +75,7 @@ export default function WarehousesSettings() {
             console.error("Error deleting warehouse", err);
             window.hubbi.notify("Error al eliminar bodega", "error");
         }
-    };
+    }, [fetchWarehouses]);
 
     const columns = useMemo(() => [
         columnHelper.accessor('name', {
@@ -139,7 +139,7 @@ export default function WarehousesSettings() {
                 </div>
             )
         })
-    ], [branches]);
+    ], [branches, handleDelete]);
 
     const table = useReactTable({
         data: warehouses,

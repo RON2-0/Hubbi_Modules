@@ -190,6 +190,7 @@ export default function SidebarPreview() {
                                         <AlertCircle className="w-4 h-4 text-amber-600 mt-0.5" />
                                         <div className="text-xs text-amber-800 dark:text-amber-200">
                                             // Note: depreciation mapping would need update if not in attributes anymore. Assumed in generic attributes now.
+                                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                             <p><strong>Meta:</strong> {(selectedItem.attributes as any).depreciation || 'N/A'}</p>
 
 

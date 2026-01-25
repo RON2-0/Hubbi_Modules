@@ -2,6 +2,7 @@ import { clsx } from 'clsx';
 import {
     Settings,
     Warehouse,
+    Ruler,
     Tags,
     Layers,
     PenTool,
@@ -15,6 +16,7 @@ export default function SettingsHeader({ activeTab }: SettingsHeaderProps) {
     const tabs = [
         { id: 'settings-general', label: 'General', icon: Settings },
         { id: 'settings-warehouses', label: 'Bodegas', icon: Warehouse },
+        { id: 'settings-units', label: 'Unidades', icon: Ruler },
         { id: 'settings-categories', label: 'Categorías', icon: Tags },
         { id: 'settings-groups', label: 'Grupos', icon: Layers },
         { id: 'settings-custom-fields', label: 'Campos Personalizados', icon: PenTool },

@@ -7,10 +7,11 @@ import {
 } from '../types/inventory';
 
 export interface InventorySettingsState extends InventorySettings {
-    allowedDepartments: number[];
+    allowedDepartments: (string | number)[];
+
 
     // Actions
-    setAllowedDepartments: (ids: number[]) => void;
+    setAllowedDepartments: (ids: (string | number)[]) => void;
     setProfile: (profile: InventoryProfile) => void;
     toggleFeature: (feature: FeatureFlagKey, enabled: boolean) => void;
     resetToProfileDefaults: () => void;
@@ -49,16 +50,7 @@ const PROFILE_DEFAULTS: Record<InventoryProfile, Record<FeatureFlagKey, boolean>
         kits_enabled: true,
         reservations_enabled: true,
     },
-    [InventoryProfile.RESTAURANT]: {
-        serial_tracking: false,
-        batch_tracking: true,
-        expiration_dates: true,
-        negative_stock_allowed: true,
-        work_order_consumption: true,
-        asset_depreciation: false,
-        kits_enabled: true,
-        reservations_enabled: true,
-    },
+
     [InventoryProfile.PHARMACY]: {
         serial_tracking: false,
         batch_tracking: true,
@@ -79,9 +71,10 @@ export const createInventorySettingsStore = (initialState?: Partial<InventorySet
                 features: PROFILE_DEFAULTS[InventoryProfile.GENERIC],
                 overridden: false,
                 allowedDepartments: [],
+
                 ...initialState,
 
-                setAllowedDepartments: (allowedDepartments: number[]) => set({ allowedDepartments }),
+                setAllowedDepartments: (allowedDepartments: (string | number)[]) => set({ allowedDepartments }),
 
                 setProfile: (profile: InventoryProfile) => {
                     set({

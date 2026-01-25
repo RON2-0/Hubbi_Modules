@@ -1,7 +1,10 @@
 import SettingsHeader from './SettingsHeader';
 import GeneralSettings from './GeneralSettings';
 import WarehousesSettings from './WarehousesSettings';
-import { PlaceholderPage } from '../../components/PlaceholderPage';
+import UnitsSettings from './UnitsSettings';
+import CategoriesSettings from './CategoriesSettings';
+import GroupsSettings from './GroupsSettings';
+import CustomFieldsSettings from './CustomFieldsSettings';
 
 interface SettingsViewProps {
     currentRoute: string; // 'settings', 'settings-warehouses', etc.
@@ -17,12 +20,14 @@ export default function SettingsView({ currentRoute }: SettingsViewProps) {
                 return <GeneralSettings />;
             case 'settings-warehouses':
                 return <WarehousesSettings />;
+            case 'settings-units':
+                return <UnitsSettings />;
             case 'settings-categories':
-                return <PlaceholderPage title="Categorías" description="Define la jerarquía de productos." />;
+                return <CategoriesSettings />;
             case 'settings-groups':
-                return <PlaceholderPage title="Grupos y Familias" description="Agrupación avanzada de inventario." />;
+                return <GroupsSettings />;
             case 'settings-custom-fields':
-                return <PlaceholderPage title="Campos Personalizados" description="Define atributos extra para tus productos." />;
+                return <CustomFieldsSettings />;
             default:
                 return <GeneralSettings />;
         }

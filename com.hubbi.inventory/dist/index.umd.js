@@ -94,24 +94,32 @@
     Component.displayName = toPascalCase$1(iconName);
     return Component;
   };
-  const __iconNode$H = [
+  const __iconNode$L = [
     ["path", { d: "M5 12h14", key: "1ays0h" }],
     ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
   ];
-  const ArrowRight = createLucideIcon$1("arrow-right", __iconNode$H);
-  const __iconNode$G = [
+  const ArrowRight = createLucideIcon$1("arrow-right", __iconNode$L);
+  const __iconNode$K = [
     ["path", { d: "m21 16-4 4-4-4", key: "f6ql7i" }],
     ["path", { d: "M17 20V4", key: "1ejh1v" }],
     ["path", { d: "m3 8 4-4 4 4", key: "11wl7u" }],
     ["path", { d: "M7 4v16", key: "1glfcx" }]
   ];
-  const ArrowUpDown = createLucideIcon$1("arrow-up-down", __iconNode$G);
-  const __iconNode$F = [
+  const ArrowUpDown = createLucideIcon$1("arrow-up-down", __iconNode$K);
+  const __iconNode$J = [
+    ["path", { d: "M3 5v14", key: "1nt18q" }],
+    ["path", { d: "M8 5v14", key: "1ybrkv" }],
+    ["path", { d: "M12 5v14", key: "s699le" }],
+    ["path", { d: "M17 5v14", key: "ycjyhj" }],
+    ["path", { d: "M21 5v14", key: "nzette" }]
+  ];
+  const Barcode = createLucideIcon$1("barcode", __iconNode$J);
+  const __iconNode$I = [
     ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
     ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
   ];
-  const Briefcase = createLucideIcon$1("briefcase", __iconNode$F);
-  const __iconNode$E = [
+  const Briefcase = createLucideIcon$1("briefcase", __iconNode$I);
+  const __iconNode$H = [
     ["path", { d: "M10 12h4", key: "a56b0p" }],
     ["path", { d: "M10 8h4", key: "1sr2af" }],
     ["path", { d: "M14 21v-3a2 2 0 0 0-4 0v3", key: "1rgiei" }],
@@ -124,16 +132,23 @@
     ],
     ["path", { d: "M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16", key: "16ra0t" }]
   ];
-  const Building2 = createLucideIcon$1("building-2", __iconNode$E);
-  const __iconNode$D = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-  const Check$1 = createLucideIcon$1("check", __iconNode$D);
-  const __iconNode$C = [
+  const Building2 = createLucideIcon$1("building-2", __iconNode$H);
+  const __iconNode$G = [
+    ["path", { d: "M8 2v4", key: "1cmpym" }],
+    ["path", { d: "M16 2v4", key: "4m81vk" }],
+    ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
+    ["path", { d: "M3 10h18", key: "8toen8" }]
+  ];
+  const Calendar = createLucideIcon$1("calendar", __iconNode$G);
+  const __iconNode$F = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+  const Check$1 = createLucideIcon$1("check", __iconNode$F);
+  const __iconNode$E = [
     ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
     ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
     ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
   ];
-  const CircleAlert = createLucideIcon$1("circle-alert", __iconNode$C);
-  const __iconNode$B = [
+  const CircleAlert = createLucideIcon$1("circle-alert", __iconNode$E);
+  const __iconNode$D = [
     ["rect", { x: "2", y: "6", width: "20", height: "8", rx: "1", key: "1estib" }],
     ["path", { d: "M17 14v7", key: "7m2elx" }],
     ["path", { d: "M7 14v7", key: "1cm7wv" }],
@@ -143,31 +158,32 @@
     ["path", { d: "m14 6 7.7 7.7", key: "1s8pl2" }],
     ["path", { d: "m8 6 8 8", key: "hl96qh" }]
   ];
-  const Construction = createLucideIcon$1("construction", __iconNode$B);
-  const __iconNode$A = [
+  const Construction = createLucideIcon$1("construction", __iconNode$D);
+  const __iconNode$C = [
     ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
     ["path", { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }]
   ];
-  const DollarSign = createLucideIcon$1("dollar-sign", __iconNode$A);
-  const __iconNode$z = [
+  const DollarSign = createLucideIcon$1("dollar-sign", __iconNode$C);
+  const __iconNode$B = [
     ["path", { d: "M12 15V3", key: "m9g1x1" }],
     ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
     ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
   ];
-  const Download = createLucideIcon$1("download", __iconNode$z);
-  const __iconNode$y = [
-    ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-    ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-    ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+  const Download = createLucideIcon$1("download", __iconNode$B);
+  const __iconNode$A = [
+    ["line", { x1: "4", x2: "20", y1: "9", y2: "9", key: "4lhtct" }],
+    ["line", { x1: "4", x2: "20", y1: "15", y2: "15", key: "vyu0kd" }],
+    ["line", { x1: "10", x2: "8", y1: "3", y2: "21", key: "1ggp8o" }],
+    ["line", { x1: "16", x2: "14", y1: "3", y2: "21", key: "weycgp" }]
   ];
-  const Image = createLucideIcon$1("image", __iconNode$y);
-  const __iconNode$x = [
+  const Hash = createLucideIcon$1("hash", __iconNode$A);
+  const __iconNode$z = [
     ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
     ["path", { d: "M12 16v-4", key: "1dtifu" }],
     ["path", { d: "M12 8h.01", key: "e9boi3" }]
   ];
-  const Info = createLucideIcon$1("info", __iconNode$x);
-  const __iconNode$w = [
+  const Info = createLucideIcon$1("info", __iconNode$z);
+  const __iconNode$y = [
     [
       "path",
       {
@@ -190,15 +206,15 @@
       }
     ]
   ];
-  const Layers$1 = createLucideIcon$1("layers", __iconNode$w);
-  const __iconNode$v = [
+  const Layers$1 = createLucideIcon$1("layers", __iconNode$y);
+  const __iconNode$x = [
     ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
     ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
     ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
     ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
   ];
-  const LayoutGrid = createLucideIcon$1("layout-grid", __iconNode$v);
-  const __iconNode$u = [
+  const LayoutGrid = createLucideIcon$1("layout-grid", __iconNode$x);
+  const __iconNode$w = [
     ["path", { d: "M3 5h.01", key: "18ugdj" }],
     ["path", { d: "M3 12h.01", key: "nlz23k" }],
     ["path", { d: "M3 19h.01", key: "noohij" }],
@@ -206,8 +222,10 @@
     ["path", { d: "M8 12h13", key: "1za7za" }],
     ["path", { d: "M8 19h13", key: "m83p4d" }]
   ];
-  const List = createLucideIcon$1("list", __iconNode$u);
-  const __iconNode$t = [
+  const List = createLucideIcon$1("list", __iconNode$w);
+  const __iconNode$v = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+  const LoaderCircle$1 = createLucideIcon$1("loader-circle", __iconNode$v);
+  const __iconNode$u = [
     [
       "path",
       {
@@ -217,14 +235,14 @@
     ],
     ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
   ];
-  const MapPin = createLucideIcon$1("map-pin", __iconNode$t);
-  const __iconNode$s = [
+  const MapPin = createLucideIcon$1("map-pin", __iconNode$u);
+  const __iconNode$t = [
     ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
     ["line", { x1: "8", x2: "16", y1: "21", y2: "21", key: "1svkeh" }],
     ["line", { x1: "12", x2: "12", y1: "17", y2: "21", key: "vw1qmm" }]
   ];
-  const Monitor = createLucideIcon$1("monitor", __iconNode$s);
-  const __iconNode$r = [
+  const Monitor = createLucideIcon$1("monitor", __iconNode$t);
+  const __iconNode$s = [
     [
       "path",
       {
@@ -236,8 +254,8 @@
     ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
     ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }]
   ];
-  const Package = createLucideIcon$1("package", __iconNode$r);
-  const __iconNode$q = [
+  const Package = createLucideIcon$1("package", __iconNode$s);
+  const __iconNode$r = [
     [
       "path",
       {
@@ -255,8 +273,8 @@
     ["path", { d: "m2.3 2.3 7.286 7.286", key: "1wuzzi" }],
     ["circle", { cx: "11", cy: "11", r: "2", key: "xmgehs" }]
   ];
-  const PenTool = createLucideIcon$1("pen-tool", __iconNode$q);
-  const __iconNode$p = [
+  const PenTool = createLucideIcon$1("pen-tool", __iconNode$r);
+  const __iconNode$q = [
     [
       "path",
       {
@@ -265,8 +283,8 @@
       }
     ]
   ];
-  const Pen = createLucideIcon$1("pen", __iconNode$p);
-  const __iconNode$o = [
+  const Pen = createLucideIcon$1("pen", __iconNode$q);
+  const __iconNode$p = [
     [
       "path",
       {
@@ -275,25 +293,32 @@
       }
     ]
   ];
-  const Phone = createLucideIcon$1("phone", __iconNode$o);
-  const __iconNode$n = [
+  const Phone = createLucideIcon$1("phone", __iconNode$p);
+  const __iconNode$o = [
     ["path", { d: "M5 12h14", key: "1ays0h" }],
     ["path", { d: "M12 5v14", key: "s699le" }]
   ];
-  const Plus = createLucideIcon$1("plus", __iconNode$n);
-  const __iconNode$m = [
-    ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-    ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-    ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-    ["path", { d: "M8 16H3v5", key: "1cv678" }]
-  ];
-  const RefreshCw = createLucideIcon$1("refresh-cw", __iconNode$m);
-  const __iconNode$l = [
+  const Plus = createLucideIcon$1("plus", __iconNode$o);
+  const __iconNode$n = [
     ["path", { d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "1357e3" }],
     ["path", { d: "M3 3v5h5", key: "1xhq8a" }]
   ];
-  const RotateCcw = createLucideIcon$1("rotate-ccw", __iconNode$l);
-  const __iconNode$k = [
+  const RotateCcw = createLucideIcon$1("rotate-ccw", __iconNode$n);
+  const __iconNode$m = [
+    [
+      "path",
+      {
+        d: "M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z",
+        key: "icamh8"
+      }
+    ],
+    ["path", { d: "m14.5 12.5 2-2", key: "inckbg" }],
+    ["path", { d: "m11.5 9.5 2-2", key: "fmmyf7" }],
+    ["path", { d: "m8.5 6.5 2-2", key: "vc6u1g" }],
+    ["path", { d: "m17.5 15.5 2-2", key: "wo5hmg" }]
+  ];
+  const Ruler = createLucideIcon$1("ruler", __iconNode$m);
+  const __iconNode$l = [
     [
       "path",
       {
@@ -304,13 +329,13 @@
     ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
     ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
   ];
-  const Save = createLucideIcon$1("save", __iconNode$k);
-  const __iconNode$j = [
+  const Save = createLucideIcon$1("save", __iconNode$l);
+  const __iconNode$k = [
     ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
     ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
   ];
-  const Search$1 = createLucideIcon$1("search", __iconNode$j);
-  const __iconNode$i = [
+  const Search$1 = createLucideIcon$1("search", __iconNode$k);
+  const __iconNode$j = [
     [
       "path",
       {
@@ -320,8 +345,8 @@
     ],
     ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
   ];
-  const Settings = createLucideIcon$1("settings", __iconNode$i);
-  const __iconNode$h = [
+  const Settings = createLucideIcon$1("settings", __iconNode$j);
+  const __iconNode$i = [
     [
       "path",
       {
@@ -330,8 +355,8 @@
       }
     ]
   ];
-  const Shield = createLucideIcon$1("shield", __iconNode$h);
-  const __iconNode$g = [
+  const Shield = createLucideIcon$1("shield", __iconNode$i);
+  const __iconNode$h = [
     ["path", { d: "M16 10a4 4 0 0 1-8 0", key: "1ltviw" }],
     ["path", { d: "M3.103 6.034h17.794", key: "awc11p" }],
     [
@@ -342,16 +367,16 @@
       }
     ]
   ];
-  const ShoppingBag = createLucideIcon$1("shopping-bag", __iconNode$g);
-  const __iconNode$f = [
+  const ShoppingBag = createLucideIcon$1("shopping-bag", __iconNode$h);
+  const __iconNode$g = [
     ["path", { d: "M11 2v2", key: "1539x4" }],
     ["path", { d: "M5 2v2", key: "1yf1q8" }],
     ["path", { d: "M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1", key: "rb5t3r" }],
     ["path", { d: "M8 15a6 6 0 0 0 12 0v-3", key: "x18d4x" }],
     ["circle", { cx: "20", cy: "10", r: "2", key: "ts1r5v" }]
   ];
-  const Stethoscope = createLucideIcon$1("stethoscope", __iconNode$f);
-  const __iconNode$e = [
+  const Stethoscope = createLucideIcon$1("stethoscope", __iconNode$g);
+  const __iconNode$f = [
     [
       "path",
       {
@@ -360,19 +385,8 @@
       }
     ]
   ];
-  const Table2 = createLucideIcon$1("table-2", __iconNode$e);
-  const __iconNode$d = [
-    [
-      "path",
-      {
-        d: "M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z",
-        key: "vktsd0"
-      }
-    ],
-    ["circle", { cx: "7.5", cy: "7.5", r: ".5", fill: "currentColor", key: "kqv944" }]
-  ];
-  const Tag = createLucideIcon$1("tag", __iconNode$d);
-  const __iconNode$c = [
+  const Table2 = createLucideIcon$1("table-2", __iconNode$f);
+  const __iconNode$e = [
     [
       "path",
       {
@@ -386,16 +400,21 @@
     ],
     ["circle", { cx: "10.5", cy: "6.5", r: ".5", fill: "currentColor", key: "12ikhr" }]
   ];
-  const Tags = createLucideIcon$1("tags", __iconNode$c);
-  const __iconNode$b = [
+  const Tags = createLucideIcon$1("tags", __iconNode$e);
+  const __iconNode$d = [
+    ["circle", { cx: "9", cy: "12", r: "3", key: "u3jwor" }],
+    ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "7", key: "g7kal2" }]
+  ];
+  const ToggleLeft = createLucideIcon$1("toggle-left", __iconNode$d);
+  const __iconNode$c = [
     ["path", { d: "M10 11v6", key: "nco0om" }],
     ["path", { d: "M14 11v6", key: "outv1u" }],
     ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
     ["path", { d: "M3 6h18", key: "d0wm0j" }],
     ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
   ];
-  const Trash2 = createLucideIcon$1("trash-2", __iconNode$b);
-  const __iconNode$a = [
+  const Trash2 = createLucideIcon$1("trash-2", __iconNode$c);
+  const __iconNode$b = [
     [
       "path",
       {
@@ -406,7 +425,13 @@
     ["path", { d: "M12 9v4", key: "juzpu7" }],
     ["path", { d: "M12 17h.01", key: "p32p05" }]
   ];
-  const TriangleAlert = createLucideIcon$1("triangle-alert", __iconNode$a);
+  const TriangleAlert = createLucideIcon$1("triangle-alert", __iconNode$b);
+  const __iconNode$a = [
+    ["path", { d: "M12 4v16", key: "1654pz" }],
+    ["path", { d: "M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2", key: "e0r10z" }],
+    ["path", { d: "M9 20h6", key: "s66wpe" }]
+  ];
+  const Type = createLucideIcon$1("type", __iconNode$a);
   const __iconNode$9 = [
     ["path", { d: "M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11", key: "pb2vm6" }],
     [
@@ -711,7 +736,6 @@
     InventoryProfile2["GENERIC"] = "GENERIC";
     InventoryProfile2["RETAIL"] = "RETAIL";
     InventoryProfile2["WORKSHOP"] = "WORKSHOP";
-    InventoryProfile2["RESTAURANT"] = "RESTAURANT";
     InventoryProfile2["PHARMACY"] = "PHARMACY";
     return InventoryProfile2;
   })(InventoryProfile || {});
@@ -741,16 +765,6 @@
       batch_tracking: false,
       expiration_dates: false,
       negative_stock_allowed: false,
-      work_order_consumption: true,
-      asset_depreciation: false,
-      kits_enabled: true,
-      reservations_enabled: true
-    },
-    [InventoryProfile.RESTAURANT]: {
-      serial_tracking: false,
-      batch_tracking: true,
-      expiration_dates: true,
-      negative_stock_allowed: true,
       work_order_consumption: true,
       asset_depreciation: false,
       kits_enabled: true,
@@ -812,17 +826,11 @@
   };
   const InventoryContext = React.createContext(null);
   const InventoryProvider = ({ children, initialState }) => {
-    const storeRef = React.useRef(void 0);
-    if (!storeRef.current) {
-      storeRef.current = createInventoryStore(initialState);
-    }
-    const settingsStoreRef = React.useRef(void 0);
-    if (!settingsStoreRef.current) {
-      settingsStoreRef.current = createInventorySettingsStore();
-    }
+    const [store] = React.useState(() => createInventoryStore(initialState));
+    const [settings] = React.useState(() => createInventorySettingsStore());
     return /* @__PURE__ */ jsxRuntime.jsx(InventoryContext.Provider, { value: {
-      store: storeRef.current,
-      settings: settingsStoreRef.current
+      store,
+      settings
     }, children });
   };
   function useInventoryStore(selector) {
@@ -24419,7 +24427,7 @@
       SHEET_VERY_HIDDEN: 2
     }
   };
-  const columnHelper$1 = createColumnHelper();
+  const columnHelper$5 = createColumnHelper();
   const TYPE_ICONS = {
     product: /* @__PURE__ */ jsxRuntime.jsx(Package, { className: "w-4 h-4 text-blue-500" }),
     service: /* @__PURE__ */ jsxRuntime.jsx(Wrench, { className: "w-4 h-4 text-orange-500" }),
@@ -24427,16 +24435,16 @@
     kit: /* @__PURE__ */ jsxRuntime.jsx(Package, { className: "w-4 h-4 text-green-500" })
   };
   const columns = [
-    columnHelper$1.accessor("kind", {
+    columnHelper$5.accessor("kind", {
       header: "Tipo",
       cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex justify-center", title: info.getValue(), children: TYPE_ICONS[info.getValue().toLowerCase()] || /* @__PURE__ */ jsxRuntime.jsx(Package, { className: "w-4 h-4 text-hubbi-dim" }) }),
       size: 50
     }),
-    columnHelper$1.accessor("sku", {
+    columnHelper$5.accessor("sku", {
       header: "SKU / Código",
       cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("span", { className: "font-mono text-hubbi-dim", children: info.getValue() || "-" })
     }),
-    columnHelper$1.accessor("name", {
+    columnHelper$5.accessor("name", {
       header: ({ column }) => {
         return /* @__PURE__ */ jsxRuntime.jsxs(
           "button",
@@ -24452,11 +24460,11 @@
       },
       cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("span", { className: "font-medium text-hubbi-text", children: info.getValue() })
     }),
-    columnHelper$1.accessor("category_id", {
+    columnHelper$5.accessor("category_id", {
       header: "Categoría",
       cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("span", { className: "capitalize px-2 py-1 bg-hubbi-muted rounded-md text-xs text-hubbi-text", children: info.getValue() })
     }),
-    columnHelper$1.accessor("price_base", {
+    columnHelper$5.accessor("price_base", {
       header: "Precio Lista",
       cell: (info) => {
         const val = info.getValue();
@@ -24466,14 +24474,14 @@
         ] }) : /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-hubbi-dim", children: "-" });
       }
     }),
-    columnHelper$1.accessor("cost_avg", {
+    columnHelper$5.accessor("cost_avg", {
       header: "Costo Prom.",
       cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("span", { className: "text-hubbi-dim font-mono", children: [
         "$",
         (info.getValue() || 0).toFixed(2)
       ] })
     }),
-    columnHelper$1.accessor("status", {
+    columnHelper$5.accessor("status", {
       header: "Estado",
       cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("span", { className: clsx$1(
         "px-2 py-0.5 rounded-full text-xs font-medium",
@@ -24486,9 +24494,31 @@
     const { selectedItemId, selectItem } = useInventoryStore();
     const [sorting, setSorting] = React.useState([]);
     const [globalFilter, setGlobalFilter] = React.useState("");
+    const [customFields, setCustomFields] = React.useState([]);
+    React.useEffect(() => {
+      window.hubbi.db.query(
+        "SELECT id, label, key_name FROM custom_fields WHERE is_active = TRUE ORDER BY display_order ASC, label ASC",
+        [],
+        { moduleId: "com.hubbi.inventory" }
+      ).then((res) => setCustomFields(res)).catch((err) => console.error("Error loading custom columns", err));
+    }, []);
+    const tableColumns = React.useMemo(() => {
+      const dynamicCols = customFields.map(
+        (field) => columnHelper$5.accessor((row) => row.attributes?.[field.key_name], {
+          id: `cf_${field.key_name}`,
+          header: field.label,
+          cell: (info) => {
+            const val = info.getValue();
+            return /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-hubbi-dim text-sm", children: val !== null && val !== void 0 ? String(val) : "-" });
+          }
+        })
+      );
+      return [...columns, ...dynamicCols];
+    }, [customFields]);
     const table = useReactTable({
       data,
-      columns,
+      columns: tableColumns,
+      columnResizeMode: "onChange",
       state: {
         sorting,
         globalFilter
@@ -24546,9 +24576,30 @@
         )
       ] }),
       /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-card rounded-lg border border-hubbi-border shadow-sm overflow-hidden", children: [
-        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntime.jsxs("table", { className: "w-full text-left text-sm", children: [
-          /* @__PURE__ */ jsxRuntime.jsx("thead", { className: "bg-hubbi-muted border-b border-hubbi-border", children: table.getHeaderGroups().map((headerGroup) => /* @__PURE__ */ jsxRuntime.jsx("tr", { children: headerGroup.headers.map((header) => /* @__PURE__ */ jsxRuntime.jsx("th", { className: "px-4 py-3 font-medium text-hubbi-dim whitespace-nowrap", children: header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext()) }, header.id)) }, headerGroup.id)) }),
-          /* @__PURE__ */ jsxRuntime.jsxs("tbody", { className: "divide-y divide-hubbi-border", children: [
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntime.jsxs("table", { className: "w-full text-left text-sm border-collapse", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("thead", { className: "bg-hubbi-muted", children: table.getHeaderGroups().map((headerGroup) => /* @__PURE__ */ jsxRuntime.jsx("tr", { children: headerGroup.headers.map((header) => /* @__PURE__ */ jsxRuntime.jsxs(
+            "th",
+            {
+              style: { width: header.getSize() },
+              className: "relative px-4 py-2 font-medium text-hubbi-dim border border-hubbi-border group select-none",
+              children: [
+                header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext()),
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  "div",
+                  {
+                    onMouseDown: header.getResizeHandler(),
+                    onTouchStart: header.getResizeHandler(),
+                    className: clsx$1(
+                      "absolute right-0 top-0 h-full w-1 cursor-col-resize touch-none",
+                      header.column.getIsResizing() ? "bg-hubbi-primary" : "bg-transparent group-hover:bg-hubbi-border"
+                    )
+                  }
+                )
+              ]
+            },
+            header.id
+          )) }, headerGroup.id)) }),
+          /* @__PURE__ */ jsxRuntime.jsxs("tbody", { children: [
             table.getRowModel().rows.map((row) => {
               const isSelected = row.original.id === selectedItemId;
               return /* @__PURE__ */ jsxRuntime.jsx(
@@ -24557,14 +24608,14 @@
                   onClick: () => selectItem(row.original),
                   className: clsx$1(
                     "cursor-pointer transition-colors hover:bg-hubbi-muted/50",
-                    isSelected && "bg-hubbi-primary/10 border-l-2 border-hubbi-primary"
+                    isSelected && "bg-hubbi-primary/10"
                   ),
-                  children: row.getVisibleCells().map((cell) => /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-4 py-3 text-hubbi-text", children: flexRender(cell.column.columnDef.cell, cell.getContext()) }, cell.id))
+                  children: row.getVisibleCells().map((cell) => /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-4 py-2 text-hubbi-text border border-hubbi-border truncate max-w-[300px]", style: { width: cell.column.getSize() }, children: flexRender(cell.column.columnDef.cell, cell.getContext()) }, cell.id))
                 },
                 row.id
               );
             }),
-            table.getRowModel().rows.length === 0 && /* @__PURE__ */ jsxRuntime.jsx("tr", { children: /* @__PURE__ */ jsxRuntime.jsx("td", { colSpan: columns.length, className: "px-4 py-8 text-center text-hubbi-dim", children: "No se encontraron resultados" }) })
+            table.getRowModel().rows.length === 0 && /* @__PURE__ */ jsxRuntime.jsx("tr", { children: /* @__PURE__ */ jsxRuntime.jsx("td", { colSpan: columns.length, className: "px-4 py-8 text-center text-hubbi-dim border border-hubbi-border", children: "No se encontraron resultados" }) })
           ] })
         ] }) }),
         /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "px-4 py-2 border-t border-hubbi-border text-xs text-hubbi-dim text-right", children: [
@@ -42641,6 +42692,7 @@
   };
   const HookFormControlContext = React.createContext(null);
   HookFormControlContext.displayName = "HookFormControlContext";
+  const useFormControlContext = () => React.useContext(HookFormControlContext);
   var getProxyFormState = (formState, control, localProxyFormState, isRoot = true) => {
     const result = {
       defaultValues: control._defaultValues
@@ -44062,6 +44114,236 @@
       formControl: methods
     };
   }
+  var generateId = () => {
+    if (typeof crypto !== "undefined" && crypto.randomUUID) {
+      return crypto.randomUUID();
+    }
+    const d = typeof performance === "undefined" ? Date.now() : performance.now() * 1e3;
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+      const r2 = (Math.random() * 16 + d) % 16 | 0;
+      return (c == "x" ? r2 : r2 & 3 | 8).toString(16);
+    });
+  };
+  var getFocusFieldName = (name, index, options = {}) => options.shouldFocus || isUndefined(options.shouldFocus) ? options.focusName || `${name}.${isUndefined(options.focusIndex) ? index : options.focusIndex}.` : "";
+  var appendAt = (data, value) => [
+    ...data,
+    ...convertToArrayPayload(value)
+  ];
+  var fillEmptyArray = (value) => Array.isArray(value) ? value.map(() => void 0) : void 0;
+  function insert(data, index, value) {
+    return [
+      ...data.slice(0, index),
+      ...convertToArrayPayload(value),
+      ...data.slice(index)
+    ];
+  }
+  var moveArrayAt = (data, from, to) => {
+    if (!Array.isArray(data)) {
+      return [];
+    }
+    if (isUndefined(data[to])) {
+      data[to] = void 0;
+    }
+    data.splice(to, 0, data.splice(from, 1)[0]);
+    return data;
+  };
+  var prependAt = (data, value) => [
+    ...convertToArrayPayload(value),
+    ...convertToArrayPayload(data)
+  ];
+  function removeAtIndexes(data, indexes) {
+    let i2 = 0;
+    const temp = [...data];
+    for (const index of indexes) {
+      temp.splice(index - i2, 1);
+      i2++;
+    }
+    return compact(temp).length ? temp : [];
+  }
+  var removeArrayAt = (data, index) => isUndefined(index) ? [] : removeAtIndexes(data, convertToArrayPayload(index).sort((a2, b) => a2 - b));
+  var swapArrayAt = (data, indexA, indexB) => {
+    [data[indexA], data[indexB]] = [data[indexB], data[indexA]];
+  };
+  var updateAt = (fieldValues, index, value) => {
+    fieldValues[index] = value;
+    return fieldValues;
+  };
+  function useFieldArray(props) {
+    const formControl = useFormControlContext();
+    const { control = formControl, name, keyName = "id", shouldUnregister, rules } = props;
+    const [fields, setFields] = React.useState(control._getFieldArray(name));
+    const ids = React.useRef(control._getFieldArray(name).map(generateId));
+    const _actioned = React.useRef(false);
+    control._names.array.add(name);
+    React.useMemo(() => rules && fields.length >= 0 && control.register(name, rules), [control, name, fields.length, rules]);
+    useIsomorphicLayoutEffect(() => control._subjects.array.subscribe({
+      next: ({ values, name: fieldArrayName }) => {
+        if (fieldArrayName === name || !fieldArrayName) {
+          const fieldValues = get(values, name);
+          if (Array.isArray(fieldValues)) {
+            setFields(fieldValues);
+            ids.current = fieldValues.map(generateId);
+          }
+        }
+      }
+    }).unsubscribe, [control, name]);
+    const updateValues = React.useCallback((updatedFieldArrayValues) => {
+      _actioned.current = true;
+      control._setFieldArray(name, updatedFieldArrayValues);
+    }, [control, name]);
+    const append = (value, options) => {
+      const appendValue = convertToArrayPayload(cloneObject(value));
+      const updatedFieldArrayValues = appendAt(control._getFieldArray(name), appendValue);
+      control._names.focus = getFocusFieldName(name, updatedFieldArrayValues.length - 1, options);
+      ids.current = appendAt(ids.current, appendValue.map(generateId));
+      updateValues(updatedFieldArrayValues);
+      setFields(updatedFieldArrayValues);
+      control._setFieldArray(name, updatedFieldArrayValues, appendAt, {
+        argA: fillEmptyArray(value)
+      });
+    };
+    const prepend = (value, options) => {
+      const prependValue = convertToArrayPayload(cloneObject(value));
+      const updatedFieldArrayValues = prependAt(control._getFieldArray(name), prependValue);
+      control._names.focus = getFocusFieldName(name, 0, options);
+      ids.current = prependAt(ids.current, prependValue.map(generateId));
+      updateValues(updatedFieldArrayValues);
+      setFields(updatedFieldArrayValues);
+      control._setFieldArray(name, updatedFieldArrayValues, prependAt, {
+        argA: fillEmptyArray(value)
+      });
+    };
+    const remove = (index) => {
+      const updatedFieldArrayValues = removeArrayAt(control._getFieldArray(name), index);
+      ids.current = removeArrayAt(ids.current, index);
+      updateValues(updatedFieldArrayValues);
+      setFields(updatedFieldArrayValues);
+      !Array.isArray(get(control._fields, name)) && set(control._fields, name, void 0);
+      control._setFieldArray(name, updatedFieldArrayValues, removeArrayAt, {
+        argA: index
+      });
+    };
+    const insert$1 = (index, value, options) => {
+      const insertValue = convertToArrayPayload(cloneObject(value));
+      const updatedFieldArrayValues = insert(control._getFieldArray(name), index, insertValue);
+      control._names.focus = getFocusFieldName(name, index, options);
+      ids.current = insert(ids.current, index, insertValue.map(generateId));
+      updateValues(updatedFieldArrayValues);
+      setFields(updatedFieldArrayValues);
+      control._setFieldArray(name, updatedFieldArrayValues, insert, {
+        argA: index,
+        argB: fillEmptyArray(value)
+      });
+    };
+    const swap = (indexA, indexB) => {
+      const updatedFieldArrayValues = control._getFieldArray(name);
+      swapArrayAt(updatedFieldArrayValues, indexA, indexB);
+      swapArrayAt(ids.current, indexA, indexB);
+      updateValues(updatedFieldArrayValues);
+      setFields(updatedFieldArrayValues);
+      control._setFieldArray(name, updatedFieldArrayValues, swapArrayAt, {
+        argA: indexA,
+        argB: indexB
+      }, false);
+    };
+    const move = (from, to) => {
+      const updatedFieldArrayValues = control._getFieldArray(name);
+      moveArrayAt(updatedFieldArrayValues, from, to);
+      moveArrayAt(ids.current, from, to);
+      updateValues(updatedFieldArrayValues);
+      setFields(updatedFieldArrayValues);
+      control._setFieldArray(name, updatedFieldArrayValues, moveArrayAt, {
+        argA: from,
+        argB: to
+      }, false);
+    };
+    const update = (index, value) => {
+      const updateValue = cloneObject(value);
+      const updatedFieldArrayValues = updateAt(control._getFieldArray(name), index, updateValue);
+      ids.current = [...updatedFieldArrayValues].map((item, i2) => !item || i2 === index ? generateId() : ids.current[i2]);
+      updateValues(updatedFieldArrayValues);
+      setFields([...updatedFieldArrayValues]);
+      control._setFieldArray(name, updatedFieldArrayValues, updateAt, {
+        argA: index,
+        argB: updateValue
+      }, true, false);
+    };
+    const replace = (value) => {
+      const updatedFieldArrayValues = convertToArrayPayload(cloneObject(value));
+      ids.current = updatedFieldArrayValues.map(generateId);
+      updateValues([...updatedFieldArrayValues]);
+      setFields([...updatedFieldArrayValues]);
+      control._setFieldArray(name, [...updatedFieldArrayValues], (data) => data, {}, true, false);
+    };
+    React.useEffect(() => {
+      control._state.action = false;
+      isWatched(name, control._names) && control._subjects.state.next({
+        ...control._formState
+      });
+      if (_actioned.current && (!getValidationModes(control._options.mode).isOnSubmit || control._formState.isSubmitted) && !getValidationModes(control._options.reValidateMode).isOnSubmit) {
+        if (control._options.resolver) {
+          control._runSchema([name]).then((result) => {
+            control._updateIsValidating([name]);
+            const error = get(result.errors, name);
+            const existingError = get(control._formState.errors, name);
+            if (existingError ? !error && existingError.type || error && (existingError.type !== error.type || existingError.message !== error.message) : error && error.type) {
+              error ? set(control._formState.errors, name, error) : unset(control._formState.errors, name);
+              control._subjects.state.next({
+                errors: control._formState.errors
+              });
+            }
+          });
+        } else {
+          const field = get(control._fields, name);
+          if (field && field._f && !(getValidationModes(control._options.reValidateMode).isOnSubmit && getValidationModes(control._options.mode).isOnSubmit)) {
+            validateField(field, control._names.disabled, control._formValues, control._options.criteriaMode === VALIDATION_MODE.all, control._options.shouldUseNativeValidation, true).then((error) => !isEmptyObject(error) && control._subjects.state.next({
+              errors: updateFieldArrayRootError(control._formState.errors, error, name)
+            }));
+          }
+        }
+      }
+      control._subjects.state.next({
+        name,
+        values: cloneObject(control._formValues)
+      });
+      control._names.focus && iterateFieldsByAction(control._fields, (ref, key) => {
+        if (control._names.focus && key.startsWith(control._names.focus) && ref.focus) {
+          ref.focus();
+          return 1;
+        }
+        return;
+      });
+      control._names.focus = "";
+      control._setValid();
+      _actioned.current = false;
+    }, [fields, name, control]);
+    React.useEffect(() => {
+      !get(control._formValues, name) && control._setFieldArray(name);
+      return () => {
+        const updateMounted = (name2, value) => {
+          const field = get(control._fields, name2);
+          if (field && field._f) {
+            field._f.mount = value;
+          }
+        };
+        control._options.shouldUnregister || shouldUnregister ? control.unregister(name) : updateMounted(name, false);
+      };
+    }, [name, control, keyName, shouldUnregister]);
+    return {
+      swap: React.useCallback(swap, [updateValues, name, control]),
+      move: React.useCallback(move, [updateValues, name, control]),
+      prepend: React.useCallback(prepend, [updateValues, name, control]),
+      append: React.useCallback(append, [updateValues, name, control]),
+      remove: React.useCallback(remove, [updateValues, name, control]),
+      insert: React.useCallback(insert$1, [updateValues, name, control]),
+      update: React.useCallback(update, [updateValues, name, control]),
+      replace: React.useCallback(replace, [updateValues, name, control]),
+      fields: React.useMemo(() => fields.map((field, index) => ({
+        ...field,
+        [keyName]: ids.current[index] || generateId()
+      })), [fields, keyName])
+    };
+  }
   function useForm(props = {}) {
     const _formControl = React.useRef(void 0);
     const _values = React.useRef(void 0);
@@ -44174,7 +44456,1327 @@
     _formControl.current.formState = React.useMemo(() => getProxyFormState(formState, control), [control, formState]);
     return _formControl.current;
   }
-  const r$1 = (t2, r2, o2) => {
+  const toKebabCase = (string2) => string2.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+  const toCamelCase = (string2) => string2.replace(
+    /^([A-Z])|[\s-_]+(\w)/g,
+    (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
+  );
+  const toPascalCase = (string2) => {
+    const camelCase = toCamelCase(string2);
+    return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+  };
+  const mergeClasses = (...classes) => classes.filter((className, index, array2) => {
+    return Boolean(className) && className.trim() !== "" && array2.indexOf(className) === index;
+  }).join(" ").trim();
+  const hasA11yProp = (props) => {
+    for (const prop in props) {
+      if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
+        return true;
+      }
+    }
+  };
+  var defaultAttributes = {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  };
+  const Icon = React.forwardRef(
+    ({
+      color = "currentColor",
+      size = 24,
+      strokeWidth = 2,
+      absoluteStrokeWidth,
+      className = "",
+      children,
+      iconNode,
+      ...rest
+    }, ref) => React.createElement(
+      "svg",
+      {
+        ref,
+        ...defaultAttributes,
+        width: size,
+        height: size,
+        stroke: color,
+        strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
+        className: mergeClasses("lucide", className),
+        ...!children && !hasA11yProp(rest) && { "aria-hidden": "true" },
+        ...rest
+      },
+      [
+        ...iconNode.map(([tag, attrs]) => React.createElement(tag, attrs)),
+        ...Array.isArray(children) ? children : [children]
+      ]
+    )
+  );
+  const createLucideIcon = (iconName, iconNode) => {
+    const Component = React.forwardRef(
+      ({ className, ...props }, ref) => React.createElement(Icon, {
+        ref,
+        iconNode,
+        className: mergeClasses(
+          `lucide-${toKebabCase(toPascalCase(iconName))}`,
+          `lucide-${iconName}`,
+          className
+        ),
+        ...props
+      })
+    );
+    Component.displayName = toPascalCase(iconName);
+    return Component;
+  };
+  const __iconNode$6 = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+  const Check = createLucideIcon("check", __iconNode$6);
+  const __iconNode$5 = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+  const ChevronDown = createLucideIcon("chevron-down", __iconNode$5);
+  const __iconNode$4 = [
+    [
+      "path",
+      {
+        d: "M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49",
+        key: "ct8e1f"
+      }
+    ],
+    ["path", { d: "M14.084 14.158a3 3 0 0 1-4.242-4.242", key: "151rxh" }],
+    [
+      "path",
+      {
+        d: "M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143",
+        key: "13bj9a"
+      }
+    ],
+    ["path", { d: "m2 2 20 20", key: "1ooewy" }]
+  ];
+  const EyeOff = createLucideIcon("eye-off", __iconNode$4);
+  const __iconNode$3 = [
+    [
+      "path",
+      {
+        d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
+        key: "1nclc0"
+      }
+    ],
+    ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+  ];
+  const Eye = createLucideIcon("eye", __iconNode$3);
+  const __iconNode$2 = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+  const LoaderCircle = createLucideIcon("loader-circle", __iconNode$2);
+  const __iconNode$1 = [
+    ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+    ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
+  ];
+  const Search = createLucideIcon("search", __iconNode$1);
+  const __iconNode = [
+    ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+    ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+  ];
+  const X = createLucideIcon("x", __iconNode);
+  const Input = React.forwardRef(
+    ({ startIcon, className, label, type, error, ...props }, ref) => {
+      const [showPassword, setShowPassword] = React.useState(false);
+      const isPassword = type === "password";
+      const inputType = isPassword ? showPassword ? "text" : "password" : type;
+      return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: `relative w-full ${className}`, children: [
+        label && /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim mb-1 uppercase", children: label }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "relative group w-full", children: [
+          startIcon && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "absolute inset-y-0 left-3 text-hubbi-dim group-focus-within:text-hubbi-primary transition-colors pointer-events-none flex items-center", children: startIcon }),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "input",
+            {
+              ref,
+              type: inputType,
+              className: `
+          w-full bg-hubbi-input border border-hubbi-border 
+          text-hubbi-text placeholder-hubbi-dim 
+          rounded-lg py-2.5 ${startIcon ? "pl-10" : "pl-3"} ${isPassword ? "pr-10" : "pr-4"} 
+          text-sm transition-all
+          focus:outline-none focus:ring-2 focus:ring-hubbi-primary/50 focus:border-hubbi-primary
+          /* Add styling for date/time/number */
+          file:bg-hubbi-primary file:text-white file:border-0 file:rounded-md file:px-2 file:py-1 file:mr-3 file:text-xs
+          disabled:opacity-50 disabled:cursor-not-allowed
+          [color-scheme:dark]
+          [&::-webkit-calendar-picker-indicator]:opacity-60 [&::-webkit-calendar-picker-indicator]:hover:opacity-100 [&::-webkit-calendar-picker-indicator]:cursor-pointer
+          [&::-webkit-inner-spin-button]:opacity-40 [&::-webkit-inner-spin-button]:hover:opacity-100
+          ${isPassword ? "[&::-ms-reveal]:hidden [&::-ms-clear]:hidden" : ""}
+          ${error ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" : ""}
+        `,
+              ...props
+            }
+          ),
+          isPassword && /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setShowPassword(!showPassword),
+              className: "absolute inset-y-0 right-3 flex items-center text-hubbi-dim hover:text-hubbi-text focus:outline-none",
+              tabIndex: -1,
+              children: showPassword ? /* @__PURE__ */ jsxRuntime.jsx(EyeOff, { size: 16 }) : /* @__PURE__ */ jsxRuntime.jsx(Eye, { size: 16 })
+            }
+          )
+        ] }),
+        error && /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-red-500 mt-1 block font-medium", children: error })
+      ] });
+    }
+  );
+  Input.displayName = "Input";
+  const NumberInput = React.forwardRef((props, ref) => /* @__PURE__ */ jsxRuntime.jsx(Input, { type: "number", ref, ...props }));
+  NumberInput.displayName = "NumberInput";
+  const DateInput = React.forwardRef((props, ref) => /* @__PURE__ */ jsxRuntime.jsx(Input, { type: "date", ref, ...props }));
+  DateInput.displayName = "DateInput";
+  const TimeInput = React.forwardRef((props, ref) => /* @__PURE__ */ jsxRuntime.jsx(Input, { type: "time", ref, ...props }));
+  TimeInput.displayName = "TimeInput";
+  function r$1(e) {
+    var t2, f, n2 = "";
+    if ("string" == typeof e || "number" == typeof e) n2 += e;
+    else if ("object" == typeof e) if (Array.isArray(e)) {
+      var o2 = e.length;
+      for (t2 = 0; t2 < o2; t2++) e[t2] && (f = r$1(e[t2])) && (n2 && (n2 += " "), n2 += f);
+    } else for (f in e) e[f] && (n2 && (n2 += " "), n2 += f);
+    return n2;
+  }
+  function clsx() {
+    for (var e, t2, f = 0, n2 = "", o2 = arguments.length; f < o2; f++) (e = arguments[f]) && (t2 = r$1(e)) && (n2 && (n2 += " "), n2 += t2);
+    return n2;
+  }
+  const Select = ({
+    options,
+    value,
+    onChange,
+    placeholder = "Seleccionar...",
+    label,
+    disabled = false,
+    multiple = false,
+    containerClassName = "",
+    className = "",
+    searchable = false,
+    searchPlaceholder = "Buscar...",
+    icon: Icon2
+  }) => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [search, setSearch] = React.useState("");
+    const containerRef = React.useRef(null);
+    const searchInputRef = React.useRef(null);
+    const [position, setPosition] = React.useState("bottom");
+    React.useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (containerRef.current && !containerRef.current.contains(event.target)) {
+          setIsOpen(false);
+        }
+      };
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+    React.useEffect(() => {
+      if (isOpen && containerRef.current) {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const rect = containerRef.current.getBoundingClientRect();
+        const spaceBelow = window.innerHeight - rect.bottom;
+        if (spaceBelow < 320) {
+          setPosition("top");
+        } else {
+          setPosition("bottom");
+        }
+        setTimeout(() => {
+          const newScrollTop = window.scrollY || document.documentElement.scrollTop;
+          if (newScrollTop !== scrollTop) {
+            window.scrollTo(0, scrollTop);
+          }
+        }, 0);
+      }
+    }, [isOpen]);
+    React.useEffect(() => {
+      if (isOpen && searchable && searchInputRef.current) {
+        searchInputRef.current.focus();
+      }
+    }, [isOpen, searchable]);
+    const handleSelect = (optionValue) => {
+      if (multiple) {
+        const currentValues = Array.isArray(value) ? value : [];
+        const newValue = currentValues.includes(optionValue) ? currentValues.filter((v) => v !== optionValue) : [...currentValues, optionValue];
+        onChange(newValue);
+      } else {
+        onChange(optionValue);
+        setIsOpen(false);
+      }
+    };
+    const handleRemoveTag = (e, valToRemove) => {
+      e.stopPropagation();
+      if (Array.isArray(value)) {
+        onChange(value.filter((v) => v !== valToRemove));
+      }
+    };
+    const filteredOptions = options.filter(
+      (opt) => opt.label.toLowerCase().includes(search.toLowerCase()) || opt.description && opt.description.toLowerCase().includes(search.toLowerCase())
+    );
+    const getDisplay = () => {
+      if (multiple) {
+        const selectedValues = Array.isArray(value) ? value : [];
+        if (selectedValues.length === 0) return /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-hubbi-dim", children: placeholder });
+        return /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-wrap gap-1.5", children: selectedValues.map((val) => {
+          const opt = options.find((o2) => o2.value === val);
+          return /* @__PURE__ */ jsxRuntime.jsxs("span", { className: "inline-flex items-center gap-1 bg-hubbi-primary/20 text-hubbi-primary text-xs font-bold px-1.5 py-0.5 rounded border border-hubbi-primary/30", children: [
+            opt ? opt.label : val,
+            /* @__PURE__ */ jsxRuntime.jsx(
+              X,
+              {
+                size: 12,
+                className: "cursor-pointer hover:text-hubbi-text",
+                onClick: (e) => handleRemoveTag(e, val)
+              }
+            )
+          ] }, val);
+        }) });
+      } else {
+        const selectedOption = options.find((o2) => o2.value === value);
+        return /* @__PURE__ */ jsxRuntime.jsx("span", { className: clsx(
+          "block truncate transition-colors",
+          selectedOption ? "text-hubbi-text" : "text-hubbi-dim"
+        ), children: selectedOption ? selectedOption.label : placeholder });
+      }
+    };
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: `relative w-full ${containerClassName}`, ref: containerRef, children: [
+      label && /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim mb-1 uppercase", children: label }),
+      /* @__PURE__ */ jsxRuntime.jsxs(
+        "div",
+        {
+          onClick: () => !disabled && setIsOpen(!isOpen),
+          className: `
+                    w-full px-3 py-2
+                    bg-hubbi-input border rounded-lg
+                    flex items-center justify-between gap-2
+                    cursor-pointer transition-all
+                    ${isOpen ? "border-hubbi-primary ring-2 ring-hubbi-primary/20" : "border-hubbi-border hover:border-hubbi-dim"}
+                    ${disabled ? "opacity-50 cursor-not-allowed" : ""}
+                    ${className.includes("h-") ? className : `min-h-[42px] ${className}`}
+                `,
+          children: [
+            Icon2 && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "shrink-0 text-hubbi-primary", children: /* @__PURE__ */ jsxRuntime.jsx(Icon2, { size: 14 }) }),
+            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex-1 min-w-0", children: getDisplay() }),
+            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "shrink-0 text-hubbi-dim", children: /* @__PURE__ */ jsxRuntime.jsx(ChevronDown, { size: 16, className: `transition-transform duration-200 ${isOpen ? "rotate-180" : ""}` }) })
+          ]
+        }
+      ),
+      isOpen && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: `absolute z-50 left-0 right-0 bg-hubbi-card border border-hubbi-border rounded-lg shadow-2xl overflow-hidden animate-in fade-in duration-100 max-h-[300px] flex flex-col ${position === "top" ? "bottom-full mb-2 slide-in-from-bottom-2" : "top-full mt-2 slide-in-from-top-2"}`, children: [
+        searchable && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-2 border-b border-hubbi-border bg-hubbi-input/30 sticky top-0 z-10", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "relative", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(Search, { size: 14, className: "absolute left-3 top-1/2 -translate-y-1/2 text-hubbi-dim" }),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "input",
+            {
+              ref: searchInputRef,
+              type: "text",
+              placeholder: searchPlaceholder,
+              value: search,
+              onChange: (e) => setSearch(e.target.value),
+              className: "w-full bg-hubbi-bg border border-hubbi-border rounded-lg pl-9 pr-3 py-1.5 text-sm text-hubbi-text focus:border-hubbi-primary outline-none",
+              onClick: (e) => e.stopPropagation()
+            }
+          )
+        ] }) }),
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "overflow-y-auto max-h-[250px] p-1.5 space-y-0.5 custom-scrollbar", children: filteredOptions.length > 0 ? filteredOptions.map((option) => {
+          const isSelected = multiple ? Array.isArray(value) && value.includes(option.value) : value === option.value;
+          return /* @__PURE__ */ jsxRuntime.jsxs(
+            "div",
+            {
+              onClick: () => handleSelect(option.value),
+              className: `
+                                            px-3 py-2 rounded-lg text-sm cursor-pointer transition-colors flex items-center justify-between gap-3
+                                            ${isSelected ? "bg-hubbi-primary/15 text-hubbi-primary font-medium" : "text-hubbi-text hover:bg-hubbi-input"}
+                                        `,
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col", children: [
+                  /* @__PURE__ */ jsxRuntime.jsx("span", { children: option.label }),
+                  option.description && /* @__PURE__ */ jsxRuntime.jsx("span", { className: `text-[10px] ${isSelected ? "text-hubbi-primary/70" : "text-hubbi-dim"}`, children: option.description })
+                ] }),
+                isSelected && /* @__PURE__ */ jsxRuntime.jsx(Check, { size: 16 })
+              ]
+            },
+            option.value
+          );
+        }) : /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-4 text-center text-sm text-hubbi-dim", children: "No se encontraron resultados." }) })
+      ] })
+    ] });
+  };
+  function ActionLock({
+    locked,
+    children,
+    loadingText,
+    showSpinner = true,
+    className = "",
+    innerClassName = "",
+    style
+  }) {
+    const overlay = React.useMemo(() => /* @__PURE__ */ jsxRuntime.jsx(
+      "div",
+      {
+        className: "absolute inset-0 backdrop-blur-[2px] bg-white/5 dark:bg-black/5 flex items-center justify-center z-50 rounded-inherit animate-in fade-in duration-200",
+        "aria-busy": "true",
+        "aria-live": "polite",
+        children: showSpinner && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col items-center gap-3 text-hubbi-primary px-6 py-4 bg-hubbi-card/90 border border-hubbi-border/50 shadow-xl rounded-2xl backdrop-blur-md", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(LoaderCircle, { className: "animate-spin h-6 w-6" }),
+          loadingText && /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-sm font-medium text-hubbi-text", children: loadingText })
+        ] })
+      }
+    ), [showSpinner, loadingText]);
+    return /* @__PURE__ */ jsxRuntime.jsxs(
+      "div",
+      {
+        className: `relative ${className}`,
+        style,
+        children: [
+          /* @__PURE__ */ jsxRuntime.jsx("div", { className: `transition-opacity duration-200 ${locked ? "opacity-50 pointer-events-none filter blur-[0.5px]" : ""} ${innerClassName}`, children }),
+          locked && overlay
+        ]
+      }
+    );
+  }
+  const Button = ({ variant = "primary", className, children, ...props }) => {
+    const base = "inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-hubbi-bg disabled:opacity-50 disabled:cursor-not-allowed select-none";
+    const variants = {
+      primary: "bg-hubbi-primary text-hubbi-primary-fg hover:brightness-110 shadow-lg shadow-hubbi-primary/20 focus:ring-hubbi-primary",
+      secondary: "bg-hubbi-input text-hubbi-text hover:bg-opacity-80 focus:ring-hubbi-input",
+      danger: "bg-hubbi-danger text-white hover:bg-opacity-90 shadow-lg shadow-hubbi-danger/20 focus:ring-hubbi-danger",
+      ghost: "bg-transparent text-hubbi-dim hover:text-hubbi-text hover:bg-hubbi-input/50"
+    };
+    return /* @__PURE__ */ jsxRuntime.jsx("button", { className: `${base} ${variants[variant]} ${className || ""}`, ...props, children });
+  };
+  const Toggle = ({ checked, onChange, disabled, className }) => {
+    return /* @__PURE__ */ jsxRuntime.jsx(
+      "button",
+      {
+        type: "button",
+        disabled,
+        onClick: () => !disabled && onChange(!checked),
+        className: clsx$1(
+          "w-11 h-6 rounded-full transition-colors relative outline-none",
+          checked ? "bg-hubbi-success" : "bg-hubbi-dim/30",
+          disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
+          className
+        ),
+        children: /* @__PURE__ */ jsxRuntime.jsx(
+          "div",
+          {
+            className: clsx$1(
+              "w-4 h-4 bg-white rounded-full absolute top-1 transition-all shadow-sm",
+              checked ? "left-6" : "left-1"
+            )
+          }
+        )
+      }
+    );
+  };
+  const SchemaProductForm = ({ open, onClose, onSuccess, initialData }) => {
+    const [isSaving, setIsSaving] = React.useState(false);
+    const [activeTab, setActiveTab] = React.useState("DETAILS");
+    const [customFields, setCustomFields] = React.useState([]);
+    const [uoms, setUoms] = React.useState([]);
+    const [categories, setCategories] = React.useState([]);
+    const [groups, setGroups] = React.useState([]);
+    const [hasWarehouses, setHasWarehouses] = React.useState(null);
+    const context = typeof window !== "undefined" ? window.hubbi?.getContext() : null;
+    const { register, control, handleSubmit, watch, setValue, formState: { errors }, reset } = useForm({
+      defaultValues: {
+        sku: "",
+        name: "",
+        description: "",
+        photo_url: "",
+        type: "product",
+        base_unit_id: "",
+        price_base: 0,
+        cost_avg: 0,
+        is_saleable: true,
+        is_purchasable: true,
+        is_tax_exempt: false,
+        has_expiration: false,
+        has_warranty: false,
+        // subgroup_id: '', // Removed
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        attributes: {},
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        additional_uoms: [],
+        // For multi-uom pricing
+        ...initialData
+      }
+    });
+    const { fields: uomFields, append: appendUom, remove: removeUom } = useFieldArray({
+      control,
+      name: "additional_uoms"
+    });
+    const selectedType = watch("type");
+    const watchedBaseUnit = watch("base_unit_id");
+    const isSaleable = watch("is_saleable");
+    const priceBase = watch("price_base");
+    const watchedCategoryId = watch("category_id");
+    const watchedGroupId = watch("group_id");
+    React.useEffect(() => {
+      if (!open) {
+        reset();
+        setHasWarehouses(null);
+        return;
+      }
+      const loadData = async () => {
+        try {
+          const uomResults = await window.hubbi.db.query(
+            "SELECT * FROM uoms WHERE is_active = TRUE",
+            [],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          setUoms(uomResults);
+          if (uomResults.length > 0 && !watchedBaseUnit) {
+            setValue("base_unit_id", uomResults[0].id);
+          }
+          const fieldResults = await window.hubbi.db.query(
+            "SELECT * FROM custom_fields WHERE is_active = TRUE",
+            [],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          setCustomFields(fieldResults);
+          const categoryResults = await window.hubbi.db.query(
+            "SELECT * FROM categories WHERE is_active = TRUE ORDER BY display_order ASC, name ASC",
+            [],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          setCategories(categoryResults);
+          const groupResults = await window.hubbi.db.query(
+            "SELECT * FROM item_groups WHERE is_active = TRUE ORDER BY display_order ASC, name ASC",
+            [],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          setGroups(groupResults);
+          const warehouseCheck = await window.hubbi.db.query(
+            "SELECT COUNT(*) as count FROM warehouses WHERE sub_hub_id = ?",
+            [context?.subHubId],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          const count2 = warehouseCheck[0]?.count || 0;
+          setHasWarehouses(count2 > 0);
+        } catch (err) {
+          console.error("Failed to load dependencies", err);
+        }
+      };
+      loadData();
+    }, [open, context?.subHubId, reset, setValue, watchedBaseUnit]);
+    if (!open) return null;
+    const visibleFields = customFields.filter((f) => f.scope === "all" || f.scope === selectedType);
+    const groupedFields = visibleFields.reduce((acc, field) => {
+      const group = field.group_name || "General";
+      if (!acc[group]) acc[group] = [];
+      acc[group].push(field);
+      return acc;
+    }, {});
+    const onFormSubmit = async (data) => {
+      if (hasWarehouses === false) return;
+      setIsSaving(true);
+      try {
+        const id = crypto.randomUUID();
+        const attributesJson = JSON.stringify(data.attributes || {});
+        await window.hubbi.db.insert("items", {
+          id,
+          sku: data.sku || null,
+          name: data.name,
+          description: data.description || null,
+          photo_url: data.photo_url || null,
+          type: data.type,
+          base_unit_id: data.base_unit_id,
+          price_base: data.price_base,
+          cost_avg: data.cost_avg,
+          is_saleable: data.is_saleable,
+          is_purchasable: data.is_purchasable,
+          is_tax_exempt: data.is_tax_exempt,
+          has_expiration: data.has_expiration,
+          has_warranty: data.has_warranty,
+          attributes: attributesJson,
+          is_active: true
+        }, { moduleId: "com.hubbi.inventory" });
+        if (data.additional_uoms && data.additional_uoms.length > 0) {
+          for (const uom of data.additional_uoms) {
+            if (!uom.uom_id) continue;
+            await window.hubbi.db.insert("item_uoms", {
+              id: crypto.randomUUID(),
+              item_id: id,
+              uom_id: uom.uom_id,
+              conversion_factor: uom.conversion_factor || 1,
+              sale_price: uom.sale_price || 0,
+              barcode: uom.barcode || null,
+              is_default_sale: false
+            }, { moduleId: "com.hubbi.inventory" });
+          }
+        }
+        window.hubbi.notify("Producto creado correctamente", "success");
+        onSuccess();
+        onClose();
+      } catch (err) {
+        console.error("Error creating item", err);
+        window.hubbi.notify("Error al crear el producto", "error");
+      } finally {
+        setIsSaving(false);
+      }
+    };
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200", children: [
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "absolute inset-0", onClick: () => !isSaving && onClose() }),
+      /* @__PURE__ */ jsxRuntime.jsx(ActionLock, { locked: isSaving, loadingText: "Guardando...", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "relative bg-hubbi-card border border-hubbi-border w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden animate-in zoom-in-95 duration-200", onClick: (e) => e.stopPropagation(), children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-6 border-b border-hubbi-border flex items-center justify-between bg-hubbi-muted/20", children: [
+          /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3", children: [
+            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-2 bg-hubbi-primary/10 rounded-xl", children: /* @__PURE__ */ jsxRuntime.jsx(Package, { className: "text-hubbi-primary w-6 h-6" }) }),
+            /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntime.jsx("h2", { className: "text-xl font-bold text-hubbi-text", children: "Nuevo Item" }),
+              /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-hubbi-dim", children: "Registra un nuevo producto, servicio o activo." })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntime.jsx("button", { type: "button", onClick: onClose, className: "p-2 hover:bg-hubbi-muted rounded-full text-hubbi-dim hover:text-hubbi-text transition-colors", children: /* @__PURE__ */ jsxRuntime.jsx(X$1, { size: 20 }) })
+        ] }),
+        hasWarehouses === false && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "mx-6 mt-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-start gap-4", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(Shield, { className: "text-red-500 w-6 h-6" }),
+          /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex-1", children: [
+            /* @__PURE__ */ jsxRuntime.jsx("h4", { className: "text-base font-black text-red-500 uppercase", children: "Sin Bodegas" }),
+            /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-red-500/80 mt-1", children: "No puedes crear ítems sin bodegas configuradas en esta sucursal." })
+          ] }),
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { onClick: () => window.hubbi.navigate("/settings/warehouses"), variant: "danger", children: "Configurar" })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex border-b border-hubbi-border bg-hubbi-card px-6 pt-2", children: [
+          /* @__PURE__ */ jsxRuntime.jsxs(
+            "button",
+            {
+              onClick: () => setActiveTab("DETAILS"),
+              className: clsx$1("px-4 py-3 text-sm font-bold border-b-2 transition-colors flex items-center gap-2", activeTab === "DETAILS" ? "text-hubbi-primary border-hubbi-primary" : "text-hubbi-dim border-transparent hover:text-hubbi-text"),
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsx(Layers$1, { size: 16 }),
+                " Detalles Básicos"
+              ]
+            }
+          ),
+          (isSaleable || selectedType === "product" || selectedType === "service") && /* @__PURE__ */ jsxRuntime.jsxs(
+            "button",
+            {
+              onClick: () => setActiveTab("PRICING"),
+              className: clsx$1("px-4 py-3 text-sm font-bold border-b-2 transition-colors flex items-center gap-2", activeTab === "PRICING" ? "text-hubbi-primary border-hubbi-primary" : "text-hubbi-dim border-transparent hover:text-hubbi-text"),
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsx(DollarSign, { size: 16 }),
+                " Precios & Unidades"
+              ]
+            }
+          ),
+          visibleFields.length > 0 && /* @__PURE__ */ jsxRuntime.jsxs(
+            "button",
+            {
+              onClick: () => setActiveTab("ATTRIBUTES"),
+              className: clsx$1("px-4 py-3 text-sm font-bold border-b-2 transition-colors flex items-center gap-2", activeTab === "ATTRIBUTES" ? "text-hubbi-primary border-hubbi-primary" : "text-hubbi-dim border-transparent hover:text-hubbi-text"),
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsx(Settings, { size: 16 }),
+                " Características (",
+                visibleFields.length,
+                ")"
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: clsx$1("flex-1 overflow-y-auto p-6 space-y-6 bg-hubbi-card", hasWarehouses === false && "opacity-50 pointer-events-none"), children: [
+          activeTab === "DETAILS" && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-6", children: [
+            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
+              /* @__PURE__ */ jsxRuntime.jsx(Input, { label: "Nombre *", ...register("name", { required: true }), error: errors.name?.message, placeholder: "Ej: Laptop Dell XPS 15", disabled: isSaving }),
+              /* @__PURE__ */ jsxRuntime.jsx(Input, { label: "SKU / Código", ...register("sku"), error: errors.sku?.message, placeholder: "SKU-AUTO", disabled: isSaving, className: "font-mono text-xs" })
+            ] }),
+            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
+              /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-1", children: [
+                /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Tipo de Ítem" }),
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  Select,
+                  {
+                    value: selectedType,
+                    onChange: (val) => setValue("type", val, { shouldValidate: true }),
+                    options: [
+                      { value: "product", label: "Producto (Tangible)" },
+                      { value: "service", label: "Servicio (Intangible)" },
+                      { value: "asset", label: "Activo Fijo (Maquinaria/Equipo)" },
+                      { value: "kit", label: "Combo / Kit" }
+                    ],
+                    disabled: isSaving
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-1", children: [
+                /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Unidad Base *" }),
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  Select,
+                  {
+                    value: watchedBaseUnit || "",
+                    onChange: (val) => setValue("base_unit_id", val, { shouldValidate: true }),
+                    options: uoms.map((u) => ({ value: u.id, label: `${u.name} (${u.symbol})` })),
+                    disabled: isSaving,
+                    placeholder: "Seleccionar...",
+                    searchable: true
+                  }
+                )
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-4", children: [
+              /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-1", children: [
+                /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Categoría *" }),
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  Select,
+                  {
+                    value: watchedCategoryId || "",
+                    onChange: (val) => {
+                      setValue("category_id", val, { shouldValidate: true });
+                      setValue("group_id", "");
+                    },
+                    options: categories.map((c) => ({ value: c.id, label: c.name })),
+                    disabled: isSaving,
+                    placeholder: "Seleccionar...",
+                    searchable: true
+                  }
+                ),
+                categories.length === 0 && /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-[10px] text-amber-500", children: "No hay categorías. Créalas en Configuración." })
+              ] }),
+              /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-1", children: [
+                /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Grupo (opcional)" }),
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  Select,
+                  {
+                    value: watchedGroupId || "",
+                    onChange: (val) => {
+                      setValue("group_id", val);
+                    },
+                    options: [
+                      { value: "", label: "Sin grupo" },
+                      ...groups.filter((g) => !g.category_id || g.category_id === watchedCategoryId).map((g) => ({ value: g.id, label: g.name }))
+                    ],
+                    disabled: isSaving || !watchedCategoryId,
+                    placeholder: "Seleccionar..."
+                  }
+                )
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-1", children: [
+              /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Descripción" }),
+              /* @__PURE__ */ jsxRuntime.jsx("textarea", { ...register("description"), className: "w-full bg-hubbi-input border border-hubbi-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-hubbi-primary/50", rows: 3, placeholder: "Detalles técnicos..." })
+            ] }),
+            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3 pt-2", children: [
+              { id: "is_saleable", label: "Vendible", desc: "Aparece en Facturación" },
+              { id: "is_purchasable", label: "Comprable", desc: "Permite Órdenes de Compra" },
+              { id: "has_expiration", label: "Vencimiento", desc: "Controla Lotes y Fechas" },
+              { id: "is_tax_exempt", label: "Exento IVA", desc: "No calcula impuestos" }
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ].map((item) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between p-3 bg-hubbi-muted/10 rounded-xl border border-hubbi-border", children: [
+              /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col", children: [
+                /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-sm font-bold text-hubbi-text", children: item.label }),
+                /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-[10px] text-hubbi-dim", children: item.desc })
+              ] }),
+              /* @__PURE__ */ jsxRuntime.jsx(Toggle, { checked: watch(item.id), onChange: (val) => setValue(item.id, val), disabled: isSaving })
+            ] }, item.id)) })
+          ] }),
+          activeTab === "ATTRIBUTES" && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "space-y-6", children: Object.entries(groupedFields).map(([group, fields]) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "border border-hubbi-border rounded-xl p-5", children: [
+            /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-sm font-bold text-hubbi-text border-b border-hubbi-border pb-2 mb-4 uppercase tracking-widest", children: group }),
+            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: fields.map((field) => /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim mb-1", children: field.label }),
+              field.type === "text" && /* @__PURE__ */ jsxRuntime.jsx("input", { ...register(`attributes.${field.key_name}`), className: "w-full p-2 text-sm border rounded bg-transparent border-hubbi-border" }),
+              field.type === "number" && /* @__PURE__ */ jsxRuntime.jsx("input", { type: "number", ...register(`attributes.${field.key_name}`), className: "w-full p-2 text-sm border rounded bg-transparent border-hubbi-border" }),
+              field.type === "boolean" && /* @__PURE__ */ jsxRuntime.jsx(Toggle, { checked: watch(`attributes.${field.key_name}`), onChange: (val) => setValue(`attributes.${field.key_name}`, val) })
+            ] }, field.id)) })
+          ] }, group)) }),
+          activeTab === "PRICING" && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "space-y-6", children: !isSaleable ? /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-8 text-center bg-hubbi-muted/30 rounded-lg border border-dashed border-hubbi-border", children: [
+            /* @__PURE__ */ jsxRuntime.jsx(Shield, { className: "w-12 h-12 mx-auto text-hubbi-dim mb-3" }),
+            /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-lg font-medium text-hubbi-text", children: "Este ítem no es vendible" }),
+            /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-hubbi-dim max-w-sm mx-auto mt-2", children: 'Para configurar precios, primero marca la opción "Vendible" en la pestaña de Detalles.' }),
+            /* @__PURE__ */ jsxRuntime.jsx(Button, { variant: "ghost", onClick: () => {
+              setValue("is_saleable", true);
+              setActiveTab("DETAILS");
+            }, className: "mt-4 text-hubbi-primary", children: "Activar Venta" })
+          ] }) : /* @__PURE__ */ jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [
+            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-primary/5 border border-hubbi-primary/10 rounded-xl p-4 flex gap-6 items-center", children: [
+              /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-3 bg-hubbi-muted/50 rounded-lg shadow-sm", children: [
+                /* @__PURE__ */ jsxRuntime.jsx("span", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Precio Base (Unitario)" }),
+                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-baseline gap-1", children: [
+                  /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-lg font-bold text-hubbi-primary", children: "$" }),
+                  /* @__PURE__ */ jsxRuntime.jsx(
+                    "input",
+                    {
+                      type: "number",
+                      step: "0.01",
+                      ...register("price_base", { valueAsNumber: true }),
+                      className: "bg-transparent text-2xl font-black text-hubbi-text w-32 focus:outline-none focus:border-b border-hubbi-primary"
+                    }
+                  )
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex-1 text-sm text-hubbi-dim", children: [
+                /* @__PURE__ */ jsxRuntime.jsxs("p", { children: [
+                  "Este es el precio para la unidad base ",
+                  /* @__PURE__ */ jsxRuntime.jsx("strong", { children: uoms.find((u) => u.id === watchedBaseUnit)?.name || "..." }),
+                  "."
+                ] }),
+                /* @__PURE__ */ jsxRuntime.jsx("p", { children: "Las unidades adicionales se calcularán a partir de este valor por defecto." })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-3", children: [
+              /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between", children: [
+                /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-sm font-bold text-hubbi-text uppercase tracking-widest", children: "Unidades Alternativas / Mayorista" }),
+                /* @__PURE__ */ jsxRuntime.jsxs(Button, { variant: "ghost", onClick: () => appendUom({ uom_id: "", conversion_factor: 1, sale_price: 0, barcode: "" }), children: [
+                  /* @__PURE__ */ jsxRuntime.jsx(Plus, { size: 16, className: "mr-2" }),
+                  " Agregar Presentación"
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntime.jsx("div", { className: "rounded-xl border border-hubbi-border overflow-hidden", children: /* @__PURE__ */ jsxRuntime.jsxs("table", { className: "w-full text-sm text-left", children: [
+                /* @__PURE__ */ jsxRuntime.jsx("thead", { className: "bg-hubbi-muted/10 text-hubbi-dim font-bold uppercase text-xs", children: /* @__PURE__ */ jsxRuntime.jsxs("tr", { children: [
+                  /* @__PURE__ */ jsxRuntime.jsx("th", { className: "px-4 py-3", children: "Presentación" }),
+                  /* @__PURE__ */ jsxRuntime.jsx("th", { className: "px-4 py-3 w-32", children: "Factor" }),
+                  /* @__PURE__ */ jsxRuntime.jsx("th", { className: "px-4 py-3 w-40", children: "Precio Venta" }),
+                  /* @__PURE__ */ jsxRuntime.jsx("th", { className: "px-4 py-3", children: "Código Barras" }),
+                  /* @__PURE__ */ jsxRuntime.jsx("th", { className: "px-4 py-3 w-10" })
+                ] }) }),
+                /* @__PURE__ */ jsxRuntime.jsxs("tbody", { className: "divide-y divide-hubbi-border", children: [
+                  uomFields.map(
+                    (field, index) => {
+                      const currentUomValue = watch(`additional_uoms.${index}.uom_id`);
+                      return /* @__PURE__ */ jsxRuntime.jsxs("tr", { className: "bg-hubbi-card group hover:bg-hubbi-muted/5", children: [
+                        /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-4 py-2", children: /* @__PURE__ */ jsxRuntime.jsx(
+                          Select,
+                          {
+                            options: uoms.filter((u) => u.id !== watchedBaseUnit).map((u) => ({ value: u.id, label: u.name })),
+                            value: currentUomValue,
+                            onChange: (val) => setValue(`additional_uoms.${index}.uom_id`, val),
+                            placeholder: "Seleccionar..."
+                          }
+                        ) }),
+                        /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-4 py-2", children: /* @__PURE__ */ jsxRuntime.jsx(
+                          "input",
+                          {
+                            type: "number",
+                            ...register(`additional_uoms.${index}.conversion_factor`, {
+                              valueAsNumber: true,
+                              onChange: (e) => {
+                                const factor = parseFloat(e.target.value) || 0;
+                                const suggested = factor * (priceBase || 0);
+                                setValue(`additional_uoms.${index}.sale_price`, parseFloat(suggested.toFixed(2)));
+                              }
+                            }),
+                            className: "w-full bg-transparent border-b border-transparent focus:border-hubbi-primary focus:outline-none p-1 font-mono",
+                            placeholder: "Ej: 12"
+                          }
+                        ) }),
+                        /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-4 py-2", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center", children: [
+                          /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-hubbi-dim mr-1", children: "$" }),
+                          /* @__PURE__ */ jsxRuntime.jsx(
+                            "input",
+                            {
+                              type: "number",
+                              step: "0.01",
+                              ...register(`additional_uoms.${index}.sale_price`, { valueAsNumber: true }),
+                              className: "w-full bg-transparent font-bold focus:outline-none"
+                            }
+                          )
+                        ] }) }),
+                        /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-4 py-2", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
+                          /* @__PURE__ */ jsxRuntime.jsx(Barcode, { size: 14, className: "text-hubbi-dim" }),
+                          /* @__PURE__ */ jsxRuntime.jsx(
+                            "input",
+                            {
+                              ...register(`additional_uoms.${index}.barcode`),
+                              className: "w-full bg-transparent text-xs font-mono focus:outline-none",
+                              placeholder: "Ean-13..."
+                            }
+                          )
+                        ] }) }),
+                        /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-4 py-2 text-right", children: /* @__PURE__ */ jsxRuntime.jsx("button", { type: "button", onClick: () => removeUom(index), className: "text-hubbi-dim hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity", children: /* @__PURE__ */ jsxRuntime.jsx(Trash2, { size: 16 }) }) })
+                      ] }, field.id);
+                    }
+                  ),
+                  uomFields.length === 0 && /* @__PURE__ */ jsxRuntime.jsx("tr", { children: /* @__PURE__ */ jsxRuntime.jsx("td", { colSpan: 5, className: "px-4 py-8 text-center text-hubbi-dim italic", children: "No hay presentaciones adicionales. Se venderá solo por unidad base." }) })
+                ] })
+              ] }) })
+            ] })
+          ] }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-6 border-t border-hubbi-border bg-hubbi-muted/10 flex justify-end gap-3", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { variant: "ghost", type: "button", onClick: onClose, disabled: isSaving, children: "Cancelar" }),
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { onClick: handleSubmit(onFormSubmit), disabled: isSaving || hasWarehouses === false, className: "px-10", children: isSaving ? "Guardando..." : "Crear Item" })
+        ] })
+      ] }) })
+    ] });
+  };
+  function Header() {
+    const {
+      viewMode,
+      setViewMode,
+      selectedSubHubId,
+      setSubHubFilter,
+      selectedWarehouseId,
+      setWarehouseFilter
+    } = useInventoryStore();
+    const { refresh } = useInventoryData();
+    const [branches, setBranches] = React.useState([]);
+    const [warehouses, setWarehouses] = React.useState([]);
+    const [isProductFormOpen, setIsProductFormOpen] = React.useState(false);
+    const context = typeof window !== "undefined" ? window.hubbi?.getContext() : null;
+    React.useEffect(() => {
+      const load = async () => {
+        if (typeof window === "undefined") return;
+        const b = await window.hubbi.subHubs.list();
+        setBranches(b);
+      };
+      load();
+    }, []);
+    React.useEffect(() => {
+      let isMounted = true;
+      const loadWarehouses = async () => {
+        if (typeof window === "undefined") return;
+        let sql = "SELECT * FROM warehouses WHERE 1=1";
+        const params = [];
+        if (selectedSubHubId) {
+          sql += " AND sub_hub_id = ?";
+          params.push(selectedSubHubId);
+        }
+        try {
+          const results = await window.hubbi.db.query(sql, params, { moduleId: "com.hubbi.inventory" });
+          if (isMounted) {
+            setWarehouses(results);
+          }
+        } catch (error) {
+          console.error("Failed to load warehouses", error);
+        }
+      };
+      loadWarehouses();
+      return () => {
+        isMounted = false;
+      };
+    }, [selectedSubHubId]);
+    const viewOptions = [
+      { id: "table", label: "Tabla", icon: Table2 },
+      { id: "vms", label: "WMS", icon: LayoutGrid }
+    ];
+    const hasSubHubSwitcher = window.hubbi.hasPermission("subhub.select");
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col gap-4 p-4 border-b border-hubbi-border bg-hubbi-card animate-in slide-in-from-top-2 duration-300", children: [
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex bg-hubbi-input/50 p-1 rounded-xl border border-hubbi-border/50", children: viewOptions.map((option) => {
+        const isActive = viewMode === option.id;
+        return /* @__PURE__ */ jsxRuntime.jsxs(
+          "button",
+          {
+            onClick: () => setViewMode(option.id),
+            className: clsx$1(
+              "px-6 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all flex items-center gap-2",
+              isActive ? "bg-hubbi-card shadow-sm text-hubbi-primary ring-1 ring-black/5 dark:ring-white/5" : "text-hubbi-dim hover:text-hubbi-text hover:bg-hubbi-muted/50"
+            ),
+            children: [
+              /* @__PURE__ */ jsxRuntime.jsx(option.icon, { className: "w-3.5 h-3.5" }),
+              option.label
+            ]
+          },
+          option.id
+        );
+      }) }) }),
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col md:flex-row items-center justify-between gap-4", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3 w-full md:w-auto", children: [
+          hasSubHubSwitcher ? /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-full md:w-56", children: /* @__PURE__ */ jsxRuntime.jsx(
+            Select,
+            {
+              icon: Building2,
+              value: selectedSubHubId ? String(selectedSubHubId) : "",
+              onChange: (val) => setSubHubFilter(val ? String(val) : null),
+              options: [
+                { value: "", label: "Todas las Sucursales" },
+                ...branches.map((b) => ({ value: String(b.id), label: b.name }))
+              ]
+            }
+          ) }) : /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2 px-3 py-2 bg-hubbi-input/20 rounded-xl border border-hubbi-border/50", children: [
+            /* @__PURE__ */ jsxRuntime.jsx(Building2, { className: "w-3.5 h-3.5 text-hubbi-primary" }),
+            /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs font-bold text-hubbi-text", children: context?.subHubName || "Sucursal Local" })
+          ] }),
+          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-full md:w-56", children: /* @__PURE__ */ jsxRuntime.jsx(
+            Select,
+            {
+              icon: LayoutGrid,
+              value: selectedWarehouseId || "",
+              onChange: (val) => setWarehouseFilter(val ? String(val) : null),
+              options: [
+                { value: "", label: "Todas las Bodegas" },
+                ...warehouses.map((w) => ({ value: w.id, label: w.name }))
+              ]
+            }
+          ) })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs(
+          Button,
+          {
+            onClick: () => setIsProductFormOpen(true),
+            className: "w-full md:w-auto px-6 whitespace-nowrap",
+            children: [
+              /* @__PURE__ */ jsxRuntime.jsx(Plus, { size: 16, className: "mr-2" }),
+              "Nuevo Producto"
+            ]
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntime.jsx(
+        SchemaProductForm,
+        {
+          open: isProductFormOpen,
+          onClose: () => setIsProductFormOpen(false),
+          onSuccess: refresh
+        }
+      )
+    ] });
+  }
+  function ProductsView() {
+    const { viewMode } = useInventoryStore();
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "h-full w-full flex flex-col", children: [
+      /* @__PURE__ */ jsxRuntime.jsx(Header, {}),
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex-1 relative min-h-0", children: viewMode === "table" ? /* @__PURE__ */ jsxRuntime.jsx(InventoryTable, {}) : /* @__PURE__ */ jsxRuntime.jsx(WmsView, {}) })
+    ] });
+  }
+  function SettingsHeader({ activeTab }) {
+    const tabs = [
+      { id: "settings-general", label: "General", icon: Settings },
+      { id: "settings-warehouses", label: "Bodegas", icon: Warehouse },
+      { id: "settings-units", label: "Unidades", icon: Ruler },
+      { id: "settings-categories", label: "Categorías", icon: Tags },
+      { id: "settings-groups", label: "Grupos", icon: Layers$1 },
+      { id: "settings-custom-fields", label: "Campos Personalizados", icon: PenTool }
+    ];
+    const navigate = (route) => {
+      let path = "/app/com.hubbi.inventory";
+      path += "/" + route.replace("-", "/");
+      window.hubbi.navigate(path);
+    };
+    return /* @__PURE__ */ jsxRuntime.jsx("div", { className: "h-14 border-b border-hubbi-border flex items-center px-4 bg-hubbi-card gap-2 overflow-x-auto min-w-0", children: tabs.map((tab) => {
+      const isActive = activeTab === tab.id || tab.id === "settings-general" && activeTab === "settings";
+      return /* @__PURE__ */ jsxRuntime.jsxs(
+        "button",
+        {
+          onClick: () => navigate(tab.id),
+          className: clsx$1(
+            "px-3 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-2 whitespace-nowrap",
+            isActive ? "bg-hubbi-primary/10 text-hubbi-primary shadow-sm ring-1 ring-hubbi-primary/20" : "text-hubbi-dim hover:text-hubbi-text hover:bg-hubbi-muted"
+          ),
+          children: [
+            /* @__PURE__ */ jsxRuntime.jsx(tab.icon, { className: clsx$1("w-4 h-4", isActive ? "text-hubbi-primary" : "text-hubbi-dim") }),
+            tab.label
+          ]
+        },
+        tab.id
+      );
+    }) });
+  }
+  const PROFILE_META = {
+    [InventoryProfile.GENERIC]: {
+      label: "Genérico",
+      icon: Briefcase,
+      description: "Configuración estándar sin especialización."
+    },
+    [InventoryProfile.RETAIL]: {
+      label: "Retail / Tienda",
+      icon: ShoppingBag,
+      description: "Optimizado para ventas rápidas y rotación."
+    },
+    [InventoryProfile.WORKSHOP]: {
+      label: "Taller",
+      icon: Wrench,
+      description: "Gestión de servicios, repuestos y órdenes."
+    },
+    [InventoryProfile.PHARMACY]: {
+      label: "Farmacia",
+      icon: Stethoscope,
+      description: "Control estricto de lotes y vencimientos."
+    }
+  };
+  const FeatureRow = React.memo(({ label, description, checked, onChange }) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between py-4 border-b border-hubbi-border last:border-0 group", children: [
+    /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "font-medium text-hubbi-text group-hover:text-hubbi-primary transition-colors", children: label }),
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-sm text-hubbi-dim", children: description })
+    ] }),
+    /* @__PURE__ */ jsxRuntime.jsx(
+      Toggle,
+      {
+        checked,
+        onChange
+      }
+    )
+  ] }));
+  function GeneralSettings() {
+    const profile = useInventorySettings((s2) => s2.profile);
+    const features = useInventorySettings((s2) => s2.features);
+    const overridden = useInventorySettings((s2) => s2.overridden);
+    const allowedDepartments = useInventorySettings((s2) => s2.allowedDepartments || []);
+    const setProfile = useInventorySettings((s2) => s2.setProfile);
+    const toggleFeature = useInventorySettings((s2) => s2.toggleFeature);
+    const resetToDefaults = useInventorySettings((s2) => s2.resetToProfileDefaults);
+    const setAllowedDepartments = useInventorySettings((s2) => s2.setAllowedDepartments);
+    const [saving, setSaving] = React.useState(false);
+    const [loading, setLoading] = React.useState(true);
+    const [allDepartments, setAllDepartments] = React.useState([]);
+    const [originalState, setOriginalState] = React.useState(null);
+    React.useEffect(() => {
+      const load = async () => {
+        try {
+          const stored = await window.hubbi.settings.getAll("com.hubbi.inventory");
+          const loadedFeatures = { ...features };
+          const settingsKeys = Object.keys(stored);
+          Object.keys(loadedFeatures).forEach((key) => {
+            const settingKey = `feature_${key}`;
+            if (settingsKeys.includes(settingKey)) {
+              loadedFeatures[key] = stored[settingKey] === "true";
+            }
+          });
+          const loadedProfile = stored["profile"] || InventoryProfile.GENERIC;
+          const loadedDepts = stored["allowedDepartments"] ? JSON.parse(stored["allowedDepartments"]) : [];
+          setOriginalState({
+            profile: loadedProfile,
+            features: loadedFeatures,
+            allowedDepartments: loadedDepts
+          });
+          const depts = await window.hubbi.departments.list();
+          const context = window.hubbi.getContext();
+          const filteredDepts = context?.subHubId ? depts.filter((d) => !d.sub_hub_id || String(d.sub_hub_id) === String(context.subHubId)) : depts;
+          setAllDepartments(filteredDepts);
+        } catch (err) {
+          console.error("Failed to load settings", err);
+        } finally {
+          setLoading(false);
+        }
+      };
+      load();
+    }, []);
+    const hasChanges = React.useMemo(() => {
+      if (!originalState) return false;
+      const profileChanged = profile !== originalState.profile;
+      const deptsChanged = JSON.stringify(allowedDepartments.sort()) !== JSON.stringify(originalState.allowedDepartments.sort());
+      const featuresChanged = Object.keys(features).some(
+        (key) => features[key] !== originalState.features[key]
+      );
+      return profileChanged || deptsChanged || featuresChanged;
+    }, [profile, allowedDepartments, features, originalState]);
+    const handleReset = () => {
+      if (!originalState) return;
+      setProfile(originalState.profile);
+      setAllowedDepartments(originalState.allowedDepartments);
+      Object.keys(originalState.features).forEach((key) => {
+        if (features[key] !== originalState.features[key]) {
+          toggleFeature(key, originalState.features[key]);
+        }
+      });
+    };
+    const handleSave = async () => {
+      setSaving(true);
+      try {
+        await window.hubbi.settings.set("profile", profile, "com.hubbi.inventory");
+        await window.hubbi.settings.set("allowedDepartments", JSON.stringify(allowedDepartments), "com.hubbi.inventory");
+        for (const [key, enabled] of Object.entries(features)) {
+          await window.hubbi.settings.set(`feature_${key}`, String(enabled), "com.hubbi.inventory");
+        }
+        setOriginalState({
+          profile,
+          features: { ...features },
+          allowedDepartments: [...allowedDepartments]
+        });
+        window.hubbi.notify("Configuración guardada correctamente", "success");
+      } catch (err) {
+        console.error(err);
+        window.hubbi.notify("Error al guardar configuración", "error");
+      } finally {
+        setSaving(false);
+      }
+    };
+    if (loading) return /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-8 text-center text-hubbi-dim animate-pulse", children: "Cargando perfil..." });
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "max-w-4xl mx-auto p-6 space-y-8 pb-32", children: [
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntime.jsx("h2", { className: "text-2xl font-bold text-hubbi-text", children: "Configuración de Inventario" }),
+        /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-hubbi-dim mt-1", children: "Define el comportamiento del módulo mediante Perfiles de Negocio." })
+      ] }),
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-3", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-between items-center", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-sm font-semibold text-hubbi-dim uppercase tracking-wider", children: "Perfil de Negocio" }),
+          overridden && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2 text-xs text-amber-500 bg-amber-500/10 px-2 py-1 rounded-md", children: [
+            /* @__PURE__ */ jsxRuntime.jsx(TriangleAlert, { size: 12 }),
+            /* @__PURE__ */ jsxRuntime.jsx("span", { children: "Personalizado" }),
+            /* @__PURE__ */ jsxRuntime.jsxs("button", { onClick: resetToDefaults, className: "underline hover:text-amber-600 ml-1 flex items-center gap-1", children: [
+              /* @__PURE__ */ jsxRuntime.jsx(RotateCcw, { size: 10 }),
+              " Restaurar Defaults"
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-3", children: Object.keys(PROFILE_META).map((key) => {
+          const meta = PROFILE_META[key];
+          const isSelected = profile === key;
+          const Icon2 = meta.icon;
+          return /* @__PURE__ */ jsxRuntime.jsxs(
+            "button",
+            {
+              onClick: () => setProfile(key),
+              className: clsx$1(
+                "p-3 rounded-xl border text-left transition-all relative flex flex-col gap-2",
+                isSelected ? "border-hubbi-primary bg-hubbi-primary/5 text-hubbi-primary ring-1 ring-hubbi-primary shadow-sm" : "border-hubbi-border bg-hubbi-card hover:border-hubbi-dim/50 text-hubbi-text hover:bg-hubbi-background"
+              ),
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-between items-start", children: [
+                  /* @__PURE__ */ jsxRuntime.jsx(Icon2, { className: clsx$1("w-6 h-6", isSelected ? "text-hubbi-primary" : "text-hubbi-dim") }),
+                  isSelected && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "bg-hubbi-primary text-white p-0.5 rounded-full", children: /* @__PURE__ */ jsxRuntime.jsx(Check$1, { size: 10 }) })
+                ] }),
+                /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntime.jsx("span", { className: "font-medium text-sm block", children: meta.label }),
+                  /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-hubbi-dim line-clamp-2 mt-0.5", children: meta.description })
+                ] })
+              ]
+            },
+            key
+          );
+        }) })
+      ] }),
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-3", children: [
+        /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-sm font-semibold text-hubbi-dim uppercase tracking-wider", children: "Capacidades Habilitadas" }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-card border border-hubbi-border rounded-xl px-6 divide-y divide-hubbi-border shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(
+            FeatureRow,
+            {
+              feature: "expiration_dates",
+              label: "Control de Vencimientos",
+              description: "Requiere fecha de caducidad en entradas y salidas (FIFO/FEFO).",
+              checked: !!features.expiration_dates,
+              onChange: (val) => toggleFeature("expiration_dates", val)
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            FeatureRow,
+            {
+              feature: "serial_tracking",
+              label: "Números de Serie (S/N)",
+              description: "Rastreo individual de ítems únicos.",
+              checked: !!features.serial_tracking,
+              onChange: (val) => toggleFeature("serial_tracking", val)
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            FeatureRow,
+            {
+              feature: "batch_tracking",
+              label: "Lotes / Batches",
+              description: "Agrupación de trazabilidad por lotes de fabricación.",
+              checked: !!features.batch_tracking,
+              onChange: (val) => toggleFeature("batch_tracking", val)
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            FeatureRow,
+            {
+              feature: "work_order_consumption",
+              label: "Consumo por Órdenes",
+              description: "Permite descontar inventario mediante órdenes de trabajo o recetas.",
+              checked: !!features.work_order_consumption,
+              onChange: (val) => toggleFeature("work_order_consumption", val)
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            FeatureRow,
+            {
+              feature: "asset_depreciation",
+              label: "Gestión de Activos Fijos",
+              description: "Habilita campos de depreciación y vida útil para bienes internos.",
+              checked: !!features.asset_depreciation,
+              onChange: (val) => toggleFeature("asset_depreciation", val)
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            FeatureRow,
+            {
+              feature: "kits_enabled",
+              label: "Kits & Compuestos",
+              description: "Permite crear productos hijos (BOM) dentro de un padre (ej. Canastas, Paquetes).",
+              checked: !!features.kits_enabled,
+              onChange: (val) => toggleFeature("kits_enabled", val)
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            FeatureRow,
+            {
+              feature: "reservations_enabled",
+              label: "Reservas de Stock",
+              description: "Habilita el bloqueo de stock para Órdenes de Trabajo o Pedidos (Comprometido).",
+              checked: !!features.reservations_enabled,
+              onChange: (val) => toggleFeature("reservations_enabled", val)
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            FeatureRow,
+            {
+              feature: "negative_stock_allowed",
+              label: "Permitir Stock Negativo",
+              description: "AUTORIZAR movimientos de salida sin stock suficiente (No recomendado).",
+              checked: !!features.negative_stock_allowed,
+              onChange: (val) => toggleFeature("negative_stock_allowed", val)
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-4", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-sm font-semibold text-hubbi-dim uppercase tracking-wider", children: "Restricción de Acceso por Área" }),
+          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "h-px flex-1 bg-hubbi-border" })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-card border border-hubbi-border rounded-xl p-6 shadow-sm space-y-4", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-hubbi-dim", children: "Selecciona los departamentos que tienen permiso para acceder a este módulo. Si no seleccionas ninguno, el acceso será **Universal** para todos los usuarios con el permiso `inventory.access`." }),
+          /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-2", children: [
+            allDepartments.length === 0 && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "col-span-full p-4 border border-dashed border-hubbi-border rounded-lg text-center text-hubbi-dim text-sm italic", children: [
+              "No se encontraron departamentos disponibles para configurar.",
+              /* @__PURE__ */ jsxRuntime.jsx("br", {}),
+              "Asegúrate de que Hubbi Core esté conectado."
+            ] }),
+            allDepartments.map((dept) => {
+              const isAllowed = allowedDepartments.includes(dept.id);
+              return /* @__PURE__ */ jsxRuntime.jsxs(
+                "button",
+                {
+                  onClick: () => {
+                    const newDepts = isAllowed ? allowedDepartments.filter((id) => id !== dept.id) : [...allowedDepartments, dept.id];
+                    setAllowedDepartments(newDepts);
+                  },
+                  className: clsx$1(
+                    "px-4 py-2 rounded-lg text-xs font-medium border transition-all text-left flex items-center justify-between gap-2",
+                    isAllowed ? "bg-hubbi-primary/10 border-hubbi-primary text-hubbi-primary" : "bg-hubbi-input/30 border-hubbi-border text-hubbi-dim hover:border-hubbi-dim/50"
+                  ),
+                  children: [
+                    dept.name,
+                    isAllowed && /* @__PURE__ */ jsxRuntime.jsx(Check$1, { size: 12 })
+                  ]
+                },
+                dept.id
+              );
+            })
+          ] })
+        ] })
+      ] }),
+      hasChanges && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "sticky bottom-6 z-[60] mx-auto w-[90%] md:w-[50vw] bg-black/90 text-white p-4 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 shadow-2xl border border-white/10 animate-in slide-in-from-bottom-4", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("span", { className: "font-medium text-sm text-center md:text-left", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("span", { className: "md:hidden", children: "Tienes cambios sin guardar." }),
+          /* @__PURE__ */ jsxRuntime.jsx("span", { className: "hidden md:inline", children: "¡Cuidado! Tienes cambios sin guardar." })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-2 md:flex w-full md:w-auto gap-2 md:gap-3", children: [
+          /* @__PURE__ */ jsxRuntime.jsxs("button", { onClick: handleReset, disabled: saving, className: "justify-center px-2 md:px-4 py-2 hover:bg-white/10 rounded-lg text-sm flex items-center gap-2 transition-colors", children: [
+            /* @__PURE__ */ jsxRuntime.jsx(RotateCcw, { size: 14 }),
+            " Restablecer"
+          ] }),
+          /* @__PURE__ */ jsxRuntime.jsxs(
+            "button",
+            {
+              onClick: handleSave,
+              disabled: saving,
+              className: clsx$1(
+                "justify-center px-4 md:px-6 py-2 bg-hubbi-success rounded-lg font-bold text-sm transition-colors flex items-center gap-2",
+                saving ? "opacity-50 cursor-not-allowed" : "hover:bg-hubbi-success/90"
+              ),
+              children: [
+                saving ? /* @__PURE__ */ jsxRuntime.jsx(LoaderCircle$1, { className: "animate-spin h-3.5 w-3.5" }) : /* @__PURE__ */ jsxRuntime.jsx(Save, { size: 14 }),
+                saving ? "Guardando..." : "Guardar"
+              ]
+            }
+          )
+        ] })
+      ] })
+    ] });
+  }
+  const r = (t2, r2, o2) => {
     if (t2 && "reportValidity" in t2) {
       const s2 = get(o2, r2);
       t2.setCustomValidity(s2 && s2.message || ""), t2.reportValidity();
@@ -44182,7 +45784,7 @@
   }, o = (e, t2) => {
     for (const o2 in t2.fields) {
       const s2 = t2.fields[o2];
-      s2 && s2.ref && "reportValidity" in s2.ref ? r$1(s2.ref, o2, e) : s2 && s2.refs && s2.refs.forEach((t3) => r$1(t3, o2, e));
+      s2 && s2.ref && "reportValidity" in s2.ref ? r(s2.ref, o2, e) : s2 && s2.refs && s2.refs.forEach((t3) => r(t3, o2, e));
     }
   }, s$1 = (r2, s2) => {
     s2.shouldUseNativeValidation && o(r2, s2);
@@ -47759,420 +49361,6 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
     };
     throw new Error("Invalid input: not a Zod schema");
   }
-  const toKebabCase = (string2) => string2.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
-  const toCamelCase = (string2) => string2.replace(
-    /^([A-Z])|[\s-_]+(\w)/g,
-    (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
-  );
-  const toPascalCase = (string2) => {
-    const camelCase = toCamelCase(string2);
-    return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
-  };
-  const mergeClasses = (...classes) => classes.filter((className, index, array2) => {
-    return Boolean(className) && className.trim() !== "" && array2.indexOf(className) === index;
-  }).join(" ").trim();
-  const hasA11yProp = (props) => {
-    for (const prop in props) {
-      if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
-        return true;
-      }
-    }
-  };
-  var defaultAttributes = {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: 24,
-    height: 24,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 2,
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  };
-  const Icon = React.forwardRef(
-    ({
-      color = "currentColor",
-      size = 24,
-      strokeWidth = 2,
-      absoluteStrokeWidth,
-      className = "",
-      children,
-      iconNode,
-      ...rest
-    }, ref) => React.createElement(
-      "svg",
-      {
-        ref,
-        ...defaultAttributes,
-        width: size,
-        height: size,
-        stroke: color,
-        strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
-        className: mergeClasses("lucide", className),
-        ...!children && !hasA11yProp(rest) && { "aria-hidden": "true" },
-        ...rest
-      },
-      [
-        ...iconNode.map(([tag, attrs]) => React.createElement(tag, attrs)),
-        ...Array.isArray(children) ? children : [children]
-      ]
-    )
-  );
-  const createLucideIcon = (iconName, iconNode) => {
-    const Component = React.forwardRef(
-      ({ className, ...props }, ref) => React.createElement(Icon, {
-        ref,
-        iconNode,
-        className: mergeClasses(
-          `lucide-${toKebabCase(toPascalCase(iconName))}`,
-          `lucide-${iconName}`,
-          className
-        ),
-        ...props
-      })
-    );
-    Component.displayName = toPascalCase(iconName);
-    return Component;
-  };
-  const __iconNode$6 = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-  const Check = createLucideIcon("check", __iconNode$6);
-  const __iconNode$5 = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-  const ChevronDown = createLucideIcon("chevron-down", __iconNode$5);
-  const __iconNode$4 = [
-    [
-      "path",
-      {
-        d: "M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49",
-        key: "ct8e1f"
-      }
-    ],
-    ["path", { d: "M14.084 14.158a3 3 0 0 1-4.242-4.242", key: "151rxh" }],
-    [
-      "path",
-      {
-        d: "M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143",
-        key: "13bj9a"
-      }
-    ],
-    ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-  ];
-  const EyeOff = createLucideIcon("eye-off", __iconNode$4);
-  const __iconNode$3 = [
-    [
-      "path",
-      {
-        d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
-        key: "1nclc0"
-      }
-    ],
-    ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
-  ];
-  const Eye = createLucideIcon("eye", __iconNode$3);
-  const __iconNode$2 = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-  const LoaderCircle = createLucideIcon("loader-circle", __iconNode$2);
-  const __iconNode$1 = [
-    ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
-    ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
-  ];
-  const Search = createLucideIcon("search", __iconNode$1);
-  const __iconNode = [
-    ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
-    ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
-  ];
-  const X = createLucideIcon("x", __iconNode);
-  const Input = React.forwardRef(
-    ({ startIcon, className, label, type, error, ...props }, ref) => {
-      const [showPassword, setShowPassword] = React.useState(false);
-      const isPassword = type === "password";
-      const inputType = isPassword ? showPassword ? "text" : "password" : type;
-      return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: `relative w-full ${className}`, children: [
-        label && /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim mb-1 uppercase", children: label }),
-        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "relative group w-full", children: [
-          startIcon && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "absolute inset-y-0 left-3 text-hubbi-dim group-focus-within:text-hubbi-primary transition-colors pointer-events-none flex items-center", children: startIcon }),
-          /* @__PURE__ */ jsxRuntime.jsx(
-            "input",
-            {
-              ref,
-              type: inputType,
-              className: `
-          w-full bg-hubbi-input border border-hubbi-border 
-          text-hubbi-text placeholder-hubbi-dim 
-          rounded-lg py-2.5 ${startIcon ? "pl-10" : "pl-3"} ${isPassword ? "pr-10" : "pr-4"} 
-          text-sm transition-all
-          focus:outline-none focus:ring-2 focus:ring-hubbi-primary/50 focus:border-hubbi-primary
-          /* Add styling for date/time/number */
-          file:bg-hubbi-primary file:text-white file:border-0 file:rounded-md file:px-2 file:py-1 file:mr-3 file:text-xs
-          disabled:opacity-50 disabled:cursor-not-allowed
-          [color-scheme:dark]
-          [&::-webkit-calendar-picker-indicator]:opacity-60 [&::-webkit-calendar-picker-indicator]:hover:opacity-100 [&::-webkit-calendar-picker-indicator]:cursor-pointer
-          [&::-webkit-inner-spin-button]:opacity-40 [&::-webkit-inner-spin-button]:hover:opacity-100
-          ${isPassword ? "[&::-ms-reveal]:hidden [&::-ms-clear]:hidden" : ""}
-          ${error ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" : ""}
-        `,
-              ...props
-            }
-          ),
-          isPassword && /* @__PURE__ */ jsxRuntime.jsx(
-            "button",
-            {
-              type: "button",
-              onClick: () => setShowPassword(!showPassword),
-              className: "absolute inset-y-0 right-3 flex items-center text-hubbi-dim hover:text-hubbi-text focus:outline-none",
-              tabIndex: -1,
-              children: showPassword ? /* @__PURE__ */ jsxRuntime.jsx(EyeOff, { size: 16 }) : /* @__PURE__ */ jsxRuntime.jsx(Eye, { size: 16 })
-            }
-          )
-        ] }),
-        error && /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-red-500 mt-1 block font-medium", children: error })
-      ] });
-    }
-  );
-  Input.displayName = "Input";
-  const NumberInput = React.forwardRef((props, ref) => /* @__PURE__ */ jsxRuntime.jsx(Input, { type: "number", ref, ...props }));
-  NumberInput.displayName = "NumberInput";
-  const DateInput = React.forwardRef((props, ref) => /* @__PURE__ */ jsxRuntime.jsx(Input, { type: "date", ref, ...props }));
-  DateInput.displayName = "DateInput";
-  const TimeInput = React.forwardRef((props, ref) => /* @__PURE__ */ jsxRuntime.jsx(Input, { type: "time", ref, ...props }));
-  TimeInput.displayName = "TimeInput";
-  function r(e) {
-    var t2, f, n2 = "";
-    if ("string" == typeof e || "number" == typeof e) n2 += e;
-    else if ("object" == typeof e) if (Array.isArray(e)) {
-      var o2 = e.length;
-      for (t2 = 0; t2 < o2; t2++) e[t2] && (f = r(e[t2])) && (n2 && (n2 += " "), n2 += f);
-    } else for (f in e) e[f] && (n2 && (n2 += " "), n2 += f);
-    return n2;
-  }
-  function clsx() {
-    for (var e, t2, f = 0, n2 = "", o2 = arguments.length; f < o2; f++) (e = arguments[f]) && (t2 = r(e)) && (n2 && (n2 += " "), n2 += t2);
-    return n2;
-  }
-  const Select = ({
-    options,
-    value,
-    onChange,
-    placeholder = "Seleccionar...",
-    label,
-    disabled = false,
-    multiple = false,
-    containerClassName = "",
-    className = "",
-    searchable = false,
-    searchPlaceholder = "Buscar...",
-    icon: Icon2
-  }) => {
-    const [isOpen, setIsOpen] = React.useState(false);
-    const [search, setSearch] = React.useState("");
-    const containerRef = React.useRef(null);
-    const searchInputRef = React.useRef(null);
-    const [position, setPosition] = React.useState("bottom");
-    React.useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (containerRef.current && !containerRef.current.contains(event.target)) {
-          setIsOpen(false);
-        }
-      };
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-    React.useEffect(() => {
-      if (isOpen && containerRef.current) {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const rect = containerRef.current.getBoundingClientRect();
-        const spaceBelow = window.innerHeight - rect.bottom;
-        if (spaceBelow < 320) {
-          setPosition("top");
-        } else {
-          setPosition("bottom");
-        }
-        setTimeout(() => {
-          const newScrollTop = window.scrollY || document.documentElement.scrollTop;
-          if (newScrollTop !== scrollTop) {
-            window.scrollTo(0, scrollTop);
-          }
-        }, 0);
-      }
-    }, [isOpen]);
-    React.useEffect(() => {
-      if (isOpen && searchable && searchInputRef.current) {
-        searchInputRef.current.focus();
-      }
-    }, [isOpen, searchable]);
-    const handleSelect = (optionValue) => {
-      if (multiple) {
-        const currentValues = Array.isArray(value) ? value : [];
-        const newValue = currentValues.includes(optionValue) ? currentValues.filter((v) => v !== optionValue) : [...currentValues, optionValue];
-        onChange(newValue);
-      } else {
-        onChange(optionValue);
-        setIsOpen(false);
-      }
-    };
-    const handleRemoveTag = (e, valToRemove) => {
-      e.stopPropagation();
-      if (Array.isArray(value)) {
-        onChange(value.filter((v) => v !== valToRemove));
-      }
-    };
-    const filteredOptions = options.filter(
-      (opt) => opt.label.toLowerCase().includes(search.toLowerCase()) || opt.description && opt.description.toLowerCase().includes(search.toLowerCase())
-    );
-    const getDisplay = () => {
-      if (multiple) {
-        const selectedValues = Array.isArray(value) ? value : [];
-        if (selectedValues.length === 0) return /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-hubbi-dim", children: placeholder });
-        return /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-wrap gap-1.5", children: selectedValues.map((val) => {
-          const opt = options.find((o2) => o2.value === val);
-          return /* @__PURE__ */ jsxRuntime.jsxs("span", { className: "inline-flex items-center gap-1 bg-hubbi-primary/20 text-hubbi-primary text-xs font-bold px-1.5 py-0.5 rounded border border-hubbi-primary/30", children: [
-            opt ? opt.label : val,
-            /* @__PURE__ */ jsxRuntime.jsx(
-              X,
-              {
-                size: 12,
-                className: "cursor-pointer hover:text-hubbi-text",
-                onClick: (e) => handleRemoveTag(e, val)
-              }
-            )
-          ] }, val);
-        }) });
-      } else {
-        const selectedOption = options.find((o2) => o2.value === value);
-        return /* @__PURE__ */ jsxRuntime.jsx("span", { className: clsx(
-          "block truncate transition-colors",
-          selectedOption ? "text-hubbi-text" : "text-hubbi-dim"
-        ), children: selectedOption ? selectedOption.label : placeholder });
-      }
-    };
-    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: `relative w-full ${containerClassName}`, ref: containerRef, children: [
-      label && /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim mb-1 uppercase", children: label }),
-      /* @__PURE__ */ jsxRuntime.jsxs(
-        "div",
-        {
-          onClick: () => !disabled && setIsOpen(!isOpen),
-          className: `
-                    w-full px-3 py-2
-                    bg-hubbi-input border rounded-lg
-                    flex items-center justify-between gap-2
-                    cursor-pointer transition-all
-                    ${isOpen ? "border-hubbi-primary ring-2 ring-hubbi-primary/20" : "border-hubbi-border hover:border-hubbi-dim"}
-                    ${disabled ? "opacity-50 cursor-not-allowed" : ""}
-                    ${className.includes("h-") ? className : `min-h-[42px] ${className}`}
-                `,
-          children: [
-            Icon2 && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "shrink-0 text-hubbi-primary", children: /* @__PURE__ */ jsxRuntime.jsx(Icon2, { size: 14 }) }),
-            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex-1 min-w-0", children: getDisplay() }),
-            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "shrink-0 text-hubbi-dim", children: /* @__PURE__ */ jsxRuntime.jsx(ChevronDown, { size: 16, className: `transition-transform duration-200 ${isOpen ? "rotate-180" : ""}` }) })
-          ]
-        }
-      ),
-      isOpen && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: `absolute z-50 left-0 right-0 bg-hubbi-card border border-hubbi-border rounded-lg shadow-2xl overflow-hidden animate-in fade-in duration-100 max-h-[300px] flex flex-col ${position === "top" ? "bottom-full mb-2 slide-in-from-bottom-2" : "top-full mt-2 slide-in-from-top-2"}`, children: [
-        searchable && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-2 border-b border-hubbi-border bg-hubbi-input/30 sticky top-0 z-10", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "relative", children: [
-          /* @__PURE__ */ jsxRuntime.jsx(Search, { size: 14, className: "absolute left-3 top-1/2 -translate-y-1/2 text-hubbi-dim" }),
-          /* @__PURE__ */ jsxRuntime.jsx(
-            "input",
-            {
-              ref: searchInputRef,
-              type: "text",
-              placeholder: searchPlaceholder,
-              value: search,
-              onChange: (e) => setSearch(e.target.value),
-              className: "w-full bg-hubbi-bg border border-hubbi-border rounded-lg pl-9 pr-3 py-1.5 text-sm text-hubbi-text focus:border-hubbi-primary outline-none",
-              onClick: (e) => e.stopPropagation()
-            }
-          )
-        ] }) }),
-        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "overflow-y-auto max-h-[250px] p-1.5 space-y-0.5 custom-scrollbar", children: filteredOptions.length > 0 ? filteredOptions.map((option) => {
-          const isSelected = multiple ? Array.isArray(value) && value.includes(option.value) : value === option.value;
-          return /* @__PURE__ */ jsxRuntime.jsxs(
-            "div",
-            {
-              onClick: () => handleSelect(option.value),
-              className: `
-                                            px-3 py-2 rounded-lg text-sm cursor-pointer transition-colors flex items-center justify-between gap-3
-                                            ${isSelected ? "bg-hubbi-primary/15 text-hubbi-primary font-medium" : "text-hubbi-text hover:bg-hubbi-input"}
-                                        `,
-              children: [
-                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col", children: [
-                  /* @__PURE__ */ jsxRuntime.jsx("span", { children: option.label }),
-                  option.description && /* @__PURE__ */ jsxRuntime.jsx("span", { className: `text-[10px] ${isSelected ? "text-hubbi-primary/70" : "text-hubbi-dim"}`, children: option.description })
-                ] }),
-                isSelected && /* @__PURE__ */ jsxRuntime.jsx(Check, { size: 16 })
-              ]
-            },
-            option.value
-          );
-        }) : /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-4 text-center text-sm text-hubbi-dim", children: "No se encontraron resultados." }) })
-      ] })
-    ] });
-  };
-  function ActionLock({
-    locked,
-    children,
-    loadingText,
-    showSpinner = true,
-    className = "",
-    innerClassName = "",
-    style
-  }) {
-    const overlay = React.useMemo(() => /* @__PURE__ */ jsxRuntime.jsx(
-      "div",
-      {
-        className: "absolute inset-0 backdrop-blur-[2px] bg-white/5 dark:bg-black/5 flex items-center justify-center z-50 rounded-inherit animate-in fade-in duration-200",
-        "aria-busy": "true",
-        "aria-live": "polite",
-        children: showSpinner && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col items-center gap-3 text-hubbi-primary px-6 py-4 bg-hubbi-card/90 border border-hubbi-border/50 shadow-xl rounded-2xl backdrop-blur-md", children: [
-          /* @__PURE__ */ jsxRuntime.jsx(LoaderCircle, { className: "animate-spin h-6 w-6" }),
-          loadingText && /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-sm font-medium text-hubbi-text", children: loadingText })
-        ] })
-      }
-    ), [showSpinner, loadingText]);
-    return /* @__PURE__ */ jsxRuntime.jsxs(
-      "div",
-      {
-        className: `relative ${className}`,
-        style,
-        children: [
-          /* @__PURE__ */ jsxRuntime.jsx("div", { className: `transition-opacity duration-200 ${locked ? "opacity-50 pointer-events-none filter blur-[0.5px]" : ""} ${innerClassName}`, children }),
-          locked && overlay
-        ]
-      }
-    );
-  }
-  const Button = ({ variant = "primary", className, children, ...props }) => {
-    const base = "inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-hubbi-bg disabled:opacity-50 disabled:cursor-not-allowed select-none";
-    const variants = {
-      primary: "bg-hubbi-primary text-hubbi-primary-fg hover:brightness-110 shadow-lg shadow-hubbi-primary/20 focus:ring-hubbi-primary",
-      secondary: "bg-hubbi-input text-hubbi-text hover:bg-opacity-80 focus:ring-hubbi-input",
-      danger: "bg-hubbi-danger text-white hover:bg-opacity-90 shadow-lg shadow-hubbi-danger/20 focus:ring-hubbi-danger",
-      ghost: "bg-transparent text-hubbi-dim hover:text-hubbi-text hover:bg-hubbi-input/50"
-    };
-    return /* @__PURE__ */ jsxRuntime.jsx("button", { className: `${base} ${variants[variant]} ${className || ""}`, ...props, children });
-  };
-  const Toggle = ({ checked, onChange, disabled, className }) => {
-    return /* @__PURE__ */ jsxRuntime.jsx(
-      "button",
-      {
-        type: "button",
-        disabled,
-        onClick: () => !disabled && onChange(!checked),
-        className: clsx$1(
-          "w-11 h-6 rounded-full transition-colors relative outline-none",
-          checked ? "bg-hubbi-success" : "bg-hubbi-dim/30",
-          disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
-          className
-        ),
-        children: /* @__PURE__ */ jsxRuntime.jsx(
-          "div",
-          {
-            className: clsx$1(
-              "w-4 h-4 bg-white rounded-full absolute top-1 transition-all shadow-sm",
-              checked ? "left-6" : "left-1"
-            )
-          }
-        )
-      }
-    );
-  };
   const ZodISODateTime = /* @__PURE__ */ $constructor("ZodISODateTime", (inst, def) => {
     $ZodISODateTime.init(inst, def);
     ZodStringFormat.init(inst, def);
@@ -48840,7 +50028,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
   function superRefine(fn) {
     return /* @__PURE__ */ _superRefine(fn);
   }
-  const productSchema = object({
+  object({
     name: string().min(3, "El nombre debe tener al menos 3 caracteres").max(100, "Nombre demasiado largo"),
     sku: string().max(50, "SKU demasiado largo").optional().nullable(),
     description: string().max(500, "Descripción demasiado larga").optional().nullable(),
@@ -48864,662 +50052,6 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
     responsible_user_id: string().optional().nullable(),
     is_active: boolean().default(true)
   });
-  function ProductForm({ open, onClose, onSuccess }) {
-    const [isSaving, setIsSaving] = React.useState(false);
-    const [uoms, setUoms] = React.useState([]);
-    const [hasWarehouses, setHasWarehouses] = React.useState(null);
-    const context = typeof window !== "undefined" ? window.hubbi?.getContext() : null;
-    const {
-      register,
-      handleSubmit,
-      reset,
-      setValue,
-      watch,
-      formState: { errors }
-    } = useForm({
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      resolver: a(productSchema),
-      mode: "onChange",
-      defaultValues: {
-        sku: "",
-        name: "",
-        description: "",
-        photo_url: "",
-        type: "product",
-        base_unit_id: "",
-        price_base: 0,
-        cost_avg: 0,
-        is_saleable: true,
-        is_purchasable: true,
-        is_tax_exempt: false,
-        has_expiration: false,
-        has_warranty: false,
-        category_id: null
-      }
-    });
-    const watchedType = watch("type");
-    const watchedBaseUnit = watch("base_unit_id");
-    React.useEffect(() => {
-      const loadDependencies = async () => {
-        try {
-          const results = await window.hubbi.db.query(
-            "SELECT * FROM uoms WHERE is_active = TRUE",
-            [],
-            { moduleId: "com.hubbi.inventory" }
-          );
-          setUoms(results);
-          if (results.length > 0 && !watchedBaseUnit) {
-            setValue("base_unit_id", results[0].id);
-          }
-          const warehouseCheck = await window.hubbi.db.query(
-            "SELECT COUNT(*) as count FROM warehouses WHERE sub_hub_id = ?",
-            [context?.subHubId],
-            { moduleId: "com.hubbi.inventory" }
-          );
-          const count2 = warehouseCheck[0]?.count || 0;
-          setHasWarehouses(count2 > 0);
-        } catch (err) {
-          console.error("Failed to load dependency data", err);
-        }
-      };
-      if (open) loadDependencies();
-    }, [open, context?.subHubId, setValue, watchedBaseUnit]);
-    React.useEffect(() => {
-      if (!open) {
-        reset();
-        setHasWarehouses(null);
-      }
-    }, [open, reset]);
-    if (!open) return null;
-    const onFormSubmit = async (data) => {
-      if (hasWarehouses === false) return;
-      setIsSaving(true);
-      try {
-        const id = crypto.randomUUID();
-        await window.hubbi.db.insert("items", {
-          id,
-          sku: data.sku || null,
-          name: data.name,
-          description: data.description || null,
-          photo_url: data.photo_url || null,
-          type: data.type,
-          base_unit_id: data.base_unit_id,
-          price_base: data.price_base,
-          cost_avg: data.cost_avg,
-          is_saleable: data.is_saleable,
-          is_purchasable: data.is_purchasable,
-          is_tax_exempt: data.is_tax_exempt,
-          has_expiration: data.has_expiration,
-          has_warranty: data.has_warranty,
-          is_active: true
-        }, { moduleId: "com.hubbi.inventory" });
-        window.hubbi.notify("Producto creado correctamente", "success");
-        onSuccess();
-        onClose();
-      } catch (err) {
-        console.error("Error creating item", err);
-        window.hubbi.notify("Error al crear el producto", "error");
-      } finally {
-        setIsSaving(false);
-      }
-    };
-    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200", children: [
-      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "absolute inset-0", onClick: () => !isSaving && onClose() }),
-      /* @__PURE__ */ jsxRuntime.jsx(ActionLock, { locked: isSaving, loadingText: "Guardando Producto...", children: /* @__PURE__ */ jsxRuntime.jsxs(
-        "div",
-        {
-          className: "relative bg-hubbi-card border border-hubbi-border w-full max-w-2xl rounded-2xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden animate-in zoom-in-95 duration-200",
-          onClick: (e) => e.stopPropagation(),
-          children: [
-            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-6 border-b border-hubbi-border flex items-center justify-between bg-hubbi-muted/20", children: [
-              /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3", children: [
-                /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-2 bg-hubbi-primary/10 rounded-xl", children: /* @__PURE__ */ jsxRuntime.jsx(Package, { className: "text-hubbi-primary w-6 h-6" }) }),
-                /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
-                  /* @__PURE__ */ jsxRuntime.jsx("h2", { className: "text-xl font-bold text-hubbi-text", children: "Nuevo Producto" }),
-                  /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-hubbi-dim", children: "Registra un nuevo ítem profesional en tu catálogo." })
-                ] })
-              ] }),
-              /* @__PURE__ */ jsxRuntime.jsx("button", { type: "button", onClick: onClose, className: "p-2 hover:bg-hubbi-muted rounded-full text-hubbi-dim hover:text-hubbi-text transition-colors", children: /* @__PURE__ */ jsxRuntime.jsx(X$1, { size: 20 }) })
-            ] }),
-            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex-1 overflow-y-auto no-scrollbar", children: [
-              hasWarehouses === false && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "m-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-start gap-4 animate-in slide-in-from-top-4 duration-300", children: [
-                /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-2 bg-red-500 rounded-xl shadow-lg shadow-red-500/20", children: /* @__PURE__ */ jsxRuntime.jsx(Shield, { className: "text-white w-6 h-6" }) }),
-                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex-1 min-w-0", children: [
-                  /* @__PURE__ */ jsxRuntime.jsx("h4", { className: "text-base font-black text-red-500 uppercase tracking-wider", children: "Acción Bloqueada" }),
-                  /* @__PURE__ */ jsxRuntime.jsxs("p", { className: "text-sm text-red-500/80 leading-relaxed mt-1 font-medium", children: [
-                    "No puedes registrar productos en ",
-                    /* @__PURE__ */ jsxRuntime.jsx("strong", { className: "text-red-600 bg-red-500/5 px-1 rounded", children: context?.subHubName }),
-                    " sin bodegas configuradas."
-                  ] }),
-                  /* @__PURE__ */ jsxRuntime.jsx("div", { className: "mt-4", children: /* @__PURE__ */ jsxRuntime.jsx("button", { type: "button", onClick: () => window.hubbi.navigate("/settings/warehouses"), className: "text-[10px] font-black uppercase tracking-widest bg-red-500 text-white px-5 py-2.5 rounded-xl hover:bg-red-600 transition-all active:scale-95 shadow-lg shadow-red-500/20", children: "Ir a configuración" }) })
-                ] })
-              ] }),
-              /* @__PURE__ */ jsxRuntime.jsxs(
-                "form",
-                {
-                  onSubmit: handleSubmit(onFormSubmit),
-                  className: clsx$1("p-6 space-y-6 transition-all duration-500", hasWarehouses === false && "opacity-20 pointer-events-none grayscale blur-[1px]"),
-                  children: [
-                    /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-4", children: [
-                      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
-                        /* @__PURE__ */ jsxRuntime.jsx(Tag, { className: "w-4 h-4 text-hubbi-primary" }),
-                        /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-xs font-bold text-hubbi-dim uppercase tracking-widest", children: "Identidad" })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
-                        /* @__PURE__ */ jsxRuntime.jsx(Input, { label: "Nombre del Producto *", ...register("name"), error: errors.name?.message, placeholder: 'Ej: Monitor Pro Display 27"', disabled: isSaving }),
-                        /* @__PURE__ */ jsxRuntime.jsx(Input, { label: "SKU / Código", ...register("sku"), error: errors.sku?.message, placeholder: "SKU-12345", disabled: isSaving, className: "font-mono text-xs" })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-1", children: [
-                        /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Descripción" }),
-                        /* @__PURE__ */ jsxRuntime.jsx("textarea", { ...register("description"), className: clsx$1("w-full bg-hubbi-input border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-hubbi-primary/50 text-hubbi-text transition-all min-h-[80px]", errors.description ? "border-red-500" : "border-hubbi-border hover:border-hubbi-dim"), placeholder: "Detalles adicionales del producto...", disabled: isSaving }),
-                        errors.description && /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-red-500 font-medium", children: errors.description.message })
-                      ] })
-                    ] }),
-                    /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
-                      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-4", children: [
-                        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
-                          /* @__PURE__ */ jsxRuntime.jsx(Building2, { className: "w-4 h-4 text-hubbi-primary" }),
-                          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-xs font-bold text-hubbi-dim uppercase tracking-widest", children: "Clasificación" })
-                        ] }),
-                        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-1", children: [
-                          /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Tipo de Ítem" }),
-                          /* @__PURE__ */ jsxRuntime.jsx(
-                            Select,
-                            {
-                              value: watchedType,
-                              onChange: (val) => setValue("type", val, { shouldValidate: true }),
-                              options: [
-                                { value: "product", label: "Producto" },
-                                { value: "service", label: "Servicio" },
-                                { value: "asset", label: "Activo Fijo" },
-                                { value: "kit", label: "Combo / Kit" }
-                              ],
-                              disabled: isSaving
-                            }
-                          ),
-                          errors.type && /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-red-500 font-medium", children: errors.type.message })
-                        ] }),
-                        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-1", children: [
-                          /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Unidad de Medida Base *" }),
-                          /* @__PURE__ */ jsxRuntime.jsx(
-                            Select,
-                            {
-                              value: watchedBaseUnit,
-                              onChange: (val) => setValue("base_unit_id", val, { shouldValidate: true }),
-                              options: uoms.map((u) => ({ value: u.id, label: `${u.name} (${u.symbol})` })),
-                              disabled: isSaving,
-                              placeholder: "Seleccionar unidad...",
-                              searchable: true
-                            }
-                          ),
-                          errors.base_unit_id && /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-red-500 font-medium", children: errors.base_unit_id.message })
-                        ] })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-4", children: [
-                        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
-                          /* @__PURE__ */ jsxRuntime.jsx(DollarSign, { className: "w-4 h-4 text-hubbi-primary" }),
-                          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-xs font-bold text-hubbi-dim uppercase tracking-widest", children: "Valores" })
-                        ] }),
-                        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
-                          /* @__PURE__ */ jsxRuntime.jsx(NumberInput, { label: "Precio Venta", step: "0.01", ...register("price_base", { valueAsNumber: true }), error: errors.price_base?.message, disabled: isSaving, startIcon: /* @__PURE__ */ jsxRuntime.jsx(DollarSign, { size: 14 }) }),
-                          /* @__PURE__ */ jsxRuntime.jsx(NumberInput, { label: "Costo Inicial", step: "0.01", ...register("cost_avg", { valueAsNumber: true }), error: errors.cost_avg?.message, disabled: isSaving, startIcon: /* @__PURE__ */ jsxRuntime.jsx(DollarSign, { size: 14 }) })
-                        ] })
-                      ] })
-                    ] }),
-                    /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-4", children: [
-                      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
-                        /* @__PURE__ */ jsxRuntime.jsx(Image, { className: "w-4 h-4 text-hubbi-primary" }),
-                        /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-xs font-bold text-hubbi-dim uppercase tracking-widest", children: "Imagen" })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntime.jsx(Input, { ...register("photo_url"), error: errors.photo_url?.message, placeholder: "https://ejemplo.com/foto.jpg", disabled: isSaving, className: "font-mono text-xs", startIcon: /* @__PURE__ */ jsxRuntime.jsx(Image, { size: 14 }) })
-                    ] }),
-                    /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-4", children: [
-                      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
-                        /* @__PURE__ */ jsxRuntime.jsx(Check$1, { className: "w-4 h-4 text-hubbi-primary" }),
-                        /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-xs font-bold text-hubbi-dim uppercase tracking-widest", children: "Propiedades" })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3", children: [
-                        { id: "is_saleable", label: "Ítem Vendible", description: "Permite seleccionar este ítem en cotizaciones y facturas." },
-                        { id: "is_purchasable", label: "Ítem Comprable", description: "Habilita la creación de órdenes de compra." },
-                        { id: "is_tax_exempt", label: "Exento de Impuestos", description: "Ignora el cálculo de IVA para este ítem." },
-                        { id: "has_expiration", label: "Maneja Vencimiento", description: "Activa el control de lotes y fechas de expiración." },
-                        { id: "has_warranty", label: "Aplica Garantía", description: "Activa el seguimiento de certificados de garantía." }
-                      ].map((item) => {
-                        const isChecked = watch(item.id);
-                        return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between p-4 bg-hubbi-muted/20 rounded-xl border border-hubbi-border", children: [
-                          /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col pr-4", children: [
-                            /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-sm font-bold text-hubbi-text", children: item.label }),
-                            /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-[10px] text-hubbi-dim leading-tight mt-0.5", children: item.description })
-                          ] }),
-                          /* @__PURE__ */ jsxRuntime.jsx(
-                            Toggle,
-                            {
-                              checked: isChecked,
-                              onChange: (val) => setValue(item.id, val),
-                              disabled: isSaving
-                            }
-                          )
-                        ] }, item.id);
-                      }) })
-                    ] })
-                  ]
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-6 border-t border-hubbi-border bg-hubbi-muted/10 flex justify-end gap-3", children: [
-              /* @__PURE__ */ jsxRuntime.jsx(Button, { variant: "ghost", type: "button", onClick: onClose, disabled: isSaving, children: "Cancelar" }),
-              /* @__PURE__ */ jsxRuntime.jsx(Button, { onClick: handleSubmit(onFormSubmit), disabled: isSaving || hasWarehouses === false, className: "px-10", children: isSaving ? "Guardando..." : "Crear Producto" })
-            ] })
-          ]
-        }
-      ) })
-    ] });
-  }
-  function Header() {
-    const {
-      viewMode,
-      setViewMode,
-      selectedSubHubId,
-      setSubHubFilter,
-      selectedWarehouseId,
-      setWarehouseFilter
-    } = useInventoryStore();
-    const { refresh } = useInventoryData();
-    const [branches, setBranches] = React.useState([]);
-    const [warehouses, setWarehouses] = React.useState([]);
-    const [isProductFormOpen, setIsProductFormOpen] = React.useState(false);
-    const context = typeof window !== "undefined" ? window.hubbi?.getContext() : null;
-    React.useEffect(() => {
-      const load = async () => {
-        if (typeof window === "undefined") return;
-        const b = await window.hubbi.subHubs.list();
-        setBranches(b);
-      };
-      load();
-    }, []);
-    const loadWarehouses = React.useCallback(async () => {
-      if (typeof window === "undefined") return;
-      let sql = "SELECT * FROM warehouses WHERE 1=1";
-      const params = [];
-      if (selectedSubHubId) {
-        sql += " AND sub_hub_id = ?";
-        params.push(selectedSubHubId);
-      }
-      const results = await window.hubbi.db.query(sql, params, { moduleId: "com.hubbi.inventory" });
-      setWarehouses(results);
-    }, [selectedSubHubId]);
-    React.useEffect(() => {
-      loadWarehouses();
-    }, [loadWarehouses]);
-    const viewOptions = [
-      { id: "table", label: "Tabla", icon: Table2 },
-      { id: "vms", label: "WMS", icon: LayoutGrid }
-    ];
-    const hasSubHubSwitcher = window.hubbi.hasPermission("subhub.select");
-    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col gap-4 p-4 border-b border-hubbi-border bg-hubbi-card animate-in slide-in-from-top-2 duration-300", children: [
-      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex bg-hubbi-input/50 p-1 rounded-xl border border-hubbi-border/50", children: viewOptions.map((option) => {
-        const isActive = viewMode === option.id;
-        return /* @__PURE__ */ jsxRuntime.jsxs(
-          "button",
-          {
-            onClick: () => setViewMode(option.id),
-            className: clsx$1(
-              "px-6 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all flex items-center gap-2",
-              isActive ? "bg-hubbi-card shadow-sm text-hubbi-primary ring-1 ring-black/5 dark:ring-white/5" : "text-hubbi-dim hover:text-hubbi-text hover:bg-hubbi-muted/50"
-            ),
-            children: [
-              /* @__PURE__ */ jsxRuntime.jsx(option.icon, { className: "w-3.5 h-3.5" }),
-              option.label
-            ]
-          },
-          option.id
-        );
-      }) }) }),
-      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col md:flex-row items-center justify-between gap-4", children: [
-        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3 w-full md:w-auto", children: [
-          hasSubHubSwitcher ? /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-full md:w-56", children: /* @__PURE__ */ jsxRuntime.jsx(
-            Select,
-            {
-              icon: Building2,
-              value: selectedSubHubId ? String(selectedSubHubId) : "",
-              onChange: (val) => setSubHubFilter(val ? String(val) : null),
-              options: [
-                { value: "", label: "Todas las Sucursales" },
-                ...branches.map((b) => ({ value: String(b.id), label: b.name }))
-              ]
-            }
-          ) }) : /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2 px-3 py-2 bg-hubbi-input/20 rounded-xl border border-hubbi-border/50", children: [
-            /* @__PURE__ */ jsxRuntime.jsx(Building2, { className: "w-3.5 h-3.5 text-hubbi-primary" }),
-            /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs font-bold text-hubbi-text", children: context?.subHubName || "Sucursal Local" })
-          ] }),
-          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-full md:w-56", children: /* @__PURE__ */ jsxRuntime.jsx(
-            Select,
-            {
-              icon: LayoutGrid,
-              value: selectedWarehouseId || "",
-              onChange: (val) => setWarehouseFilter(val ? String(val) : null),
-              options: [
-                { value: "", label: "Todas las Bodegas" },
-                ...warehouses.map((w) => ({ value: w.id, label: w.name }))
-              ]
-            }
-          ) })
-        ] }),
-        /* @__PURE__ */ jsxRuntime.jsxs(
-          Button,
-          {
-            onClick: () => setIsProductFormOpen(true),
-            className: "w-full md:w-auto px-6 whitespace-nowrap",
-            children: [
-              /* @__PURE__ */ jsxRuntime.jsx(Plus, { size: 16, className: "mr-2" }),
-              "Nuevo Producto"
-            ]
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntime.jsx(
-        ProductForm,
-        {
-          open: isProductFormOpen,
-          onClose: () => setIsProductFormOpen(false),
-          onSuccess: refresh
-        }
-      )
-    ] });
-  }
-  function ProductsView() {
-    const { viewMode } = useInventoryStore();
-    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "h-full w-full flex flex-col", children: [
-      /* @__PURE__ */ jsxRuntime.jsx(Header, {}),
-      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex-1 relative min-h-0", children: viewMode === "table" ? /* @__PURE__ */ jsxRuntime.jsx(InventoryTable, {}) : /* @__PURE__ */ jsxRuntime.jsx(WmsView, {}) })
-    ] });
-  }
-  function SettingsHeader({ activeTab }) {
-    const tabs = [
-      { id: "settings-general", label: "General", icon: Settings },
-      { id: "settings-warehouses", label: "Bodegas", icon: Warehouse },
-      { id: "settings-categories", label: "Categorías", icon: Tags },
-      { id: "settings-groups", label: "Grupos", icon: Layers$1 },
-      { id: "settings-custom-fields", label: "Campos Personalizados", icon: PenTool }
-    ];
-    const navigate = (route) => {
-      let path = "/app/com.hubbi.inventory";
-      path += "/" + route.replace("-", "/");
-      window.hubbi.navigate(path);
-    };
-    return /* @__PURE__ */ jsxRuntime.jsx("div", { className: "h-14 border-b border-hubbi-border flex items-center px-4 bg-hubbi-card gap-2 overflow-x-auto min-w-0", children: tabs.map((tab) => {
-      const isActive = activeTab === tab.id || tab.id === "settings-general" && activeTab === "settings";
-      return /* @__PURE__ */ jsxRuntime.jsxs(
-        "button",
-        {
-          onClick: () => navigate(tab.id),
-          className: clsx$1(
-            "px-3 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-2 whitespace-nowrap",
-            isActive ? "bg-hubbi-primary/10 text-hubbi-primary shadow-sm ring-1 ring-hubbi-primary/20" : "text-hubbi-dim hover:text-hubbi-text hover:bg-hubbi-muted"
-          ),
-          children: [
-            /* @__PURE__ */ jsxRuntime.jsx(tab.icon, { className: clsx$1("w-4 h-4", isActive ? "text-hubbi-primary" : "text-hubbi-dim") }),
-            tab.label
-          ]
-        },
-        tab.id
-      );
-    }) });
-  }
-  const PROFILE_META = {
-    [InventoryProfile.GENERIC]: {
-      label: "Genérico",
-      icon: Briefcase,
-      description: "Configuración estándar sin especialización."
-    },
-    [InventoryProfile.RETAIL]: {
-      label: "Retail / Tienda",
-      icon: ShoppingBag,
-      description: "Optimizado para ventas rápidas y rotación."
-    },
-    [InventoryProfile.WORKSHOP]: {
-      label: "Taller",
-      icon: Wrench,
-      description: "Gestión de servicios, repuestos y órdenes."
-    },
-    [InventoryProfile.RESTAURANT]: {
-      label: "Restaurante",
-      icon: Building2,
-      // Chef icon not in default lucide set used here
-      description: "Control de ingredientes, recetas y perecederos."
-    },
-    [InventoryProfile.PHARMACY]: {
-      label: "Farmacia",
-      icon: Stethoscope,
-      description: "Control estricto de lotes y vencimientos."
-    }
-  };
-  function GeneralSettings() {
-    const profile = useInventorySettings((s2) => s2.profile);
-    const features = useInventorySettings((s2) => s2.features);
-    const overridden = useInventorySettings((s2) => s2.overridden);
-    const setProfile = useInventorySettings((s2) => s2.setProfile);
-    const toggleFeature = useInventorySettings((s2) => s2.toggleFeature);
-    const resetToDefaults = useInventorySettings((s2) => s2.resetToProfileDefaults);
-    const [saving, setSaving] = React.useState(false);
-    const [loading, setLoading] = React.useState(true);
-    const [allDepartments, setAllDepartments] = React.useState([]);
-    const allowedDepartments = useInventorySettings((s2) => s2.allowedDepartments || []);
-    const setAllowedDepartments = useInventorySettings((s2) => s2.setAllowedDepartments);
-    React.useEffect(() => {
-      const load = async () => {
-        try {
-          const stored = await window.hubbi.settings.getAll("com.hubbi.inventory");
-          const depts = await window.hubbi.departments.list();
-          const context = window.hubbi.getContext();
-          const filteredDepts = context?.subHubId ? depts.filter((d) => Number(d.sub_hub_id) === Number(context.subHubId)) : depts;
-          setAllDepartments(filteredDepts);
-          if (stored["allowedDepartments"]) {
-            const ids = JSON.parse(stored["allowedDepartments"]);
-            setAllowedDepartments(ids);
-          }
-        } catch (err) {
-          console.error("Failed to load settings", err);
-        } finally {
-          setLoading(false);
-        }
-      };
-      load();
-    }, []);
-    const handleSave = async () => {
-      setSaving(true);
-      try {
-        await window.hubbi.settings.set("profile", profile, "com.hubbi.inventory");
-        await window.hubbi.settings.set("allowedDepartments", JSON.stringify(allowedDepartments), "com.hubbi.inventory");
-        for (const [key, enabled] of Object.entries(features)) {
-          await window.hubbi.settings.set(`feature_${key}`, String(enabled), "com.hubbi.inventory");
-        }
-        window.hubbi.notify("Configuración guardada correctamente", "success");
-      } catch (err) {
-        console.error(err);
-        window.hubbi.notify("Error al guardar configuración", "error");
-      } finally {
-        setSaving(false);
-      }
-    };
-    if (loading) return /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-8 text-center text-hubbi-dim animate-pulse", children: "Cargando perfil..." });
-    const Toggle2 = ({ feature, label, description }) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between py-4 border-b border-hubbi-border last:border-0 group", children: [
-      /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "font-medium text-hubbi-text group-hover:text-hubbi-primary transition-colors", children: label }),
-        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-sm text-hubbi-dim", children: description })
-      ] }),
-      /* @__PURE__ */ jsxRuntime.jsx(
-        "button",
-        {
-          onClick: () => toggleFeature(feature, !features[feature]),
-          className: clsx$1(
-            "w-11 h-6 rounded-full transition-colors relative focus:outline-none focus:ring-2 focus:ring-hubbi-primary/20",
-            features[feature] ? "bg-hubbi-primary" : "bg-hubbi-muted"
-          ),
-          children: /* @__PURE__ */ jsxRuntime.jsx("div", { className: clsx$1(
-            "w-5 h-5 bg-white rounded-full absolute top-0.5 transition-transform shadow-sm",
-            features[feature] ? "left-[calc(100%-1.375rem)]" : "left-0.5"
-          ) })
-        }
-      )
-    ] });
-    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "max-w-4xl mx-auto p-6 space-y-8 pb-20", children: [
-      /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntime.jsx("h2", { className: "text-2xl font-bold text-hubbi-text", children: "Configuración de Inventario" }),
-        /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-hubbi-dim mt-1", children: "Define el comportamiento del módulo mediante Perfiles de Negocio." })
-      ] }),
-      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-3", children: [
-        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-between items-center", children: [
-          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-sm font-semibold text-hubbi-dim uppercase tracking-wider", children: "Perfil de Negocio" }),
-          overridden && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2 text-xs text-amber-500 bg-amber-500/10 px-2 py-1 rounded-md", children: [
-            /* @__PURE__ */ jsxRuntime.jsx(TriangleAlert, { size: 12 }),
-            /* @__PURE__ */ jsxRuntime.jsx("span", { children: "Personalizado" }),
-            /* @__PURE__ */ jsxRuntime.jsxs("button", { onClick: resetToDefaults, className: "underline hover:text-amber-600 ml-1 flex items-center gap-1", children: [
-              /* @__PURE__ */ jsxRuntime.jsx(RotateCcw, { size: 10 }),
-              " Restaurar"
-            ] })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-3", children: Object.keys(PROFILE_META).map((key) => {
-          const meta = PROFILE_META[key];
-          const isSelected = profile === key;
-          const Icon2 = meta.icon;
-          return /* @__PURE__ */ jsxRuntime.jsxs(
-            "button",
-            {
-              onClick: () => setProfile(key),
-              className: clsx$1(
-                "p-3 rounded-xl border text-left transition-all relative flex flex-col gap-2",
-                isSelected ? "border-hubbi-primary bg-hubbi-primary/5 text-hubbi-primary ring-1 ring-hubbi-primary shadow-sm" : "border-hubbi-border bg-hubbi-card hover:border-hubbi-dim/50 text-hubbi-text hover:bg-hubbi-background"
-              ),
-              children: [
-                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-between items-start", children: [
-                  /* @__PURE__ */ jsxRuntime.jsx(Icon2, { className: clsx$1("w-6 h-6", isSelected ? "text-hubbi-primary" : "text-hubbi-dim") }),
-                  isSelected && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "bg-hubbi-primary text-white p-0.5 rounded-full", children: /* @__PURE__ */ jsxRuntime.jsx(Check$1, { size: 10 }) })
-                ] }),
-                /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
-                  /* @__PURE__ */ jsxRuntime.jsx("span", { className: "font-medium text-sm block", children: meta.label }),
-                  /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-hubbi-dim line-clamp-2 mt-0.5", children: meta.description })
-                ] })
-              ]
-            },
-            key
-          );
-        }) })
-      ] }),
-      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-3", children: [
-        /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-sm font-semibold text-hubbi-dim uppercase tracking-wider", children: "Capacidades Habilitadas" }),
-        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-card border border-hubbi-border rounded-xl px-6 divide-y divide-hubbi-border shadow-sm", children: [
-          /* @__PURE__ */ jsxRuntime.jsx(
-            Toggle2,
-            {
-              feature: "expiration_dates",
-              label: "Control de Vencimientos",
-              description: "Requiere fecha de caducidad en entradas y salidas (FIFO/FEFO)."
-            }
-          ),
-          /* @__PURE__ */ jsxRuntime.jsx(
-            Toggle2,
-            {
-              feature: "serial_tracking",
-              label: "Números de Serie (S/N)",
-              description: "Rastreo individual de ítems únicos."
-            }
-          ),
-          /* @__PURE__ */ jsxRuntime.jsx(
-            Toggle2,
-            {
-              feature: "batch_tracking",
-              label: "Lotes / Batches",
-              description: "Agrupación de trazabilidad por lotes de fabricación."
-            }
-          ),
-          /* @__PURE__ */ jsxRuntime.jsx(
-            Toggle2,
-            {
-              feature: "work_order_consumption",
-              label: "Consumo por Órdenes",
-              description: "Permite descontar inventario mediante órdenes de trabajo o recetas."
-            }
-          ),
-          /* @__PURE__ */ jsxRuntime.jsx(
-            Toggle2,
-            {
-              feature: "asset_depreciation",
-              label: "Gestión de Activos Fijos",
-              description: "Habilita campos de depreciación y vida útil para bienes internos."
-            }
-          ),
-          /* @__PURE__ */ jsxRuntime.jsx(
-            Toggle2,
-            {
-              feature: "kits_enabled",
-              label: "Kits & Compuestos",
-              description: "Permite crear productos hijos (BOM) dentro de un padre (ej. Canastas, Paquetes)."
-            }
-          ),
-          /* @__PURE__ */ jsxRuntime.jsx(
-            Toggle2,
-            {
-              feature: "reservations_enabled",
-              label: "Reservas de Stock",
-              description: "Habilita el bloqueo de stock para Órdenes de Trabajo o Pedidos (Comprometido)."
-            }
-          ),
-          /* @__PURE__ */ jsxRuntime.jsx(
-            Toggle2,
-            {
-              feature: "negative_stock_allowed",
-              label: "Permitir Stock Negativo",
-              description: "AUTORIZAR movimientos de salida sin stock suficiente (No recomendado)."
-            }
-          )
-        ] })
-      ] }),
-      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-4", children: [
-        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
-          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-sm font-semibold text-hubbi-dim uppercase tracking-wider", children: "Restricción de Acceso por Área" }),
-          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "h-px flex-1 bg-hubbi-border" })
-        ] }),
-        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-card border border-hubbi-border rounded-xl p-6 shadow-sm space-y-4", children: [
-          /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-hubbi-dim", children: "Selecciona los departamentos que tienen permiso para acceder a este módulo. Si no seleccionas ninguno, el acceso será **Universal** para todos los usuarios con el permiso `inventory.access`." }),
-          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-2", children: allDepartments.map((dept) => {
-            const isAllowed = allowedDepartments.includes(dept.id);
-            return /* @__PURE__ */ jsxRuntime.jsxs(
-              "button",
-              {
-                onClick: () => {
-                  const newDepts = isAllowed ? allowedDepartments.filter((id) => id !== dept.id) : [...allowedDepartments, dept.id];
-                  setAllowedDepartments(newDepts);
-                },
-                className: clsx$1(
-                  "px-4 py-2 rounded-lg text-xs font-medium border transition-all text-left flex items-center justify-between gap-2",
-                  isAllowed ? "bg-hubbi-primary/10 border-hubbi-primary text-hubbi-primary" : "bg-hubbi-input/30 border-hubbi-border text-hubbi-dim hover:border-hubbi-dim/50"
-                ),
-                children: [
-                  dept.name,
-                  isAllowed && /* @__PURE__ */ jsxRuntime.jsx(Check$1, { size: 12 })
-                ]
-              },
-              dept.id
-            );
-          }) })
-        ] })
-      ] }),
-      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "fixed bottom-6 right-6 z-10", children: /* @__PURE__ */ jsxRuntime.jsxs(
-        "button",
-        {
-          onClick: handleSave,
-          disabled: saving,
-          className: "flex items-center gap-2 bg-hubbi-primary hover:bg-hubbi-primary-hover text-white px-6 py-3 rounded-full font-bold shadow-lg transition-transform active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed",
-          children: [
-            saving ? /* @__PURE__ */ jsxRuntime.jsx(RefreshCw, { className: "w-5 h-5 animate-spin" }) : /* @__PURE__ */ jsxRuntime.jsx(Save, { className: "w-5 h-5" }),
-            saving ? "Guardando..." : "Guardar Cambios"
-          ]
-        }
-      ) })
-    ] });
-  }
   function WarehouseForm({ open, onClose, onSuccess, initialData }) {
     const [isSaving, setIsSaving] = React.useState(false);
     const [branches, setBranches] = React.useState([]);
@@ -49555,9 +50087,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
           reset({
             name: initialData.name,
             sub_hub_id: String(initialData.sub_hub_id),
-            // @ts-ignore - fields exist in DB but not in type yet
             address: initialData.address || "",
-            // @ts-ignore
             phone: initialData.phone || "",
             responsible_user_id: initialData.responsible_user_id || null,
             is_active: initialData.is_active !== false
@@ -49760,7 +50290,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
       ) })
     ] });
   }
-  const columnHelper = createColumnHelper();
+  const columnHelper$4 = createColumnHelper();
   function WarehousesSettings() {
     const [warehouses, setWarehouses] = React.useState([]);
     const [branches, setBranches] = React.useState([]);
@@ -49795,7 +50325,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
     React.useEffect(() => {
       fetchWarehouses();
     }, [fetchWarehouses]);
-    const handleDelete = async (id) => {
+    const handleDelete = React.useCallback(async (id) => {
       if (!confirm("¿Estás seguro de eliminar esta bodega?")) return;
       try {
         await window.hubbi.db.delete("warehouses", id, { moduleId: "com.hubbi.inventory" });
@@ -49805,16 +50335,16 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
         console.error("Error deleting warehouse", err);
         window.hubbi.notify("Error al eliminar bodega", "error");
       }
-    };
+    }, [fetchWarehouses]);
     const columns2 = React.useMemo(() => [
-      columnHelper.accessor("name", {
+      columnHelper$4.accessor("name", {
         header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex items-center gap-2", children: "Nombre de Bodega" }),
         cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3", children: [
           /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-2 bg-hubbi-primary/5 rounded-lg", children: /* @__PURE__ */ jsxRuntime.jsx(Warehouse, { className: "w-4 h-4 text-hubbi-primary" }) }),
           /* @__PURE__ */ jsxRuntime.jsx("span", { className: "font-bold text-hubbi-text", children: info.getValue() })
         ] })
       }),
-      columnHelper.accessor("sub_hub_id", {
+      columnHelper$4.accessor("sub_hub_id", {
         header: "Sucursal",
         cell: (info) => {
           const branch = branches.find((b) => String(b.id) === String(info.getValue()));
@@ -49824,14 +50354,14 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
           ] });
         }
       }),
-      columnHelper.accessor("is_active", {
+      columnHelper$4.accessor("is_active", {
         header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-center", children: "Estado" }),
         cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: clsx$1(
           "px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest",
           info.getValue() !== false ? "bg-green-500/10 text-green-500 border border-green-500/20" : "bg-red-500/10 text-red-500 border border-red-500/20"
         ), children: info.getValue() !== false ? "Activa" : "Inactiva" }) })
       }),
-      columnHelper.display({
+      columnHelper$4.display({
         id: "actions",
         header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-right px-2", children: "Acciones" }),
         cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-end gap-1 px-2", children: [
@@ -49856,7 +50386,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
           )
         ] })
       })
-    ], [branches]);
+    ], [branches, handleDelete]);
     const table = useReactTable({
       data: warehouses,
       columns: columns2,
@@ -49964,11 +50494,1306 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
       )
     ] });
   }
-  function PlaceholderPage({ title, description = "Esta funcionalidad está en desarrollo." }) {
-    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col items-center justify-center h-full text-hubbi-dim p-8 text-center animate-in fade-in zoom-in duration-300", children: [
-      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "bg-hubbi-card p-6 rounded-2xl border border-hubbi-border shadow-xl mb-6", children: /* @__PURE__ */ jsxRuntime.jsx(Construction, { size: 48, className: "text-hubbi-primary mb-0 mx-auto", strokeWidth: 1.5 }) }),
-      /* @__PURE__ */ jsxRuntime.jsx("h2", { className: "text-3xl font-bold text-hubbi-text mb-3 tracking-tight", children: title }),
-      /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-lg max-w-md mx-auto text-hubbi-dim/80", children: description })
+  const columnHelper$3 = createColumnHelper();
+  function UnitsSettings() {
+    const [units, setUnits] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
+    const [sorting, setSorting] = React.useState([]);
+    const [globalFilter, setGlobalFilter] = React.useState("");
+    const [isFormOpen, setIsFormOpen] = React.useState(false);
+    const [editingUnit, setEditingUnit] = React.useState(null);
+    const [formData, setFormData] = React.useState({ name: "", symbol: "" });
+    const [isSaving, setIsSaving] = React.useState(false);
+    const fetchUnits = React.useCallback(async () => {
+      try {
+        setLoading(true);
+        const results = await window.hubbi.db.query(
+          "SELECT * FROM uoms ORDER BY name ASC",
+          [],
+          { moduleId: "com.hubbi.inventory" }
+        );
+        setUnits(results);
+      } catch (err) {
+        console.error("Error fetching units", err);
+        window.hubbi.notify("Error al cargar unidades", "error");
+      } finally {
+        setLoading(false);
+      }
+    }, []);
+    React.useEffect(() => {
+      fetchUnits();
+    }, [fetchUnits]);
+    const handleDelete = React.useCallback(async (id) => {
+      if (!confirm("¿Estás seguro de eliminar esta unidad? Esto puede afectar productos que la usen.")) return;
+      try {
+        await window.hubbi.db.delete("uoms", id, { moduleId: "com.hubbi.inventory" });
+        window.hubbi.notify("Unidad eliminada", "success");
+        fetchUnits();
+      } catch (err) {
+        console.error("Error deleting unit", err);
+        window.hubbi.notify("Error al eliminar unidad", "error");
+      }
+    }, [fetchUnits]);
+    const handleToggleActive = React.useCallback(async (unit) => {
+      try {
+        await window.hubbi.db.execute(
+          "UPDATE uoms SET is_active = ? WHERE id = ?",
+          [!unit.is_active, unit.id],
+          { moduleId: "com.hubbi.inventory" }
+        );
+        window.hubbi.notify(unit.is_active ? "Unidad desactivada" : "Unidad activada", "success");
+        fetchUnits();
+      } catch (err) {
+        console.error("Error toggling unit", err);
+        window.hubbi.notify("Error al actualizar unidad", "error");
+      }
+    }, [fetchUnits]);
+    const handleSave = async () => {
+      if (!formData.name.trim() || !formData.symbol.trim()) {
+        window.hubbi.notify("Nombre y símbolo son requeridos", "warning");
+        return;
+      }
+      setIsSaving(true);
+      try {
+        if (editingUnit) {
+          await window.hubbi.db.execute(
+            `UPDATE uoms SET name = ?, symbol = ? WHERE id = ?`,
+            [formData.name, formData.symbol, editingUnit.id],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          window.hubbi.notify("Unidad actualizada", "success");
+        } else {
+          const id = crypto.randomUUID();
+          await window.hubbi.db.execute(
+            `INSERT INTO uoms (id, name, symbol, is_active) VALUES (?, ?, ?, ?)`,
+            [id, formData.name, formData.symbol, true],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          window.hubbi.notify("Unidad creada", "success");
+        }
+        setIsFormOpen(false);
+        setEditingUnit(null);
+        setFormData({ name: "", symbol: "" });
+        fetchUnits();
+      } catch (err) {
+        console.error("Error saving unit", err);
+        window.hubbi.notify("Error al guardar unidad", "error");
+      } finally {
+        setIsSaving(false);
+      }
+    };
+    const openEdit = (unit) => {
+      setEditingUnit(unit);
+      setFormData({
+        name: unit.name,
+        symbol: unit.symbol
+      });
+      setIsFormOpen(true);
+    };
+    const columns2 = React.useMemo(() => [
+      columnHelper$3.accessor("name", {
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex items-center gap-2", children: "Nombre" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-2 bg-hubbi-primary/5 rounded-lg", children: /* @__PURE__ */ jsxRuntime.jsx(Ruler, { className: "w-4 h-4 text-hubbi-primary" }) }),
+          /* @__PURE__ */ jsxRuntime.jsx("span", { className: "font-bold text-hubbi-text", children: info.getValue() })
+        ] })
+      }),
+      columnHelper$3.accessor("symbol", {
+        header: "Símbolo",
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("span", { className: "px-2 py-1 bg-hubbi-muted/30 rounded font-mono text-sm text-hubbi-text", children: info.getValue() })
+      }),
+      columnHelper$3.accessor("is_active", {
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-center", children: "Estado" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntime.jsx(
+          "button",
+          {
+            onClick: () => handleToggleActive(info.row.original),
+            className: clsx$1(
+              "px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest cursor-pointer transition-colors",
+              info.getValue() ? "bg-green-500/10 text-green-500 border border-green-500/20 hover:bg-green-500/20" : "bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20"
+            ),
+            children: info.getValue() ? "Activa" : "Inactiva"
+          }
+        ) })
+      }),
+      columnHelper$3.display({
+        id: "actions",
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-right px-2", children: "Acciones" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-end gap-1 px-2", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              onClick: () => openEdit(info.row.original),
+              className: "p-2 text-hubbi-dim hover:text-hubbi-primary hover:bg-hubbi-primary/10 rounded-lg transition-colors",
+              children: /* @__PURE__ */ jsxRuntime.jsx(Pen, { size: 14 })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              onClick: () => handleDelete(info.row.original.id),
+              className: "p-2 text-hubbi-dim hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-colors",
+              children: /* @__PURE__ */ jsxRuntime.jsx(Trash2, { size: 14 })
+            }
+          )
+        ] })
+      })
+    ], [handleDelete, handleToggleActive]);
+    const table = useReactTable({
+      data: units,
+      columns: columns2,
+      columnResizeMode: "onChange",
+      state: { sorting, globalFilter },
+      onSortingChange: setSorting,
+      onGlobalFilterChange: setGlobalFilter,
+      getCoreRowModel: getCoreRowModel(),
+      getSortedRowModel: getSortedRowModel(),
+      getFilteredRowModel: getFilteredRowModel()
+    });
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-6 space-y-6 flex flex-col h-full animate-in fade-in duration-500", children: [
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntime.jsxs("h2", { className: "text-2xl font-bold text-hubbi-text tracking-tight flex items-center gap-3", children: [
+            "Unidades de Medida",
+            loading && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-4 h-4 border-2 border-hubbi-primary border-t-transparent rounded-full animate-spin" })
+          ] }),
+          /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-hubbi-dim mt-1", children: "Define las unidades base y presentaciones para tus productos." })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs(
+          Button,
+          {
+            onClick: () => {
+              setEditingUnit(null);
+              setFormData({ name: "", symbol: "" });
+              setIsFormOpen(true);
+            },
+            className: "flex items-center gap-2 px-6",
+            children: [
+              /* @__PURE__ */ jsxRuntime.jsx(Plus, { size: 18 }),
+              "Nueva Unidad"
+            ]
+          }
+        )
+      ] }),
+      units.length === 0 && !loading && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-4 bg-hubbi-primary/5 border border-hubbi-primary/20 rounded-xl", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("p", { className: "text-sm text-hubbi-text mb-3", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("strong", { children: "Sugerencia:" }),
+          " Agrega unidades comunes para empezar rápido:"
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-wrap gap-2", children: [
+          { name: "Unidad", symbol: "u" },
+          { name: "Pieza", symbol: "pz" },
+          { name: "Kilogramo", symbol: "kg" },
+          { name: "Libra", symbol: "lb" },
+          { name: "Litro", symbol: "L" },
+          { name: "Metro", symbol: "m" },
+          { name: "Caja", symbol: "caja" },
+          { name: "Docena", symbol: "doc" }
+        ].map((u) => /* @__PURE__ */ jsxRuntime.jsxs(
+          "button",
+          {
+            onClick: async () => {
+              const id = crypto.randomUUID();
+              await window.hubbi.db.execute(
+                `INSERT INTO uoms (id, name, symbol, is_active) VALUES (?, ?, ?, ?)`,
+                [id, u.name, u.symbol, true],
+                { moduleId: "com.hubbi.inventory" }
+              );
+              fetchUnits();
+            },
+            className: "px-3 py-1.5 bg-hubbi-card border border-hubbi-border rounded-lg text-sm hover:border-hubbi-primary hover:text-hubbi-primary transition-colors",
+            children: [
+              u.name,
+              " ",
+              /* @__PURE__ */ jsxRuntime.jsxs("span", { className: "text-hubbi-dim", children: [
+                "(",
+                u.symbol,
+                ")"
+              ] })
+            ]
+          },
+          u.symbol
+        )) })
+      ] }),
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-col md:flex-row gap-4", children: /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsxRuntime.jsx(
+        Input,
+        {
+          placeholder: "Buscar unidad...",
+          value: globalFilter,
+          onChange: (e) => setGlobalFilter(e.target.value),
+          startIcon: /* @__PURE__ */ jsxRuntime.jsx(Search$1, { size: 16, className: "text-hubbi-dim" })
+        }
+      ) }) }),
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex-1 min-h-0 bg-hubbi-card border border-hubbi-border rounded-2xl overflow-hidden shadow-sm flex flex-col", children: [
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "overflow-auto flex-1 no-scrollbar", children: /* @__PURE__ */ jsxRuntime.jsxs("table", { className: "w-full text-left border-separate border-spacing-0 border-collapse", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("thead", { className: "bg-hubbi-muted/30 sticky top-0 z-10", children: table.getHeaderGroups().map((headerGroup) => /* @__PURE__ */ jsxRuntime.jsx("tr", { children: headerGroup.headers.map((header) => /* @__PURE__ */ jsxRuntime.jsxs(
+            "th",
+            {
+              style: { width: header.getSize() },
+              onClick: header.column.getToggleSortingHandler(),
+              className: "relative px-6 py-4 text-[10px] font-black uppercase tracking-widest text-hubbi-dim border border-hubbi-border cursor-pointer hover:text-hubbi-primary transition-colors group select-none",
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
+                  flexRender(header.column.columnDef.header, header.getContext()),
+                  {
+                    asc: " ↑",
+                    desc: " ↓"
+                  }[header.column.getIsSorted()] ?? null
+                ] }),
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  "div",
+                  {
+                    onMouseDown: header.getResizeHandler(),
+                    onTouchStart: header.getResizeHandler(),
+                    onClick: (e) => e.stopPropagation(),
+                    className: clsx$1(
+                      "absolute right-0 top-0 h-full w-1 cursor-col-resize touch-none",
+                      header.column.getIsResizing() ? "bg-hubbi-primary" : "bg-transparent group-hover:bg-hubbi-border"
+                    )
+                  }
+                )
+              ]
+            },
+            header.id
+          )) }, headerGroup.id)) }),
+          /* @__PURE__ */ jsxRuntime.jsxs("tbody", { children: [
+            table.getRowModel().rows.map((row) => /* @__PURE__ */ jsxRuntime.jsx(
+              "tr",
+              {
+                className: "group hover:bg-hubbi-primary/5 transition-all duration-200",
+                children: row.getVisibleCells().map((cell) => /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-6 py-4 whitespace-nowrap border border-hubbi-border", style: { width: cell.column.getSize() }, children: flexRender(cell.column.columnDef.cell, cell.getContext()) }, cell.id))
+              },
+              row.id
+            )),
+            !loading && units.length === 0 && /* @__PURE__ */ jsxRuntime.jsx("tr", { children: /* @__PURE__ */ jsxRuntime.jsx("td", { colSpan: columns2.length, className: "px-6 py-20 text-center border border-hubbi-border", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col items-center gap-3 opacity-30", children: [
+              /* @__PURE__ */ jsxRuntime.jsx(Ruler, { size: 48 }),
+              /* @__PURE__ */ jsxRuntime.jsx("p", { className: "font-bold", children: "No se encontraron unidades" }),
+              /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm", children: "Crea tu primera unidad de medida" })
+            ] }) }) })
+          ] })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "px-6 py-3 border-t border-hubbi-border bg-hubbi-muted/10 flex items-center justify-between", children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-hubbi-dim font-medium", children: loading ? "Sincronizando..." : `${units.length} unidades` }) })
+      ] }),
+      isFormOpen && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 animate-in fade-in duration-200", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-card border border-hubbi-border rounded-2xl shadow-2xl w-full max-w-md p-6 space-y-4 animate-in zoom-in-95 duration-200", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-lg font-bold text-hubbi-text", children: editingUnit ? "Editar Unidad" : "Nueva Unidad" }),
+          /* @__PURE__ */ jsxRuntime.jsx("button", { onClick: () => setIsFormOpen(false), className: "p-1 hover:bg-hubbi-muted rounded-lg", children: /* @__PURE__ */ jsxRuntime.jsx(X$1, { size: 18, className: "text-hubbi-dim" }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          Input,
+          {
+            label: "Nombre *",
+            value: formData.name,
+            onChange: (e) => setFormData((f) => ({ ...f, name: e.target.value })),
+            placeholder: "Ej: Kilogramo"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          Input,
+          {
+            label: "Símbolo *",
+            value: formData.symbol,
+            onChange: (e) => setFormData((f) => ({ ...f, symbol: e.target.value })),
+            placeholder: "Ej: kg",
+            className: "font-mono"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-end gap-3 pt-4 border-t border-hubbi-border", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { variant: "ghost", onClick: () => setIsFormOpen(false), disabled: isSaving, children: "Cancelar" }),
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { onClick: handleSave, disabled: isSaving, children: isSaving ? "Guardando..." : editingUnit ? "Guardar Cambios" : "Crear Unidad" })
+        ] })
+      ] }) })
+    ] });
+  }
+  const columnHelper$2 = createColumnHelper();
+  const CATEGORY_COLORS = [
+    "#6366f1",
+    "#8b5cf6",
+    "#a855f7",
+    "#d946ef",
+    "#ec4899",
+    "#f43f5e",
+    "#ef4444",
+    "#f97316",
+    "#f59e0b",
+    "#eab308",
+    "#84cc16",
+    "#22c55e",
+    "#10b981",
+    "#14b8a6",
+    "#06b6d4",
+    "#0ea5e9",
+    "#3b82f6",
+    "#6366f1"
+  ];
+  function CategoriesSettings() {
+    const [categories, setCategories] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
+    const [sorting, setSorting] = React.useState([]);
+    const [globalFilter, setGlobalFilter] = React.useState("");
+    const [isFormOpen, setIsFormOpen] = React.useState(false);
+    const [editingCategory, setEditingCategory] = React.useState(null);
+    const [formData, setFormData] = React.useState({ name: "", description: "", color: CATEGORY_COLORS[0], icon: "Package" });
+    const [isSaving, setIsSaving] = React.useState(false);
+    const fetchCategories = React.useCallback(async () => {
+      try {
+        setLoading(true);
+        const results = await window.hubbi.db.query(
+          "SELECT * FROM categories ORDER BY display_order ASC, name ASC",
+          [],
+          { moduleId: "com.hubbi.inventory" }
+        );
+        setCategories(results);
+      } catch (err) {
+        console.error("Error fetching categories", err);
+        window.hubbi.notify("Error al cargar categorías", "error");
+      } finally {
+        setLoading(false);
+      }
+    }, []);
+    React.useEffect(() => {
+      fetchCategories();
+    }, [fetchCategories]);
+    const handleDelete = React.useCallback(async (id) => {
+      if (!confirm("¿Estás seguro de eliminar esta categoría?")) return;
+      try {
+        await window.hubbi.db.delete("categories", id, { moduleId: "com.hubbi.inventory" });
+        window.hubbi.notify("Categoría eliminada", "success");
+        fetchCategories();
+      } catch (err) {
+        console.error("Error deleting category", err);
+        window.hubbi.notify("Error al eliminar categoría", "error");
+      }
+    }, [fetchCategories]);
+    const handleSave = async () => {
+      if (!formData.name.trim()) {
+        window.hubbi.notify("El nombre es requerido", "warning");
+        return;
+      }
+      setIsSaving(true);
+      try {
+        if (editingCategory) {
+          await window.hubbi.db.execute(
+            `UPDATE categories SET name = ?, description = ?, color = ?, icon = ? WHERE id = ?`,
+            [formData.name, formData.description, formData.color, formData.icon, editingCategory.id],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          window.hubbi.notify("Categoría actualizada", "success");
+        } else {
+          const id = crypto.randomUUID();
+          await window.hubbi.db.execute(
+            `INSERT INTO categories (id, name, description, color, icon, display_order) VALUES (?, ?, ?, ?, ?, ?)`,
+            [id, formData.name, formData.description, formData.color, formData.icon, categories.length],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          window.hubbi.notify("Categoría creada", "success");
+        }
+        setIsFormOpen(false);
+        setEditingCategory(null);
+        setFormData({ name: "", description: "", color: CATEGORY_COLORS[0], icon: "Package" });
+        fetchCategories();
+      } catch (err) {
+        console.error("Error saving category", err);
+        window.hubbi.notify("Error al guardar categoría", "error");
+      } finally {
+        setIsSaving(false);
+      }
+    };
+    const openEdit = (category) => {
+      setEditingCategory(category);
+      setFormData({
+        name: category.name,
+        description: category.description || "",
+        color: category.color || CATEGORY_COLORS[0],
+        icon: category.icon || "Package"
+      });
+      setIsFormOpen(true);
+    };
+    const columns2 = React.useMemo(() => [
+      columnHelper$2.accessor("name", {
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex items-center gap-2", children: "Categoría" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "div",
+            {
+              className: "w-8 h-8 rounded-lg flex items-center justify-center",
+              style: { backgroundColor: info.row.original.color || CATEGORY_COLORS[0] },
+              children: /* @__PURE__ */ jsxRuntime.jsx(Tags, { className: "w-4 h-4 text-white" })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntime.jsx("span", { className: "font-bold text-hubbi-text", children: info.getValue() }),
+            info.row.original.description && /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-xs text-hubbi-dim truncate max-w-[200px]", children: info.row.original.description })
+          ] })
+        ] })
+      }),
+      columnHelper$2.accessor("is_active", {
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-center", children: "Estado" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: clsx$1(
+          "px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest",
+          info.getValue() !== false ? "bg-green-500/10 text-green-500 border border-green-500/20" : "bg-red-500/10 text-red-500 border border-red-500/20"
+        ), children: info.getValue() !== false ? "Activa" : "Inactiva" }) })
+      }),
+      columnHelper$2.display({
+        id: "actions",
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-right px-2", children: "Acciones" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-end gap-1 px-2", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              onClick: () => openEdit(info.row.original),
+              className: "p-2 text-hubbi-dim hover:text-hubbi-primary hover:bg-hubbi-primary/10 rounded-lg transition-colors",
+              children: /* @__PURE__ */ jsxRuntime.jsx(Pen, { size: 14 })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              onClick: () => handleDelete(info.row.original.id),
+              className: "p-2 text-hubbi-dim hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-colors",
+              children: /* @__PURE__ */ jsxRuntime.jsx(Trash2, { size: 14 })
+            }
+          )
+        ] })
+      })
+    ], [handleDelete]);
+    const table = useReactTable({
+      data: categories,
+      columns: columns2,
+      columnResizeMode: "onChange",
+      state: { sorting, globalFilter },
+      onSortingChange: setSorting,
+      onGlobalFilterChange: setGlobalFilter,
+      getCoreRowModel: getCoreRowModel(),
+      getSortedRowModel: getSortedRowModel(),
+      getFilteredRowModel: getFilteredRowModel()
+    });
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-6 space-y-6 flex flex-col h-full animate-in fade-in duration-500", children: [
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntime.jsxs("h2", { className: "text-2xl font-bold text-hubbi-text tracking-tight flex items-center gap-3", children: [
+            "Categorías",
+            loading && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-4 h-4 border-2 border-hubbi-primary border-t-transparent rounded-full animate-spin" })
+          ] }),
+          /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-hubbi-dim mt-1", children: "Organiza tu inventario con categorías. Cada producto debe pertenecer a una categoría." })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs(
+          Button,
+          {
+            onClick: () => {
+              setEditingCategory(null);
+              setFormData({ name: "", description: "", color: CATEGORY_COLORS[0], icon: "Package" });
+              setIsFormOpen(true);
+            },
+            className: "flex items-center gap-2 px-6",
+            children: [
+              /* @__PURE__ */ jsxRuntime.jsx(Plus, { size: 18 }),
+              "Nueva Categoría"
+            ]
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-col md:flex-row gap-4", children: /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsxRuntime.jsx(
+        Input,
+        {
+          placeholder: "Buscar categoría...",
+          value: globalFilter,
+          onChange: (e) => setGlobalFilter(e.target.value),
+          startIcon: /* @__PURE__ */ jsxRuntime.jsx(Search$1, { size: 16, className: "text-hubbi-dim" })
+        }
+      ) }) }),
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex-1 min-h-0 bg-hubbi-card border border-hubbi-border rounded-2xl overflow-hidden shadow-sm flex flex-col", children: [
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "overflow-auto flex-1 no-scrollbar", children: /* @__PURE__ */ jsxRuntime.jsxs("table", { className: "w-full text-left border-separate border-spacing-0 border-collapse", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("thead", { className: "bg-hubbi-muted/30 sticky top-0 z-10", children: table.getHeaderGroups().map((headerGroup) => /* @__PURE__ */ jsxRuntime.jsx("tr", { children: headerGroup.headers.map((header) => /* @__PURE__ */ jsxRuntime.jsxs(
+            "th",
+            {
+              style: { width: header.getSize() },
+              onClick: header.column.getToggleSortingHandler(),
+              className: "relative px-6 py-4 text-[10px] font-black uppercase tracking-widest text-hubbi-dim border border-hubbi-border cursor-pointer hover:text-hubbi-primary transition-colors group select-none",
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
+                  flexRender(header.column.columnDef.header, header.getContext()),
+                  {
+                    asc: " ↑",
+                    desc: " ↓"
+                  }[header.column.getIsSorted()] ?? null
+                ] }),
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  "div",
+                  {
+                    onMouseDown: header.getResizeHandler(),
+                    onTouchStart: header.getResizeHandler(),
+                    onClick: (e) => e.stopPropagation(),
+                    className: clsx$1(
+                      "absolute right-0 top-0 h-full w-1 cursor-col-resize touch-none",
+                      header.column.getIsResizing() ? "bg-hubbi-primary" : "bg-transparent group-hover:bg-hubbi-border"
+                    )
+                  }
+                )
+              ]
+            },
+            header.id
+          )) }, headerGroup.id)) }),
+          /* @__PURE__ */ jsxRuntime.jsxs("tbody", { children: [
+            table.getRowModel().rows.map((row) => /* @__PURE__ */ jsxRuntime.jsx(
+              "tr",
+              {
+                className: "group hover:bg-hubbi-primary/5 transition-all duration-200",
+                children: row.getVisibleCells().map((cell) => /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-6 py-4 whitespace-nowrap border border-hubbi-border", style: { width: cell.column.getSize() }, children: flexRender(cell.column.columnDef.cell, cell.getContext()) }, cell.id))
+              },
+              row.id
+            )),
+            !loading && categories.length === 0 && /* @__PURE__ */ jsxRuntime.jsx("tr", { children: /* @__PURE__ */ jsxRuntime.jsx("td", { colSpan: columns2.length, className: "px-6 py-20 text-center border border-hubbi-border", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col items-center gap-3 opacity-30", children: [
+              /* @__PURE__ */ jsxRuntime.jsx(Tags, { size: 48 }),
+              /* @__PURE__ */ jsxRuntime.jsx("p", { className: "font-bold", children: "No se encontraron categorías" }),
+              /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm", children: "Crea tu primera categoría para organizar el inventario" })
+            ] }) }) })
+          ] })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "px-6 py-3 border-t border-hubbi-border bg-hubbi-muted/10 flex items-center justify-between", children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-hubbi-dim font-medium", children: loading ? "Sincronizando..." : `${categories.length} categorías` }) })
+      ] }),
+      isFormOpen && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 animate-in fade-in duration-200", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-card border border-hubbi-border rounded-2xl shadow-2xl w-full max-w-md p-6 space-y-4 animate-in zoom-in-95 duration-200", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-lg font-bold text-hubbi-text", children: editingCategory ? "Editar Categoría" : "Nueva Categoría" }),
+          /* @__PURE__ */ jsxRuntime.jsx("button", { onClick: () => setIsFormOpen(false), className: "p-1 hover:bg-hubbi-muted rounded-lg", children: /* @__PURE__ */ jsxRuntime.jsx(X$1, { size: 18, className: "text-hubbi-dim" }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          Input,
+          {
+            label: "Nombre *",
+            value: formData.name,
+            onChange: (e) => setFormData((f) => ({ ...f, name: e.target.value })),
+            placeholder: "Ej: Electrónicos"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          Input,
+          {
+            label: "Descripción",
+            value: formData.description,
+            onChange: (e) => setFormData((f) => ({ ...f, description: e.target.value })),
+            placeholder: "Descripción opcional..."
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntime.jsx("label", { className: "text-xs font-bold uppercase text-hubbi-dim block mb-2", children: "Color" }),
+          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-wrap gap-2", children: CATEGORY_COLORS.map((color) => /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setFormData((f) => ({ ...f, color })),
+              className: clsx$1(
+                "w-8 h-8 rounded-lg transition-all",
+                formData.color === color && "ring-2 ring-offset-2 ring-hubbi-primary"
+              ),
+              style: { backgroundColor: color },
+              children: formData.color === color && /* @__PURE__ */ jsxRuntime.jsx(Check$1, { size: 14, className: "text-white m-auto" })
+            },
+            color
+          )) })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-end gap-3 pt-4 border-t border-hubbi-border", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { variant: "ghost", onClick: () => setIsFormOpen(false), disabled: isSaving, children: "Cancelar" }),
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { onClick: handleSave, disabled: isSaving, children: isSaving ? "Guardando..." : editingCategory ? "Guardar Cambios" : "Crear Categoría" })
+        ] })
+      ] }) })
+    ] });
+  }
+  const columnHelper$1 = createColumnHelper();
+  function GroupsSettings() {
+    const [groups, setGroups] = React.useState([]);
+    const [categories, setCategories] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
+    const [sorting, setSorting] = React.useState([]);
+    const [globalFilter, setGlobalFilter] = React.useState("");
+    const [isFormOpen, setIsFormOpen] = React.useState(false);
+    const [editingGroup, setEditingGroup] = React.useState(null);
+    const [formData, setFormData] = React.useState({ name: "", description: "", category_id: "" });
+    const [isSaving, setIsSaving] = React.useState(false);
+    const fetchData = React.useCallback(async () => {
+      try {
+        setLoading(true);
+        const [groupsResult, categoriesResult] = await Promise.all([
+          window.hubbi.db.query(
+            "SELECT * FROM item_groups ORDER BY display_order ASC, name ASC",
+            [],
+            { moduleId: "com.hubbi.inventory" }
+          ),
+          window.hubbi.db.query(
+            "SELECT id, name FROM categories WHERE is_active = true ORDER BY name ASC",
+            [],
+            { moduleId: "com.hubbi.inventory" }
+          )
+        ]);
+        setGroups(groupsResult);
+        setCategories(categoriesResult);
+      } catch (err) {
+        console.error("Error fetching groups", err);
+        window.hubbi.notify("Error al cargar grupos", "error");
+      } finally {
+        setLoading(false);
+      }
+    }, []);
+    React.useEffect(() => {
+      fetchData();
+    }, [fetchData]);
+    const handleSaveGroup = async () => {
+      if (!formData.name.trim()) {
+        window.hubbi.notify("El nombre es requerido", "warning");
+        return;
+      }
+      setIsSaving(true);
+      try {
+        if (editingGroup) {
+          await window.hubbi.db.execute(
+            `UPDATE item_groups SET name = ?, description = ?, category_id = ? WHERE id = ?`,
+            [formData.name, formData.description, formData.category_id || null, editingGroup.id],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          window.hubbi.notify("Grupo actualizado", "success");
+        } else {
+          const id = crypto.randomUUID();
+          await window.hubbi.db.execute(
+            `INSERT INTO item_groups (id, name, description, category_id, display_order) VALUES (?, ?, ?, ?, ?)`,
+            [id, formData.name, formData.description, formData.category_id || null, groups.length],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          window.hubbi.notify("Grupo creado", "success");
+        }
+        setIsFormOpen(false);
+        setEditingGroup(null);
+        setFormData({ name: "", description: "", category_id: "" });
+        fetchData();
+      } catch (err) {
+        console.error("Error saving group", err);
+        window.hubbi.notify("Error al guardar grupo", "error");
+      } finally {
+        setIsSaving(false);
+      }
+    };
+    const handleDeleteGroup = React.useCallback(async (id) => {
+      if (!confirm("¿Estás seguro de eliminar este grupo?")) return;
+      try {
+        await window.hubbi.db.delete("item_groups", id, { moduleId: "com.hubbi.inventory" });
+        window.hubbi.notify("Grupo eliminado", "success");
+        fetchData();
+      } catch (err) {
+        console.error("Error deleting group", err);
+        window.hubbi.notify("Error al eliminar grupo", "error");
+      }
+    }, [fetchData]);
+    const openEditGroup = (group) => {
+      setEditingGroup(group);
+      setFormData({
+        name: group.name,
+        description: group.description || "",
+        category_id: group.category_id || ""
+      });
+      setIsFormOpen(true);
+    };
+    const columns2 = React.useMemo(() => [
+      columnHelper$1.accessor("name", {
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex items-center gap-2", children: "Grupo" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-2 bg-hubbi-primary/5 rounded-lg", children: /* @__PURE__ */ jsxRuntime.jsx(Layers$1, { className: "w-4 h-4 text-hubbi-primary" }) }),
+          /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntime.jsx("span", { className: "font-bold text-hubbi-text", children: info.getValue() }),
+            info.row.original.description && /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-xs text-hubbi-dim truncate max-w-[200px]", children: info.row.original.description })
+          ] })
+        ] })
+      }),
+      columnHelper$1.accessor("category_id", {
+        header: "Categoría",
+        cell: (info) => {
+          const category = categories.find((c) => c.id === info.getValue());
+          return category ? /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-sm text-hubbi-dim", children: category.name }) : /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-hubbi-dim/50 italic", children: "Sin categoría" });
+        }
+      }),
+      columnHelper$1.accessor("is_active", {
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-center", children: "Estado" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: clsx$1(
+          "px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest",
+          info.getValue() !== false ? "bg-green-500/10 text-green-500 border border-green-500/20" : "bg-red-500/10 text-red-500 border border-red-500/20"
+        ), children: info.getValue() !== false ? "Activo" : "Inactivo" }) })
+      }),
+      columnHelper$1.display({
+        id: "actions",
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-right px-2", children: "Acciones" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-end gap-1 px-2", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              onClick: () => openEditGroup(info.row.original),
+              className: "p-2 text-hubbi-dim hover:text-hubbi-primary hover:bg-hubbi-primary/10 rounded-lg transition-colors",
+              children: /* @__PURE__ */ jsxRuntime.jsx(Pen, { size: 14 })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              onClick: () => handleDeleteGroup(info.row.original.id),
+              className: "p-2 text-hubbi-dim hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-colors",
+              children: /* @__PURE__ */ jsxRuntime.jsx(Trash2, { size: 14 })
+            }
+          )
+        ] })
+      })
+    ], [categories, handleDeleteGroup]);
+    const table = useReactTable({
+      data: groups,
+      columns: columns2,
+      columnResizeMode: "onChange",
+      state: { sorting, globalFilter },
+      onSortingChange: setSorting,
+      onGlobalFilterChange: setGlobalFilter,
+      getCoreRowModel: getCoreRowModel(),
+      getSortedRowModel: getSortedRowModel(),
+      getFilteredRowModel: getFilteredRowModel()
+    });
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-6 space-y-6 flex flex-col h-full animate-in fade-in duration-500", children: [
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntime.jsxs("h2", { className: "text-2xl font-bold text-hubbi-text tracking-tight flex items-center gap-3", children: [
+            "Grupos",
+            loading && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-4 h-4 border-2 border-hubbi-primary border-t-transparent rounded-full animate-spin" })
+          ] }),
+          /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-hubbi-dim mt-1", children: "Agrupa tus productos de forma flexible (opcional al crear productos)." })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs(
+          Button,
+          {
+            onClick: () => {
+              setEditingGroup(null);
+              setFormData({ name: "", description: "", category_id: "" });
+              setIsFormOpen(true);
+            },
+            className: "flex items-center gap-2 px-6",
+            children: [
+              /* @__PURE__ */ jsxRuntime.jsx(Plus, { size: 18 }),
+              "Nuevo Grupo"
+            ]
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-col md:flex-row gap-4", children: /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsxRuntime.jsx(
+        Input,
+        {
+          placeholder: "Buscar grupo...",
+          value: globalFilter,
+          onChange: (e) => setGlobalFilter(e.target.value),
+          startIcon: /* @__PURE__ */ jsxRuntime.jsx(Search$1, { size: 16, className: "text-hubbi-dim" })
+        }
+      ) }) }),
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex-1 min-h-0 bg-hubbi-card border border-hubbi-border rounded-2xl overflow-hidden shadow-sm flex flex-col", children: [
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "overflow-auto flex-1 no-scrollbar", children: /* @__PURE__ */ jsxRuntime.jsxs("table", { className: "w-full text-left border-separate border-spacing-0 border-collapse", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("thead", { className: "bg-hubbi-muted/30 sticky top-0 z-10", children: table.getHeaderGroups().map((headerGroup) => /* @__PURE__ */ jsxRuntime.jsx("tr", { children: headerGroup.headers.map((header) => /* @__PURE__ */ jsxRuntime.jsxs(
+            "th",
+            {
+              style: { width: header.getSize() },
+              onClick: header.column.getToggleSortingHandler(),
+              className: "relative px-6 py-4 text-[10px] font-black uppercase tracking-widest text-hubbi-dim border border-hubbi-border cursor-pointer hover:text-hubbi-primary transition-colors group select-none",
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
+                  flexRender(header.column.columnDef.header, header.getContext()),
+                  {
+                    asc: " ↑",
+                    desc: " ↓"
+                  }[header.column.getIsSorted()] ?? null
+                ] }),
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  "div",
+                  {
+                    onMouseDown: header.getResizeHandler(),
+                    onTouchStart: header.getResizeHandler(),
+                    onClick: (e) => e.stopPropagation(),
+                    className: clsx$1(
+                      "absolute right-0 top-0 h-full w-1 cursor-col-resize touch-none",
+                      header.column.getIsResizing() ? "bg-hubbi-primary" : "bg-transparent group-hover:bg-hubbi-border"
+                    )
+                  }
+                )
+              ]
+            },
+            header.id
+          )) }, headerGroup.id)) }),
+          /* @__PURE__ */ jsxRuntime.jsxs("tbody", { children: [
+            table.getRowModel().rows.map((row) => /* @__PURE__ */ jsxRuntime.jsx(
+              "tr",
+              {
+                className: "group hover:bg-hubbi-primary/5 transition-all duration-200",
+                children: row.getVisibleCells().map((cell) => /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-6 py-4 whitespace-nowrap border border-hubbi-border", style: { width: cell.column.getSize() }, children: flexRender(cell.column.columnDef.cell, cell.getContext()) }, cell.id))
+              },
+              row.id
+            )),
+            !loading && groups.length === 0 && /* @__PURE__ */ jsxRuntime.jsx("tr", { children: /* @__PURE__ */ jsxRuntime.jsx("td", { colSpan: columns2.length, className: "px-6 py-20 text-center border border-hubbi-border", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col items-center gap-3 opacity-30", children: [
+              /* @__PURE__ */ jsxRuntime.jsx(Layers$1, { size: 48 }),
+              /* @__PURE__ */ jsxRuntime.jsx("p", { className: "font-bold", children: "No se encontraron grupos" }),
+              /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm", children: "Crea tu primer grupo para organizar productos" })
+            ] }) }) })
+          ] })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "px-6 py-3 border-t border-hubbi-border bg-hubbi-muted/10 flex items-center justify-between", children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-hubbi-dim font-medium", children: loading ? "Sincronizando..." : `${groups.length} grupos` }) })
+      ] }),
+      isFormOpen && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 animate-in fade-in duration-200", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-card border border-hubbi-border rounded-2xl shadow-2xl w-full max-w-md p-6 space-y-4 animate-in zoom-in-95 duration-200", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-lg font-bold text-hubbi-text", children: editingGroup ? "Editar Grupo" : "Nuevo Grupo" }),
+          /* @__PURE__ */ jsxRuntime.jsx("button", { onClick: () => setIsFormOpen(false), className: "p-1 hover:bg-hubbi-muted rounded-lg", children: /* @__PURE__ */ jsxRuntime.jsx(X$1, { size: 18, className: "text-hubbi-dim" }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          Input,
+          {
+            label: "Nombre *",
+            value: formData.name,
+            onChange: (e) => setFormData((f) => ({ ...f, name: e.target.value })),
+            placeholder: "Ej: Premium"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          Input,
+          {
+            label: "Descripción",
+            value: formData.description,
+            onChange: (e) => setFormData((f) => ({ ...f, description: e.target.value })),
+            placeholder: "Descripción opcional..."
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          Select,
+          {
+            label: "Categoría (opcional)",
+            options: [
+              { value: "", label: "Sin categoría" },
+              ...categories.map((c) => ({ value: c.id, label: c.name }))
+            ],
+            value: formData.category_id,
+            onChange: (val) => setFormData((f) => ({ ...f, category_id: String(val ?? "") }))
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-end gap-3 pt-4 border-t border-hubbi-border", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { variant: "ghost", onClick: () => setIsFormOpen(false), disabled: isSaving, children: "Cancelar" }),
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { onClick: handleSaveGroup, disabled: isSaving, children: isSaving ? "Guardando..." : editingGroup ? "Guardar Cambios" : "Crear Grupo" })
+        ] })
+      ] }) })
+    ] });
+  }
+  const columnHelper = createColumnHelper();
+  const FIELD_TYPE_OPTIONS = [
+    { value: "text", label: "Texto", icon: Type },
+    { value: "number", label: "Número", icon: Hash },
+    { value: "boolean", label: "Sí/No", icon: ToggleLeft },
+    { value: "select", label: "Selector", icon: List },
+    { value: "date", label: "Fecha", icon: Calendar }
+  ];
+  const SCOPE_OPTIONS = [
+    { value: "all", label: "Todos los tipos" },
+    { value: "product", label: "Solo Productos" },
+    { value: "service", label: "Solo Servicios" },
+    { value: "asset", label: "Solo Activos" }
+  ];
+  function CustomFieldsSettings() {
+    const [fields, setFields] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
+    const [sorting, setSorting] = React.useState([]);
+    const [globalFilter, setGlobalFilter] = React.useState("");
+    const [isFormOpen, setIsFormOpen] = React.useState(false);
+    const [editingField, setEditingField] = React.useState(null);
+    const [formData, setFormData] = React.useState({
+      label: "",
+      key_name: "",
+      type: "text",
+      options: [],
+      default_value: "",
+      group_name: "General",
+      scope: "all"
+    });
+    const [newOption, setNewOption] = React.useState("");
+    const [isSaving, setIsSaving] = React.useState(false);
+    const fetchFields = React.useCallback(async () => {
+      try {
+        setLoading(true);
+        const results = await window.hubbi.db.query(
+          "SELECT * FROM custom_fields ORDER BY group_name ASC, label ASC",
+          [],
+          { moduleId: "com.hubbi.inventory" }
+        );
+        const parsed = results.map((f) => ({
+          ...f,
+          options: typeof f.options === "string" ? JSON.parse(f.options) : f.options || []
+        }));
+        setFields(parsed);
+      } catch (err) {
+        console.error("Error fetching custom fields", err);
+        window.hubbi.notify("Error al cargar campos personalizados", "error");
+      } finally {
+        setLoading(false);
+      }
+    }, []);
+    React.useEffect(() => {
+      fetchFields();
+    }, [fetchFields]);
+    const handleDelete = React.useCallback(async (id) => {
+      if (!confirm("¿Estás seguro de eliminar este campo? Los datos existentes en productos no se eliminarán.")) return;
+      try {
+        await window.hubbi.db.delete("custom_fields", id, { moduleId: "com.hubbi.inventory" });
+        window.hubbi.notify("Campo eliminado", "success");
+        fetchFields();
+      } catch (err) {
+        console.error("Error deleting field", err);
+        window.hubbi.notify("Error al eliminar campo", "error");
+      }
+    }, [fetchFields]);
+    const handleToggleActive = React.useCallback(async (field) => {
+      try {
+        await window.hubbi.db.execute(
+          "UPDATE custom_fields SET is_active = ? WHERE id = ?",
+          [!field.is_active, field.id],
+          { moduleId: "com.hubbi.inventory" }
+        );
+        window.hubbi.notify(field.is_active ? "Campo desactivado" : "Campo activado", "success");
+        fetchFields();
+      } catch (err) {
+        console.error("Error toggling field", err);
+        window.hubbi.notify("Error al actualizar campo", "error");
+      }
+    }, [fetchFields]);
+    const generateKeyName = (label) => {
+      return label.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+    };
+    const handleSave = async () => {
+      if (!formData.label.trim() || !formData.key_name.trim()) {
+        window.hubbi.notify("Nombre y clave son requeridos", "warning");
+        return;
+      }
+      if (formData.type === "select" && formData.options.length === 0) {
+        window.hubbi.notify("Agrega al menos una opción para el selector", "warning");
+        return;
+      }
+      setIsSaving(true);
+      try {
+        const optionsJson = JSON.stringify(formData.options);
+        if (editingField) {
+          await window.hubbi.db.execute(
+            `UPDATE custom_fields SET label = ?, key_name = ?, type = ?, options = ?, default_value = ?, group_name = ?, scope = ? WHERE id = ?`,
+            [formData.label, formData.key_name, formData.type, optionsJson, formData.default_value, formData.group_name, formData.scope, editingField.id],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          window.hubbi.notify("Campo actualizado", "success");
+        } else {
+          const id = crypto.randomUUID();
+          await window.hubbi.db.execute(
+            `INSERT INTO custom_fields (id, label, key_name, type, options, default_value, group_name, scope, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [id, formData.label, formData.key_name, formData.type, optionsJson, formData.default_value, formData.group_name, formData.scope, true],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          window.hubbi.notify("Campo creado", "success");
+        }
+        setIsFormOpen(false);
+        setEditingField(null);
+        setFormData({ label: "", key_name: "", type: "text", options: [], default_value: "", group_name: "General", scope: "all" });
+        fetchFields();
+      } catch (err) {
+        console.error("Error saving field", err);
+        window.hubbi.notify("Error al guardar campo", "error");
+      } finally {
+        setIsSaving(false);
+      }
+    };
+    const openEdit = (field) => {
+      setEditingField(field);
+      setFormData({
+        label: field.label,
+        key_name: field.key_name,
+        type: field.type,
+        options: field.options || [],
+        default_value: field.default_value || "",
+        group_name: field.group_name || "General",
+        scope: field.scope || "all"
+      });
+      setIsFormOpen(true);
+    };
+    const addOption = () => {
+      if (!newOption.trim()) return;
+      if (formData.options.includes(newOption.trim())) {
+        window.hubbi.notify("Esta opción ya existe", "warning");
+        return;
+      }
+      setFormData((f) => ({ ...f, options: [...f.options, newOption.trim()] }));
+      setNewOption("");
+    };
+    const removeOption = (opt) => {
+      setFormData((f) => ({ ...f, options: f.options.filter((o2) => o2 !== opt) }));
+    };
+    const columns2 = React.useMemo(() => [
+      columnHelper.accessor("label", {
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex items-center gap-2", children: "Campo" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-2 bg-hubbi-primary/5 rounded-lg", children: (() => {
+            const TypeIcon = FIELD_TYPE_OPTIONS.find((t2) => t2.value === info.row.original.type)?.icon || PenTool;
+            return /* @__PURE__ */ jsxRuntime.jsx(TypeIcon, { className: "w-4 h-4 text-hubbi-primary" });
+          })() }),
+          /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntime.jsx("span", { className: "font-bold text-hubbi-text", children: info.getValue() }),
+            /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-xs text-hubbi-dim font-mono", children: info.row.original.key_name })
+          ] })
+        ] })
+      }),
+      columnHelper.accessor("type", {
+        header: "Tipo",
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("span", { className: "px-2 py-1 bg-hubbi-muted/30 rounded text-xs text-hubbi-text capitalize", children: FIELD_TYPE_OPTIONS.find((t2) => t2.value === info.getValue())?.label || info.getValue() })
+      }),
+      columnHelper.accessor("group_name", {
+        header: "Grupo",
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-sm text-hubbi-dim", children: info.getValue() || "General" })
+      }),
+      columnHelper.accessor("scope", {
+        header: "Aplica a",
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-hubbi-dim", children: SCOPE_OPTIONS.find((s2) => s2.value === info.getValue())?.label || "Todos" })
+      }),
+      columnHelper.accessor("is_active", {
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-center", children: "Estado" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntime.jsx(
+          "button",
+          {
+            onClick: () => handleToggleActive(info.row.original),
+            className: clsx$1(
+              "px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest cursor-pointer transition-colors",
+              info.getValue() ? "bg-green-500/10 text-green-500 border border-green-500/20 hover:bg-green-500/20" : "bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20"
+            ),
+            children: info.getValue() ? "Activo" : "Inactivo"
+          }
+        ) })
+      }),
+      columnHelper.display({
+        id: "actions",
+        header: () => /* @__PURE__ */ jsxRuntime.jsx("div", { className: "text-right px-2", children: "Acciones" }),
+        cell: (info) => /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-end gap-1 px-2", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              onClick: () => openEdit(info.row.original),
+              className: "p-2 text-hubbi-dim hover:text-hubbi-primary hover:bg-hubbi-primary/10 rounded-lg transition-colors",
+              children: /* @__PURE__ */ jsxRuntime.jsx(Pen, { size: 14 })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "button",
+            {
+              onClick: () => handleDelete(info.row.original.id),
+              className: "p-2 text-hubbi-dim hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-colors",
+              children: /* @__PURE__ */ jsxRuntime.jsx(Trash2, { size: 14 })
+            }
+          )
+        ] })
+      })
+    ], [handleDelete, handleToggleActive]);
+    const table = useReactTable({
+      data: fields,
+      columns: columns2,
+      columnResizeMode: "onChange",
+      state: { sorting, globalFilter },
+      onSortingChange: setSorting,
+      onGlobalFilterChange: setGlobalFilter,
+      getCoreRowModel: getCoreRowModel(),
+      getSortedRowModel: getSortedRowModel(),
+      getFilteredRowModel: getFilteredRowModel()
+    });
+    const groupedFields = React.useMemo(() => {
+      const groups = {};
+      fields.forEach((f) => {
+        const g = f.group_name || "General";
+        if (!groups[g]) groups[g] = [];
+        groups[g].push(f);
+      });
+      return groups;
+    }, [fields]);
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-6 space-y-6 flex flex-col h-full animate-in fade-in duration-500", children: [
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntime.jsxs("h2", { className: "text-2xl font-bold text-hubbi-text tracking-tight flex items-center gap-3", children: [
+            "Campos Personalizados",
+            loading && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-4 h-4 border-2 border-hubbi-primary border-t-transparent rounded-full animate-spin" })
+          ] }),
+          /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm text-hubbi-dim mt-1", children: "Define atributos adicionales para tus productos (ej: Color, Material, Voltaje)." })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs(
+          Button,
+          {
+            onClick: () => {
+              setEditingField(null);
+              setFormData({ label: "", key_name: "", type: "text", options: [], default_value: "", group_name: "General", scope: "all" });
+              setIsFormOpen(true);
+            },
+            className: "flex items-center gap-2 px-6",
+            children: [
+              /* @__PURE__ */ jsxRuntime.jsx(Plus, { size: 18 }),
+              "Nuevo Campo"
+            ]
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-col md:flex-row gap-4", children: /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsxRuntime.jsx(
+        Input,
+        {
+          placeholder: "Buscar campo...",
+          value: globalFilter,
+          onChange: (e) => setGlobalFilter(e.target.value),
+          startIcon: /* @__PURE__ */ jsxRuntime.jsx(Search$1, { size: 16, className: "text-hubbi-dim" })
+        }
+      ) }) }),
+      /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex-1 min-h-0 bg-hubbi-card border border-hubbi-border rounded-2xl overflow-hidden shadow-sm flex flex-col", children: [
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "overflow-auto flex-1 no-scrollbar", children: /* @__PURE__ */ jsxRuntime.jsxs("table", { className: "w-full text-left border-separate border-spacing-0 border-collapse", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("thead", { className: "bg-hubbi-muted/30 sticky top-0 z-10", children: table.getHeaderGroups().map((headerGroup) => /* @__PURE__ */ jsxRuntime.jsx("tr", { children: headerGroup.headers.map((header) => /* @__PURE__ */ jsxRuntime.jsxs(
+            "th",
+            {
+              style: { width: header.getSize() },
+              onClick: header.column.getToggleSortingHandler(),
+              className: "relative px-6 py-4 text-[10px] font-black uppercase tracking-widest text-hubbi-dim border border-hubbi-border cursor-pointer hover:text-hubbi-primary transition-colors group select-none",
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
+                  flexRender(header.column.columnDef.header, header.getContext()),
+                  {
+                    asc: " ↑",
+                    desc: " ↓"
+                  }[header.column.getIsSorted()] ?? null
+                ] }),
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  "div",
+                  {
+                    onMouseDown: header.getResizeHandler(),
+                    onTouchStart: header.getResizeHandler(),
+                    onClick: (e) => e.stopPropagation(),
+                    className: clsx$1(
+                      "absolute right-0 top-0 h-full w-1 cursor-col-resize touch-none",
+                      header.column.getIsResizing() ? "bg-hubbi-primary" : "bg-transparent group-hover:bg-hubbi-border"
+                    )
+                  }
+                )
+              ]
+            },
+            header.id
+          )) }, headerGroup.id)) }),
+          /* @__PURE__ */ jsxRuntime.jsxs("tbody", { children: [
+            table.getRowModel().rows.map((row) => /* @__PURE__ */ jsxRuntime.jsx(
+              "tr",
+              {
+                className: "group hover:bg-hubbi-primary/5 transition-all duration-200",
+                children: row.getVisibleCells().map((cell) => /* @__PURE__ */ jsxRuntime.jsx("td", { className: "px-6 py-4 whitespace-nowrap border border-hubbi-border", style: { width: cell.column.getSize() }, children: flexRender(cell.column.columnDef.cell, cell.getContext()) }, cell.id))
+              },
+              row.id
+            )),
+            !loading && fields.length === 0 && /* @__PURE__ */ jsxRuntime.jsx("tr", { children: /* @__PURE__ */ jsxRuntime.jsx("td", { colSpan: columns2.length, className: "px-6 py-20 text-center border border-hubbi-border", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col items-center gap-3 opacity-30", children: [
+              /* @__PURE__ */ jsxRuntime.jsx(PenTool, { size: 48 }),
+              /* @__PURE__ */ jsxRuntime.jsx("p", { className: "font-bold", children: "No hay campos personalizados" }),
+              /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-sm", children: "Crea tu primer campo para agregar atributos a productos" })
+            ] }) }) })
+          ] })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: "px-6 py-3 border-t border-hubbi-border bg-hubbi-muted/10 flex items-center justify-between", children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-xs text-hubbi-dim font-medium", children: loading ? "Sincronizando..." : `${fields.length} campos • ${Object.keys(groupedFields).length} grupos` }) })
+      ] }),
+      isFormOpen && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 animate-in fade-in duration-200", children: /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "bg-hubbi-card border border-hubbi-border rounded-2xl shadow-2xl w-full max-w-lg p-6 space-y-4 animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto", children: [
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("h3", { className: "text-lg font-bold text-hubbi-text", children: editingField ? "Editar Campo" : "Nuevo Campo Personalizado" }),
+          /* @__PURE__ */ jsxRuntime.jsx("button", { onClick: () => setIsFormOpen(false), className: "p-1 hover:bg-hubbi-muted rounded-lg", children: /* @__PURE__ */ jsxRuntime.jsx(X$1, { size: 18, className: "text-hubbi-dim" }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(
+            Input,
+            {
+              label: "Nombre visible *",
+              value: formData.label,
+              onChange: (e) => {
+                const label = e.target.value;
+                setFormData((f) => ({
+                  ...f,
+                  label,
+                  key_name: editingField ? f.key_name : generateKeyName(label)
+                }));
+              },
+              placeholder: "Ej: Color"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            Input,
+            {
+              label: "Clave interna *",
+              value: formData.key_name,
+              onChange: (e) => setFormData((f) => ({ ...f, key_name: e.target.value })),
+              placeholder: "Ej: color",
+              className: "font-mono text-sm",
+              disabled: !!editingField
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(
+            Select,
+            {
+              label: "Tipo de campo",
+              options: FIELD_TYPE_OPTIONS.map((t2) => ({ value: t2.value, label: t2.label })),
+              value: formData.type,
+              onChange: (val) => setFormData((f) => ({ ...f, type: val, options: val === "select" ? f.options : [] }))
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            Select,
+            {
+              label: "Aplica a",
+              options: SCOPE_OPTIONS,
+              value: formData.scope,
+              onChange: (val) => setFormData((f) => ({ ...f, scope: String(val) }))
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          Input,
+          {
+            label: "Grupo (para organizar en UI)",
+            value: formData.group_name,
+            onChange: (e) => setFormData((f) => ({ ...f, group_name: e.target.value })),
+            placeholder: "Ej: Especificaciones Técnicas"
+          }
+        ),
+        formData.type !== "boolean" && formData.type !== "select" && /* @__PURE__ */ jsxRuntime.jsx(
+          Input,
+          {
+            label: "Valor por defecto (opcional)",
+            value: formData.default_value,
+            onChange: (e) => setFormData((f) => ({ ...f, default_value: e.target.value })),
+            placeholder: "Valor inicial..."
+          }
+        ),
+        formData.type === "select" && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntime.jsx("label", { className: "block text-xs font-bold text-hubbi-dim uppercase", children: "Opciones del selector *" }),
+          /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex gap-2", children: [
+            /* @__PURE__ */ jsxRuntime.jsx(
+              Input,
+              {
+                value: newOption,
+                onChange: (e) => setNewOption(e.target.value),
+                placeholder: "Nueva opción...",
+                onKeyDown: (e) => e.key === "Enter" && (e.preventDefault(), addOption())
+              }
+            ),
+            /* @__PURE__ */ jsxRuntime.jsx(Button, { variant: "secondary", onClick: addOption, children: "Agregar" })
+          ] }),
+          /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-wrap gap-2 mt-2", children: formData.options.map((opt) => /* @__PURE__ */ jsxRuntime.jsxs(
+            "span",
+            {
+              className: "px-3 py-1.5 bg-hubbi-muted/30 border border-hubbi-border rounded-lg text-sm flex items-center gap-2",
+              children: [
+                opt,
+                /* @__PURE__ */ jsxRuntime.jsx("button", { onClick: () => removeOption(opt), className: "hover:text-red-500", children: /* @__PURE__ */ jsxRuntime.jsx(X$1, { size: 12 }) })
+              ]
+            },
+            opt
+          )) }),
+          formData.options.length === 0 && /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-xs text-amber-500", children: "Agrega al menos una opción" })
+        ] }),
+        /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex justify-end gap-3 pt-4 border-t border-hubbi-border", children: [
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { variant: "ghost", onClick: () => setIsFormOpen(false), disabled: isSaving, children: "Cancelar" }),
+          /* @__PURE__ */ jsxRuntime.jsx(Button, { onClick: handleSave, disabled: isSaving, children: isSaving ? "Guardando..." : editingField ? "Guardar Cambios" : "Crear Campo" })
+        ] })
+      ] }) })
     ] });
   }
   function SettingsView({ currentRoute }) {
@@ -49979,12 +51804,14 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
           return /* @__PURE__ */ jsxRuntime.jsx(GeneralSettings, {});
         case "settings-warehouses":
           return /* @__PURE__ */ jsxRuntime.jsx(WarehousesSettings, {});
+        case "settings-units":
+          return /* @__PURE__ */ jsxRuntime.jsx(UnitsSettings, {});
         case "settings-categories":
-          return /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Categorías", description: "Define la jerarquía de productos." });
+          return /* @__PURE__ */ jsxRuntime.jsx(CategoriesSettings, {});
         case "settings-groups":
-          return /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Grupos y Familias", description: "Agrupación avanzada de inventario." });
+          return /* @__PURE__ */ jsxRuntime.jsx(GroupsSettings, {});
         case "settings-custom-fields":
-          return /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Campos Personalizados", description: "Define atributos extra para tus productos." });
+          return /* @__PURE__ */ jsxRuntime.jsx(CustomFieldsSettings, {});
         default:
           return /* @__PURE__ */ jsxRuntime.jsx(GeneralSettings, {});
       }
@@ -49994,6 +51821,95 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
       /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex-1 overflow-y-auto min-h-0 relative", children: renderContent() })
     ] });
   }
+  function PlaceholderPage({ title, description = "Esta funcionalidad está en desarrollo." }) {
+    return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex flex-col items-center justify-center h-full text-hubbi-dim p-8 text-center animate-in fade-in zoom-in duration-300", children: [
+      /* @__PURE__ */ jsxRuntime.jsx("div", { className: "bg-hubbi-card p-6 rounded-2xl border border-hubbi-border shadow-xl mb-6", children: /* @__PURE__ */ jsxRuntime.jsx(Construction, { size: 48, className: "text-hubbi-primary mb-0 mx-auto", strokeWidth: 1.5 }) }),
+      /* @__PURE__ */ jsxRuntime.jsx("h2", { className: "text-3xl font-bold text-hubbi-text mb-3 tracking-tight", children: title }),
+      /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-lg max-w-md mx-auto text-hubbi-dim/80", children: description })
+    ] });
+  }
+  const useScannerListener = ({
+    onScan,
+    minLength = 3,
+    maxInterval = 50,
+    ignoredTags = ["INPUT", "TEXTAREA", "SELECT"]
+  }) => {
+    const buffer = React.useRef("");
+    const lastKeyTime = React.useRef(0);
+    React.useEffect(() => {
+      const handleKeyDown = (e) => {
+        const now = Date.now();
+        const timeDiff = now - lastKeyTime.current;
+        const target = e.target;
+        if (target && ignoredTags.includes(target.tagName)) {
+          return;
+        }
+        if (timeDiff > maxInterval && buffer.current.length > 0) {
+          buffer.current = "";
+        }
+        lastKeyTime.current = now;
+        if (e.key === "Enter") {
+          if (buffer.current.length >= minLength) {
+            e.preventDefault();
+            e.stopPropagation();
+            const scannedCode = buffer.current;
+            buffer.current = "";
+            console.log("[Scanner] Detected:", scannedCode);
+            onScan(scannedCode);
+          } else {
+            buffer.current = "";
+          }
+          return;
+        }
+        if (e.key === "Shift" || e.key === "Control" || e.key === "Alt" || e.key === "Meta") {
+          return;
+        }
+        if (e.key.length === 1) {
+          buffer.current += e.key;
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown, true);
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown, true);
+      };
+    }, [onScan, minLength, maxInterval, ignoredTags]);
+  };
+  const GlobalScannerHandler = () => {
+    const handleScan = async (barcode) => {
+      console.log("Global Scan Detected:", barcode);
+      try {
+        let items = await window.hubbi.db.query(
+          "SELECT * FROM items WHERE sku = ?",
+          [barcode],
+          { moduleId: "com.hubbi.inventory" }
+        );
+        if (items.length === 0) {
+          const uomItems = await window.hubbi.db.query(
+            "SELECT i.* FROM items i JOIN item_uoms u ON i.id = u.item_id WHERE u.barcode = ?",
+            [barcode],
+            { moduleId: "com.hubbi.inventory" }
+          );
+          if (uomItems.length > 0) {
+            items = uomItems;
+          }
+        }
+        if (items.length > 0) {
+          const item = items[0];
+          window.hubbi.notify(`Producto encontrado: ${item.name}`, "success");
+          window.hubbi.navigate(`/products?search=${item.sku}`);
+        } else {
+          window.hubbi.notify(`Código no encontrado: ${barcode}`, "info");
+        }
+      } catch (e) {
+        console.error("Scan Error", e);
+      }
+    };
+    useScannerListener({
+      onScan: handleScan,
+      minLength: 3
+    });
+    return null;
+  };
   function InventoryModule(props) {
     const getRoute = () => {
       if (typeof window === "undefined") return "dashboard";
@@ -50013,7 +51929,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
         if (subPath.includes("/warehouses")) return "settings-warehouses";
         if (subPath.includes("/categories")) return "settings-categories";
         if (subPath.includes("/groups")) return "settings-groups";
-        if (subPath.includes("/subgroups")) return "settings-subgroups";
+        if (subPath.includes("/units")) return "settings-units";
         if (subPath.includes("/custom-fields")) return "settings-custom-fields";
         return "settings-general";
       }
@@ -50031,8 +51947,12 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
           if (allowedIds.length > 0) {
             const context = window.hubbi.getContext();
             const userDept = context.departmentId || context.department_id;
-            if (userDept && !allowedIds.includes(userDept)) {
-              setAccessDenied(true);
+            if (userDept) {
+              const userDeptId = userDept;
+              if (!allowedIds.includes(userDeptId)) {
+                console.warn(`[Inventory] Access Denied. User Dept: ${userDeptId}, Allowed: ${JSON.stringify(allowedIds)}`);
+                setAccessDenied(true);
+              }
             }
           }
         } catch (e) {
@@ -50065,20 +51985,20 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
         /* @__PURE__ */ jsxRuntime.jsx("p", { className: "text-hubbi-dim max-w-md", children: "Tu departamento no tiene permisos autorizados para acceder al módulo de Inventario. Contacta al administrador para solicitar acceso." })
       ] });
     }
-    return /* @__PURE__ */ jsxRuntime.jsx(InventoryProvider, { children: /* @__PURE__ */ jsxRuntime.jsxs(MainLayout, { children: [
-      currentRoute === "dashboard" && /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "p-6", children: [
-        /* @__PURE__ */ jsxRuntime.jsx("h1", { className: "text-2xl font-bold text-hubbi-text mb-4", children: "Dashboard de Inventario" }),
-        /* @__PURE__ */ jsxRuntime.jsx(DashboardWidget, {})
-      ] }),
-      currentRoute === "products" && /* @__PURE__ */ jsxRuntime.jsx(ProductsView, {}),
-      currentRoute === "purchases" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Compras", description: "Gestión de ingresos y órdenes de compra." }),
-      currentRoute === "movements" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Movimientos", description: "Historial y registro de movimientos." }),
-      currentRoute === "stock" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Existencias", description: "Reporte detallado de stock por bodega." }),
-      currentRoute === "labeling" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Etiquetación", description: "Generación de códigos de barra y etiquetas." }),
-      currentRoute === "kardex" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Kardex", description: "Trazabilidad completa de productos." }),
-      currentRoute === "wms-admin" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Administración WMS", description: "Mapa interactivo y gestión de ubicaciones." }),
-      currentRoute.startsWith("settings") && /* @__PURE__ */ jsxRuntime.jsx(SettingsView, { currentRoute })
-    ] }) });
+    return /* @__PURE__ */ jsxRuntime.jsxs(InventoryProvider, { children: [
+      /* @__PURE__ */ jsxRuntime.jsx(GlobalScannerHandler, {}),
+      /* @__PURE__ */ jsxRuntime.jsxs(MainLayout, { children: [
+        currentRoute === "dashboard" && /* @__PURE__ */ jsxRuntime.jsx("div", { className: "p-6", children: /* @__PURE__ */ jsxRuntime.jsx("h1", { className: "text-2xl font-bold text-hubbi-text mb-4", children: "Dashboard de Inventario" }) }),
+        currentRoute === "products" && /* @__PURE__ */ jsxRuntime.jsx(ProductsView, {}),
+        currentRoute === "purchases" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Compras", description: "Gestión de ingresos y órdenes de compra." }),
+        currentRoute === "movements" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Movimientos", description: "Historial y registro de movimientos." }),
+        currentRoute === "stock" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Existencias", description: "Reporte detallado de stock por bodega." }),
+        currentRoute === "labeling" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Etiquetación", description: "Generación de códigos de barra y etiquetas." }),
+        currentRoute === "kardex" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Kardex", description: "Trazabilidad completa de productos." }),
+        currentRoute === "wms-admin" && /* @__PURE__ */ jsxRuntime.jsx(PlaceholderPage, { title: "Administración WMS", description: "Mapa interactivo y gestión de ubicaciones." }),
+        currentRoute.startsWith("settings") && /* @__PURE__ */ jsxRuntime.jsx(SettingsView, { currentRoute })
+      ] })
+    ] });
   }
   if (typeof window !== "undefined" && window.hubbi) {
     window.hubbi.register("com.hubbi.inventory", InventoryModule);

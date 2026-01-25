@@ -22,10 +22,59 @@ CREATE TABLE IF NOT EXISTS custom_fields (
     label TEXT NOT NULL,
     key_name TEXT NOT NULL UNIQUE, -- "color", "material"
     type TEXT DEFAULT 'text', -- 'text', 'number', 'boolean', 'select', 'date'
-    options JSON DEFAULT '[]',
+    options JSON DEFAULT '[]', -- Options for select type
     default_value TEXT,
+    
+    -- UI Logic
+    group_name TEXT DEFAULT 'General', -- "Technical Specs", "Dimensions"
+    scope TEXT DEFAULT 'all', -- 'all', 'product', 'asset', 'service'
+    display_order INTEGER DEFAULT 0,
+    
     is_active BOOLEAN DEFAULT TRUE
 );
+
+-- 0.3 Categorías (Requerido para productos)
+CREATE TABLE IF NOT EXISTS categories (
+    id UUID PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT,
+    icon TEXT, -- Lucide icon name (e.g., 'Package', 'Cpu')
+    color TEXT, -- Hex color for UI
+    parent_id UUID, -- For nested categories (optional)
+    display_order INTEGER DEFAULT 0,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (parent_id) REFERENCES categories(id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_categories_parent ON categories(parent_id);
+
+-- 0.4 Grupos (Opcional, vinculados a categorías)
+CREATE TABLE IF NOT EXISTS item_groups (
+    id UUID PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT,
+    category_id UUID, -- Linked to category (optional)
+    display_order INTEGER DEFAULT 0,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_item_groups_category ON item_groups(category_id);
+
+-- 0.5 Subgrupos (Opcional, feature-flagged, vinculados a grupos)
+CREATE TABLE IF NOT EXISTS subgroups (
+    id UUID PRIMARY KEY,
+    name TEXT NOT NULL,
+    group_id UUID NOT NULL,
+    display_order INTEGER DEFAULT 0,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (group_id) REFERENCES item_groups(id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_subgroups_group ON subgroups(group_id);
 
 -- 1. Catálogo Maestro de Productos y Activos
 CREATE TABLE IF NOT EXISTS items (

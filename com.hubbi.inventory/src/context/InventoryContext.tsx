@@ -1,4 +1,4 @@
-import { createContext, useContext, useRef, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { useStore } from 'zustand';
 import { createInventoryStore, InventoryStore, InventoryState } from '../store/inventoryStore';
 import { createInventorySettingsStore, InventorySettingsStore, InventorySettingsState } from '../store/inventorySettingsStore';
@@ -18,21 +18,14 @@ interface InventoryProviderProps {
 }
 
 export const InventoryProvider = ({ children, initialState }: InventoryProviderProps) => {
-    // Ensure store is created once per component instance (per tab)
-    const storeRef = useRef<InventoryStore>(undefined);
-    if (!storeRef.current) {
-        storeRef.current = createInventoryStore(initialState);
-    }
-
-    const settingsStoreRef = useRef<InventorySettingsStore>(undefined);
-    if (!settingsStoreRef.current) {
-        settingsStoreRef.current = createInventorySettingsStore();
-    }
+    // Ensure store is created once per component instance using useState lazy initializer
+    const [store] = useState(() => createInventoryStore(initialState));
+    const [settings] = useState(() => createInventorySettingsStore());
 
     return (
         <InventoryContext.Provider value={{
-            store: storeRef.current,
-            settings: settingsStoreRef.current
+            store,
+            settings
         }}>
             {children}
         </InventoryContext.Provider>
@@ -41,6 +34,7 @@ export const InventoryProvider = ({ children, initialState }: InventoryProviderP
 
 
 // 3. Hook to use the store
+// eslint-disable-next-line react-refresh/only-export-components
 export function useInventoryStore<T = InventoryState>(
     selector?: (state: InventoryState) => T
 ): T {
@@ -58,6 +52,7 @@ export function useInventoryStore<T = InventoryState>(
     return useStore(store, finalSelector);
 }
 // 4. Hook to use the settings
+// eslint-disable-next-line react-refresh/only-export-components
 export function useInventorySettings<T = InventorySettingsState>(
     selector?: (state: InventorySettingsState) => T
 ): T {

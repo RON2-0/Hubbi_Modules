@@ -17,6 +17,33 @@ export interface CustomFieldDefinition {
     type: CustomFieldType;
     options?: string[];
     default_value?: string;
+
+    // UI Metadata
+    group_name?: string; // e.g. "Visuals", "Technical"
+    scope?: 'all' | 'product' | 'service' | 'asset';
+
+    is_active: boolean;
+}
+
+// Category (Required for products)
+export interface Category {
+    id: string;
+    name: string;
+    description?: string;
+    icon?: string; // Lucide icon name
+    color?: string; // Hex color
+    parent_id?: string;
+    display_order: number;
+    is_active: boolean;
+}
+
+// Group (Optional, linked to categories)
+export interface ItemGroup {
+    id: string;
+    name: string;
+    description?: string;
+    category_id?: string;
+    display_order: number;
     is_active: boolean;
 }
 
@@ -37,13 +64,13 @@ export interface InventoryItem {
     // Org
     category_id: string;
     group_id?: string;
-    subgroup_id?: string;
+    // subgroup_id?: string; // Removed
 
     // Core Links
     base_unit_id: string;
     purchase_unit_id?: string;
     responsible_id?: string; // e.g. for Assets
-    responsible_department_id?: number; // New: Dept responsibility
+    responsible_department_id?: string | number; // New: Dept responsibility (Supports UUID)
 
     // Financial
     price_base: number;
@@ -126,7 +153,7 @@ export interface InventoryMovement {
     // Where
     from_warehouse_id?: string;
     to_warehouse_id?: string;
-    department_id?: number; // New: Dept consumption tracking
+    department_id?: string | number; // New: Dept consumption tracking (Supports UUID)
 
     // Why
     reason?: string;
@@ -178,7 +205,6 @@ export enum InventoryProfile {
     GENERIC = 'GENERIC',
     RETAIL = 'RETAIL',
     WORKSHOP = 'WORKSHOP',
-    RESTAURANT = 'RESTAURANT',
     PHARMACY = 'PHARMACY'
 }
 
@@ -196,5 +222,5 @@ export interface InventorySettings {
     profile: InventoryProfile;
     features: Record<FeatureFlagKey, boolean>;
     overridden: boolean;
-    allowedDepartments?: number[]; // New: Access control list
+    allowedDepartments?: (string | number)[]; // New: Access control list (Supports UUID)
 }

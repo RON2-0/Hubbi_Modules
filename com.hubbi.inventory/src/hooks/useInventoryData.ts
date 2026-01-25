@@ -35,9 +35,11 @@ export function useInventoryData() {
                 sql += ` ORDER BY name ASC`;
             }
 
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const items = await window.hubbi.db.query<any>(sql, params, { moduleId: 'com.hubbi.inventory' });
 
             // Parse JSON fields if necessary (SQLite returns string for JSON)
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const parsedItems: InventoryItem[] = items.map((item: any) => {
                 const baseAttributes = typeof item.attributes === 'string' ? JSON.parse(item.attributes) : (item.attributes || {});
                 const assetMeta = typeof item.asset_meta === 'string' ? JSON.parse(item.asset_meta) : (item.asset_meta || {});
@@ -52,8 +54,8 @@ export function useInventoryData() {
                     has_warranty: Boolean(item.has_warranty),
 
                     // Map legacy/db fields to new interface
-                    kind: (item.type?.toUpperCase() as any) || 'PRODUCT',
-                    status: (item.is_active ? 'ACTIVE' : 'INACTIVE') as any,
+                    kind: (item.type?.toUpperCase() as InventoryItem['kind']) || 'PRODUCT',
+                    status: (item.is_active ? 'ACTIVE' : 'INACTIVE') as InventoryItem['status'],
 
                     // Parse JSON strings to objects
                     attributes: { ...baseAttributes, ...assetMeta },

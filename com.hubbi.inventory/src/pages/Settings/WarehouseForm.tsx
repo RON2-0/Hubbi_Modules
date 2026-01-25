@@ -69,9 +69,7 @@ export default function WarehouseForm({ open, onClose, onSuccess, initialData }:
                 reset({
                     name: initialData.name,
                     sub_hub_id: String(initialData.sub_hub_id),
-                    // @ts-ignore - fields exist in DB but not in type yet
                     address: initialData.address || '',
-                    // @ts-ignore
                     phone: initialData.phone || '',
                     responsible_user_id: initialData.responsible_user_id || null,
                     is_active: initialData.is_active !== false
@@ -192,6 +190,7 @@ export default function WarehouseForm({ open, onClose, onSuccess, initialData }:
                     </div>
 
                     {/* Body */}
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     <form onSubmit={handleSubmit(onFormSubmit as any)} className="p-6 space-y-5 overflow-y-auto">
                         {/* Name */}
                         <Input
@@ -288,6 +287,7 @@ export default function WarehouseForm({ open, onClose, onSuccess, initialData }:
                         {/* Footer Actions */}
                         <div className="pt-4 flex justify-end gap-3">
                             <Button variant="ghost" type="button" onClick={onClose} disabled={isSaving}>Cancelar</Button>
+                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                             <Button onClick={handleSubmit(onFormSubmit as any)} disabled={isSaving} className="px-8">
                                 {isSaving ? 'Guardando...' : (initialData ? 'Guardar Cambios' : 'Crear Bodega')}
                             </Button>

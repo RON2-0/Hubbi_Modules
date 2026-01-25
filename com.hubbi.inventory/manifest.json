@@ -73,6 +73,11 @@
             "icon": "lucide:Warehouse"
           },
           {
+            "label": "Unidades",
+            "path": "/app/com.hubbi.inventory/settings/units",
+            "icon": "lucide:Ruler"
+          },
+          {
             "label": "Categorías",
             "path": "/app/com.hubbi.inventory/settings/categories",
             "icon": "lucide:Copy"
@@ -81,11 +86,6 @@
             "label": "Grupos",
             "path": "/app/com.hubbi.inventory/settings/groups",
             "icon": "lucide:Layers"
-          },
-          {
-            "label": "Subgrupos",
-            "path": "/app/com.hubbi.inventory/settings/subgroups",
-            "icon": "lucide:List"
           },
           {
             "label": "Campos Custom",

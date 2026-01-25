@@ -7,10 +7,8 @@ import { DashboardWidget } from './components/DashboardWidget';
 import ProductsView from './pages/Products/TableView/ProductsView';
 import SettingsView from './pages/Settings/SettingsView';
 import { PlaceholderPage } from './components/PlaceholderPage';
+import { GlobalScannerHandler } from './components/GlobalScannerHandler';
 
-// ============================================
-// MAIN MODULE COMPONENT
-// ============================================
 // ============================================
 // MAIN MODULE COMPONENT
 // ============================================
@@ -45,7 +43,8 @@ function InventoryModule(props: { isActive?: boolean }) {
             if (subPath.includes('/warehouses')) return 'settings-warehouses';
             if (subPath.includes('/categories')) return 'settings-categories';
             if (subPath.includes('/groups')) return 'settings-groups';
-            if (subPath.includes('/subgroups')) return 'settings-subgroups';
+            // if (subPath.includes('/subgroups')) return 'settings-subgroups'; // Removed
+            if (subPath.includes('/units')) return 'settings-units';
             if (subPath.includes('/custom-fields')) return 'settings-custom-fields';
             return 'settings-general';
         }
@@ -64,15 +63,21 @@ function InventoryModule(props: { isActive?: boolean }) {
 
             try {
                 const stored = await window.hubbi.settings.get('allowedDepartments', 'com.hubbi.inventory');
-                const allowedIds: number[] = stored ? JSON.parse(stored) : [];
+                const allowedIds: (string | number)[] = stored ? JSON.parse(stored) : [];
 
                 if (allowedIds.length > 0) {
                     // Get department from context
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     const context = window.hubbi.getContext() as any;
-                    const userDept = context.departmentId || context.department_id;
+                    const userDept = context.departmentId || context.department_id; // Could be string or number
 
-                    if (userDept && !allowedIds.includes(userDept)) {
-                        setAccessDenied(true);
+                    // Ensure strict type comparison (db usually uses numbers for IDs in Hubbi core)
+                    if (userDept) {
+                        const userDeptId = userDept;
+                        if (!allowedIds.includes(userDeptId)) {
+                            console.warn(`[Inventory] Access Denied. User Dept: ${userDeptId}, Allowed: ${JSON.stringify(allowedIds)}`);
+                            setAccessDenied(true);
+                        }
                     }
                 }
             } catch (e) {
@@ -121,13 +126,13 @@ function InventoryModule(props: { isActive?: boolean }) {
 
     return (
         <InventoryProvider>
+            <GlobalScannerHandler />
             <MainLayout>
                 {/* ... existing routes ... */}
                 {/* DASHBOARD: Default View */}
                 {currentRoute === 'dashboard' && (
                     <div className="p-6">
                         <h1 className="text-2xl font-bold text-hubbi-text mb-4">Dashboard de Inventario</h1>
-                        <DashboardWidget />
                     </div>
                 )}
 
@@ -176,6 +181,7 @@ if (typeof window !== 'undefined' && window.hubbi) {
         const subHubId = context?.subHubId;
 
         let sql = 'SELECT * FROM items WHERE sku = ? LIMIT 1';
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const params: any[] = [sku];
 
         if (subHubId) {
@@ -202,6 +208,7 @@ if (typeof window !== 'undefined' && window.hubbi) {
         const subHubId = context?.subHubId;
 
         let sql = 'SELECT * FROM stock WHERE item_id = ?';
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const params: any[] = [itemId];
 
         if (subHubId) {
